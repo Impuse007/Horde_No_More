@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
     public float speed = 5.0f;
     
     // Player Dash Values
-    public float dashSpeed = 10.0f;
-    public float dashDuration = 0.5f;
-    public float dashCooldown = 5.0f;
+    public float dashSpeed = 15.0f;
+    public float dashDuration = 0.3f;
+    public float dashCooldown = 3.0f;
     public float playerInvincibilityTime = 1.0f;
     private float dashTime;
     private float dashCooldownTime;
