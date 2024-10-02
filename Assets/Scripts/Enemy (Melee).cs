@@ -7,20 +7,24 @@ public class EnemyMelee : EnemyBase
     // Start is called before the first frame update
     void Start()
     {
-        
+        base.maxHealth = 100;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        EnemyMeleeMovement();
     }
     
-    EnemyBase enemyBase;
-    
-    public void EnemyAttack()
+    public void EnemyMeleeAttack()
     {
-        enemyDamage = 10;
+        // Deal damage to the player
+        return;
+    }
+    
+    public void EnemyMeleeMovement()
+    {
+        enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, speed * Time.deltaTime);
     }
     
     

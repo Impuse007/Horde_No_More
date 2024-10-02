@@ -11,15 +11,14 @@ public class EnemyBase : MonoBehaviour
     public float speed = 5.0f;
     public float attackRange = 1.0f;
     public float attackCooldown = 1.0f;
-
-    public void EnemyMovement()
-    {
-        // Move towards the player
-    }
     
-    public void EnemyAttack()
+    // GameObjects;
+    public GameObject player;
+    public GameObject enemy;
+
+    public void Start()
     {
-        // Deal damage to the player
+        _enemyManager.currentHealth = maxHealth;
     }
     
     public void TakeDamage(int damage)
@@ -37,7 +36,4 @@ public class EnemyBase : MonoBehaviour
     {
         // Needs a dying animation
     }
-    
-    
-    
 }

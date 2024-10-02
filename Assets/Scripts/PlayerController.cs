@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
         PlayerMoves();
+        BasicAttack();
         
         if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTime <= 0)
         {
@@ -73,5 +74,14 @@ public class PlayerController : MonoBehaviour
         
         isDashing = false;
         dashCooldownTime = dashCooldown;
+    }
+    
+    public void BasicAttack()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            // Deal damage to the enemy
+            playerManager.TakeDamage(damage);
+        }
     }
 }
