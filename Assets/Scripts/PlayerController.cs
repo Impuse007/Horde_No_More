@@ -8,12 +8,21 @@ public class PlayerController : MonoBehaviour
     // Player Components
     HealthManager playerManager;
     // Player Movement Values
+    [Header("Player Main Stats")]
+    private float playerCurrentHealth;
+    public float playerMaxHealth = 100;
+    public int playerDamage = 10;
     public float speed = 5.0f;
     
     // Player Attack Values
+    [Header("Player Attack Stats")]
+    public Transform attackPoint;
     public float basicAttackRange = 1.0f;
+    public float basicAttackCooldown = 1.0f;
+    public LayerMask enemyLayers;
     
     // Player Dash Values
+    [Header("Player Dash Stats")]
     public float dashSpeed = 15.0f;
     public float dashDuration = 0.3f;
     public float dashCooldown = 3.0f;
@@ -21,13 +30,6 @@ public class PlayerController : MonoBehaviour
     private float dashTime;
     private float dashCooldownTime;
     private bool isDashing;
-    
-    
-    // Player Health Values
-    public int maxHealth = 100;
-    
-    // Player Attack Values
-    public int playerDamage = 10;
     
     public void Start()
     {
@@ -48,7 +50,10 @@ public class PlayerController : MonoBehaviour
             dashCooldownTime -= Time.deltaTime;
         }
         
-        BasicAttack();
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            BasicAttack();
+        }
         
         Debug.Log(dashCooldownTime);
     }
@@ -84,18 +89,26 @@ public class PlayerController : MonoBehaviour
     public void BasicAttack()
     {
         // Attack in the direction of the mouse
-        Vector2 mousePosition = Input.mousePosition;
-        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector2 attackDirection = (worldPosition - (Vector2)transform.position).normalized;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 attackDirection = (mousePosition - (Vector2)transform.position).normalized;
         
-        // Create a raycast to detect enemies
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, attackDirection, basicAttackRange);
-        Debug.DrawRay(transform.position, attackDirection * basicAttackRange, Color.red); // Can't see this in the game view
-        
-        if (hit.collider.CompareTag("Enemy"))
+        RaycastHit2D hit = Physics2D.Raycast(attackPoint.position, attackDirection, basicAttackRange, enemyLayers);
+        Debug.DrawRay(attackPoint.position, attackDirection * basicAttackRange, Color.red);
+
+        if (hit.collider != null && hit.collider.CompareTag("Enemy"))
         {
-            hit.collider.GetComponent<EnemyMelee>().TakeDamage(damage: playerDamage);
+            hit.collider.GetComponent<EnemyBase>().TakeDamage(playerDamage);
             Debug.Log("Hit enemy: " + hit.collider.name);
         }
     }
+
+    //void OnDrawGizmos()
+    //{
+    //    if (attackPoint == null)
+    //    {
+    //        return;
+    //    }
+    //    
+    //    Gizmos.DrawWireSphere(attackPoint.position, basicAttackRange);
+    //}
 }
