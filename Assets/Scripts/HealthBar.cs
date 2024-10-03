@@ -8,17 +8,19 @@ public class HealthBar : MonoBehaviour
 {
     public Slider healthBar;
     private HealthManager healthManager;
+    private EnemyBase enemyBase;
     
     void Start()
     {
         healthManager = GetComponent<HealthManager>();
+        enemyBase = GetComponent<EnemyBase>();
         healthBar = GetComponentInChildren<Slider>();
-        healthBar.maxValue = healthManager.maxHealth;
-        healthBar.value = healthManager.currentHealth;
+        healthBar.maxValue = enemyBase.enemyMaxHealth;
+        healthBar.value = enemyBase.enemyCurrentHealth;
     }
     
     void Update()
     {
-        healthBar.value = healthManager.currentHealth;
+        healthBar.value = enemyBase.enemyCurrentHealth;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,13 +28,12 @@ public class PlayerController : MonoBehaviour
     
     public void Start()
     {
-        //playerManager.currentHealth = maxHealth;
+        
     }
     
     public void Update()
     {
         PlayerMoves();
-        BasicAttack();
         
         if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTime <= 0)
         {
@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
         {
             dashCooldownTime -= Time.deltaTime;
         }
+        
+        BasicAttack();
         
         Debug.Log(dashCooldownTime);
     }
@@ -75,13 +77,22 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
         dashCooldownTime = dashCooldown;
     }
-    
+
     public void BasicAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        // Attack in the direction of the mouse
+        Vector2 mousePosition = Input.mousePosition;
+        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        Vector2 attackDirection = (worldPosition - (Vector2)transform.position).normalized;
+        
+        // Create a raycast to detect enemies
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, attackDirection, 2.0f);
+        Debug.DrawRay(transform.position, attackDirection, Color.red); // Can't see this in the game view
+        
+        if (hit.collider.CompareTag("Enemy"))
         {
-            // Deal damage to the enemy
-            playerManager.TakeDamage(damage);
+            hit.collider.GetComponent<EnemyMelee>().TakeDamage(damage);
+            Debug.Log("Hit enemy: " + hit.collider.name);
         }
     }
 }
