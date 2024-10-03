@@ -13,6 +13,7 @@ public class EnemyBase : MonoBehaviour
     public float speed = 5.0f;
     public float attackRange = 1.0f;
     public float attackCooldown = 1.0f;
+    public float nextAttackTime = 0.0f;
     
     // GameObjects;
     public GameObject player;

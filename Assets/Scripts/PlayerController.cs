@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,16 +10,18 @@ public class PlayerController : MonoBehaviour
     HealthManager playerManager;
     // Player Movement Values
     [Header("Player Main Stats")]
-    private float playerCurrentHealth;
+    [HideInInspector] public float playerCurrentHealth;
     public float playerMaxHealth = 100;
-    public int playerDamage = 10;
+    public TextMeshProUGUI healthText;
     public float speed = 5.0f;
     
     // Player Attack Values
     [Header("Player Attack Stats")]
     public Transform attackPoint;
+    public int playerDamage = 10;
     public float basicAttackRange = 1.0f;
     public float basicAttackCooldown = 1.0f;
+    public float nextAttackTime = 0.0f;
     public LayerMask enemyLayers;
     
     // Player Dash Values
@@ -33,7 +36,7 @@ public class PlayerController : MonoBehaviour
     
     public void Start()
     {
-        
+        playerCurrentHealth = playerMaxHealth;
     }
     
     public void Update()
@@ -50,12 +53,18 @@ public class PlayerController : MonoBehaviour
             dashCooldownTime -= Time.deltaTime;
         }
         
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Time.time >= nextAttackTime)
         {
-            BasicAttack();
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                BasicAttack();
+                nextAttackTime = Time.time + 1f / basicAttackCooldown;
+                Debug.Log("Attacked");
+            }
         }
         
-        Debug.Log(dashCooldownTime);
+        healthText.text = playerCurrentHealth.ToString();
+        //Debug.Log(dashCooldownTime);
     }
     
     public void PlayerMoves()
@@ -100,5 +109,20 @@ public class PlayerController : MonoBehaviour
             hit.collider.GetComponent<EnemyBase>().TakeDamage(playerDamage);
             Debug.Log("Hit enemy: " + hit.collider.name);
         }
+    }
+    
+    public void TakeDamage(int damage)
+    {
+        playerCurrentHealth -= damage;
+        
+        if (playerCurrentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
