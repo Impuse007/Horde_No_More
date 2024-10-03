@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     // Player Movement Values
     public float speed = 5.0f;
     
+    // Player Attack Values
+    public float basicAttackRange = 1.0f;
+    
     // Player Dash Values
     public float dashSpeed = 15.0f;
     public float dashDuration = 0.3f;
@@ -24,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 100;
     
     // Player Attack Values
-    public int damage = 10;
+    public int playerDamage = 10;
     
     public void Start()
     {
@@ -86,12 +89,12 @@ public class PlayerController : MonoBehaviour
         Vector2 attackDirection = (worldPosition - (Vector2)transform.position).normalized;
         
         // Create a raycast to detect enemies
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, attackDirection, 2.0f);
-        Debug.DrawRay(transform.position, attackDirection, Color.red); // Can't see this in the game view
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, attackDirection, basicAttackRange);
+        Debug.DrawRay(transform.position, attackDirection * basicAttackRange, Color.red); // Can't see this in the game view
         
         if (hit.collider.CompareTag("Enemy"))
         {
-            hit.collider.GetComponent<EnemyMelee>().TakeDamage(damage);
+            hit.collider.GetComponent<EnemyMelee>().TakeDamage(damage: playerDamage);
             Debug.Log("Hit enemy: " + hit.collider.name);
         }
     }
