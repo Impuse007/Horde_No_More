@@ -3,17 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     // Player Components
     HealthManager playerManager;
+    public LevelManager levelManager; // This is not used in this script, Debugging purposes
     // Player Movement Values
     [Header("Player Main Stats")]
-    [HideInInspector] public float playerCurrentHealth;
+    public Slider playerHealthBar;
     public float playerMaxHealth = 100;
-    public TextMeshProUGUI healthText;
     public float speed = 5.0f;
+    [HideInInspector] public float playerCurrentHealth;
     
     // Player Attack Values
     [Header("Player Attack Stats")]
@@ -62,8 +65,8 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Attacked");
             }
         }
-        
-        healthText.text = playerCurrentHealth.ToString();
+
+        playerHealthBar.value = (int)playerCurrentHealth;
         //Debug.Log(dashCooldownTime);
     }
     
@@ -124,5 +127,7 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+        levelManager.MainMenu();
+        Debug.Log(SceneManager.GetActiveScene().name);
     }
 }
