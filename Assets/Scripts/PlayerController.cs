@@ -101,14 +101,4 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Hit enemy: " + hit.collider.name);
         }
     }
-
-    //void OnDrawGizmos()
-    //{
-    //    if (attackPoint == null)
-    //    {
-    //        return;
-    //    }
-    //    
-    //    Gizmos.DrawWireSphere(attackPoint.position, basicAttackRange);
-    //}
 }
