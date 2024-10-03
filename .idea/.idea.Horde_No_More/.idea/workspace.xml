@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="90da82e4-6e32-4478-b7bf-d13780ae865a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Programming.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Programming.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy (Melee).cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy (Melee).cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy Base.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy Base.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +108,7 @@
       <workItem from="1727372730436" duration="9808000" />
       <workItem from="1727572291740" duration="2805000" />
       <workItem from="1727910272241" duration="4790000" />
-      <workItem from="1727957389903" duration="5448000" />
+      <workItem from="1727957389903" duration="8776000" />
     </task>
     <servers />
   </component>
