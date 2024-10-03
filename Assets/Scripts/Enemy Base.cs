@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
     HealthManager _enemyManager;
-    public int maxHealth = 100;
-    public int currentHealth;
+    PlayerController _playerController;
+    public int enemyMaxHealth = 100;
+    public int enemyCurrentHealth;
     public int enemyDamage = 10;
     public float speed = 5.0f;
     public float attackRange = 1.0f;
@@ -18,15 +20,16 @@ public class EnemyBase : MonoBehaviour
 
     public void Start()
     {
-        _enemyManager.currentHealth = maxHealth;
+        _enemyManager.currentHealth = enemyCurrentHealth;
+        _enemyManager.maxHealth = enemyMaxHealth;
+        
     }
     
     public void TakeDamage(int damage)
     {
-        damage = enemyDamage;
-        currentHealth -= damage;
+        enemyCurrentHealth -= damage;
         
-        if (currentHealth <= 0)
+        if (enemyCurrentHealth <= 0)
         {
             Die();
         }
@@ -34,6 +37,6 @@ public class EnemyBase : MonoBehaviour
     
     public void Die()
     {
-        // Needs a dying animation
+        GameObject.Destroy(enemy);
     }
 }

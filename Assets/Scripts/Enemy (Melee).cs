@@ -7,7 +7,7 @@ public class EnemyMelee : EnemyBase
     // Start is called before the first frame update
     void Start()
     {
-        base.maxHealth = 100;
+        enemyCurrentHealth = enemyMaxHealth;
     }
 
     // Update is called once per frame
