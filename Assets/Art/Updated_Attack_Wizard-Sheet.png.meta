@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 32eb5cbca802a7244a8499eaafee1954
+guid: eee36a3b962bf7c40b93094c616f1f33
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,64 +97,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_Animation_for_Wizard_0
+      name: Updated_Attack_Wizard-Sheet_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
+        x: 1
+        y: 5
         width: 37
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ba66f1bae914b344b873d0b21a694cb
-      internalID: -624718392
+      spriteID: 8af490c60e1df1245960e3293cd858c5
+      internalID: 614790778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_Animation_for_Wizard_1
+      name: Updated_Attack_Wizard-Sheet_1
       rect:
         serializedVersion: 2
-        x: 45
-        y: 4
-        width: 37
+        x: 40
+        y: 5
+        width: 41
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ec0a4860e662ba4f9117a42fbcf5eaa
-      internalID: -794276331
+      spriteID: 5cba18e813599c942956932c31a34f1b
+      internalID: -457600535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_Animation_for_Wizard_2
+      name: Updated_Attack_Wizard-Sheet_2
       rect:
         serializedVersion: 2
-        x: 86
-        y: 4
-        width: 37
+        x: 82
+        y: 5
+        width: 41
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d550c67341ca39b4e8aa433d4e58ef2d
-      internalID: 1121097727
+      spriteID: 8e67d4990ac53bd4796df8cfee9bfe45
+      internalID: -638562243
       vertices: []
       indices: 
       edges: []
@@ -170,9 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack_Animation_for_Wizard_0: -624718392
-      Attack_Animation_for_Wizard_1: -794276331
-      Attack_Animation_for_Wizard_2: 1121097727
+      Updated_Attack_Wizard-Sheet_0: 614790778
+      Updated_Attack_Wizard-Sheet_1: -457600535
+      Updated_Attack_Wizard-Sheet_2: -638562243
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
