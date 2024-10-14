@@ -37,9 +37,22 @@ public class PlayerController : MonoBehaviour
     private float dashCooldownTime;
     private bool isDashing;
     
+    // Player Flash Values
+    [Header("Player Flash Stats")]
+    public SpriteRenderer playerSprite;
+    public int numberOfFlashes = 3;
+    public float flashDuration = 0.1f;
+    
+    // Money Values
+    [Header("Player Money Stats")]
+    public int playerMoney = 0;
+    public TextMeshProUGUI moneyText;
+    
     public void Start()
     {
         playerCurrentHealth = playerMaxHealth;
+        playerHealthBar.maxValue = playerMaxHealth;
+        playerSprite = GetComponent<SpriteRenderer>();
     }
     
     public void Update()
@@ -67,6 +80,7 @@ public class PlayerController : MonoBehaviour
         }
 
         playerHealthBar.value = (int)playerCurrentHealth;
+        moneyText.text = "Money: " + playerMoney;
         //Debug.Log(dashCooldownTime);
     }
     
@@ -122,6 +136,10 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            StartCoroutine(FlashPlayer());
+        }
     }
     
     void Die()
@@ -129,5 +147,28 @@ public class PlayerController : MonoBehaviour
         Destroy(gameObject);
         levelManager.MainMenu();
         Debug.Log(SceneManager.GetActiveScene().name);
+    }
+    
+    RaycastHit2D Raycast(Vector2 origin, Vector2 direction, float distance, LayerMask layer)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, distance, layer);
+        Physics.Raycast(origin, direction, distance, layer);
+        return hit;
+    }
+    
+    private IEnumerator FlashPlayer()
+    {
+        for (int i = 0; i < numberOfFlashes; i++)
+        {
+            playerSprite.color = new Color(1, 0, 0, 0.5f); // Red color with half transparency
+            yield return new WaitForSeconds(flashDuration);
+            playerSprite.color = Color.white; // Reset to original color
+            yield return new WaitForSeconds(flashDuration);
+        }
+    }
+    
+    public void AddMoney(int money)
+    {
+        playerMoney += money;
     }
 }
