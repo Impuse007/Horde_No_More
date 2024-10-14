@@ -151,7 +151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1562058953}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124939092
 GameObject:
@@ -183,7 +183,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1097967223}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -316,7 +316,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1562058953}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &215416663
 GameObject:
@@ -395,17 +395,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &321612171 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8595441358114314677, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-  m_PrefabInstance: {fileID: 27824484}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &353581407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,6 +1821,11 @@ MonoBehaviour:
   dashDuration: 0.3
   dashCooldown: 3
   playerInvincibilityTime: 1
+  playerSprite: {fileID: 0}
+  numberOfFlashes: 3
+  flashDuration: 0.1
+  playerMoney: 0
+  moneyText: {fileID: 0}
 --- !u!61 &953734271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2328,7 +2322,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 086f5b17a11b7564a8f6c5a1dcd943fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b41689bb35666b44cba0435655825e55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2744,10 +2738,8 @@ SceneRoots:
   - {fileID: 1390867240}
   - {fileID: 1091310876}
   - {fileID: 1205569935}
-  - {fileID: 27824484}
   - {fileID: 437667714}
   - {fileID: 769122299}
-  - {fileID: 51777457}
   - {fileID: 728149561}
   - {fileID: 1320106808}
   - {fileID: 374806279}
@@ -2757,3 +2749,6 @@ SceneRoots:
   - {fileID: 353581411}
   - {fileID: 839937048}
   - {fileID: 695900542}
+  - {fileID: 60304627}
+  - {fileID: 124939093}
+  - {fileID: 125915563}
