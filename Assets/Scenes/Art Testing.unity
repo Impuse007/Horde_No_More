@@ -1768,9 +1768,9 @@ MonoBehaviour:
   speed: 5
   playerCurrentHealth: 0
   attackPoint: {fileID: 953734269}
-  playerDamage: 20
-  basicAttackRange: 1
-  basicAttackCooldown: 1
+  playerDamage: 40
+  basicAttackRange: 3
+  basicAttackCooldown: 2
   nextAttackTime: 0
   enemyLayers:
     serializedVersion: 2
@@ -1784,6 +1784,7 @@ MonoBehaviour:
   flashDuration: 0.1
   playerMoney: 0
   moneyText: {fileID: 831485156}
+  playerAnimator: {fileID: 953734268}
 --- !u!61 &953734271
 BoxCollider2D:
   m_ObjectHideFlags: 0

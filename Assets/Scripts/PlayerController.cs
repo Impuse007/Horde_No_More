@@ -48,6 +48,9 @@ public class PlayerController : MonoBehaviour
     public int playerMoney = 0;
     public TextMeshProUGUI moneyText;
     
+    [Header("Player Animations")]
+    public Animator playerAnimator;
+    
     public void Start()
     {
         playerCurrentHealth = playerMaxHealth;
@@ -81,6 +84,7 @@ public class PlayerController : MonoBehaviour
 
         playerHealthBar.value = (int)playerCurrentHealth;
         moneyText.text = "Money: " + playerMoney;
+        
         //Debug.Log(dashCooldownTime);
     }
     
@@ -91,6 +95,11 @@ public class PlayerController : MonoBehaviour
         
         Vector3 movement = new Vector2(horizontal, vertical);
         transform.Translate(movement * speed * Time.deltaTime);
+        
+        float speedValue = movement.magnitude;
+        playerAnimator.SetFloat("Movement", speedValue);
+        playerSprite.flipX = Input.mousePosition.x < Screen.width / 2;
+        
     }
     
     private IEnumerator Dash()
@@ -126,6 +135,8 @@ public class PlayerController : MonoBehaviour
             hit.collider.GetComponent<EnemyBase>().TakeDamage(playerDamage);
             Debug.Log("Hit enemy: " + hit.collider.name);
         }
+        
+        playerAnimator.SetTrigger("Attack");
     }
     
     public void TakeDamage(int damage)
