@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="90da82e4-6e32-4478-b7bf-d13780ae865a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player_Attack_Anim.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player_Attack_Anim.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Art Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Art Testing.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +124,7 @@
       <workItem from="1728765006489" duration="2588000" />
       <workItem from="1728793280332" duration="3692000" />
       <workItem from="1728855405806" duration="337000" />
-      <workItem from="1728919024860" duration="10007000" />
+      <workItem from="1728919024860" duration="11139000" />
     </task>
     <servers />
   </component>

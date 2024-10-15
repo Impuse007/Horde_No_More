@@ -82,6 +82,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         playerHealthBar.value = (int)playerCurrentHealth;
         moneyText.text = "Money: " + playerMoney;
         
@@ -99,7 +104,6 @@ public class PlayerController : MonoBehaviour
         float speedValue = movement.magnitude;
         playerAnimator.SetFloat("Movement", speedValue);
         playerSprite.flipX = Input.mousePosition.x < Screen.width / 2;
-        
     }
     
     private IEnumerator Dash()
