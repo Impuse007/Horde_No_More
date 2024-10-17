@@ -16,6 +16,8 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
+        waveText = FindObjectOfType<TextMeshProUGUI>();
+        waveText.text = "Wave " + currentWaveIndex;
         StartCoroutine(SpawnWaves());
     }
 

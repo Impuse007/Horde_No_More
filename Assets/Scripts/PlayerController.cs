@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -167,7 +168,7 @@ public class PlayerController : MonoBehaviour
     RaycastHit2D Raycast(Vector2 origin, Vector2 direction, float distance, LayerMask layer)
     {
         RaycastHit2D hit = Physics2D.Raycast(origin, direction, distance, layer);
-        Physics.Raycast(origin, direction, distance, layer);
+        //Physics.Raycast(origin, direction, distance, layer);
         return hit;
     }
     
