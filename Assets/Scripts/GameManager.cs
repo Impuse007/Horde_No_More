@@ -11,11 +11,11 @@ public class GameManager : MonoBehaviour
     
     public void Awake()
     {
-        return;
+        
     }
 
     public void Update()
     {
-        uiManager.ActivateUIBasedOnScene();
+        //uiManager.ActivateUIBasedOnScene();
     }
 }

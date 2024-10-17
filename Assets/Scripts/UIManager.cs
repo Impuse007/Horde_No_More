@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     // UI Manager will be responsible for managing the UI elements in the game, switching scenes with the correct UI elements.
-    LevelManager levelManager;
+    public LevelManager levelManager;
+    public PlayerController playerController; // For the Player Die method // Might not be needed
     public enum switchUI
     {
         MainMenu,
@@ -31,7 +33,24 @@ public class UIManager : MonoBehaviour
     {
         levelManager = GetComponent<LevelManager>();
         ActivateUIBasedOnScene();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
+    public void Update()
+    {
+        PauseingGame();
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ActivateUIBasedOnScene();
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     public void SwitchUI(switchUI ui)
     {
         mainMenuUI.SetActive(false);
@@ -46,6 +65,10 @@ public class UIManager : MonoBehaviour
         {
             case switchUI.MainMenu:
                 mainMenuUI.SetActive(true);
+                Time.timeScale = 1; // Might not need this look up in playerController on top of this script
+                playerController.playerCurrentHealth = playerController.playerMaxHealth; // Might not need this look up in playerController on top of this script
+                playerController.playerSprite.enabled = true; // Might not need this look up in playerController on top of this script
+                playerController.playerSprite.color = new Color(1, 1, 1, 1); // Might not need this look up in playerController on top of this script
                 break;
             case switchUI.GameOver:
                 gameOverUI.SetActive(true);
@@ -54,7 +77,7 @@ public class UIManager : MonoBehaviour
                 gameWinUI.SetActive(true);
                 break;
             case switchUI.GamePause:
-                gameOverUI.SetActive(true);
+                gamePauseUI.SetActive(true);
                 break;
             case switchUI.GamePlay:
                 gamePlayUI.SetActive(true);
@@ -88,8 +111,23 @@ public class UIManager : MonoBehaviour
         
         Debug.Log("UI Activated based on scene: " + sceneName);
     }
-    
-    
+
+    public void PauseingGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                SwitchUI(switchUI.GamePlay);
+            }
+            else
+            {
+                Time.timeScale = 0;
+                SwitchUI(switchUI.GamePause);
+            }
+        }
+    }
     
     
     

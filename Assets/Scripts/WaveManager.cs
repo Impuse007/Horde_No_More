@@ -16,8 +16,13 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
-        waveText = FindObjectOfType<TextMeshProUGUI>();
-        waveText.text = "Wave " + currentWaveIndex;
+        waveText = GameObject.Find("UI Manager/Canvas/Gameplay/WaveText")?.GetComponent<TextMeshProUGUI>();
+
+        if (waveText == null)
+        {
+            Debug.LogError("WaveText not found. Ensure there is a TextMeshProUGUI component named 'WaveText' in the scene.");
+            return;
+        }
         StartCoroutine(SpawnWaves());
     }
 
