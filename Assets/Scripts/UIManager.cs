@@ -133,7 +133,10 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Application.Quit();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
         }
     }
     
