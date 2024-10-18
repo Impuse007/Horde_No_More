@@ -19,7 +19,7 @@ public class EnemyBase : MonoBehaviour
     public delegate void EnemyDealthHandler();
     public event EnemyDealthHandler OnEnemyDeath;
     
-    public int moneyDrop = 10;
+    public int moneyDrop;
     
     // GameObjects;
     public GameObject player;
@@ -30,33 +30,23 @@ public class EnemyBase : MonoBehaviour
         _enemyManager.currentHealth = enemyCurrentHealth;
         _enemyManager.maxHealth = enemyMaxHealth;
         player = GameObject.FindWithTag("Player");
-       if (player != null)
-       {
-           _playerController = player.GetComponent<PlayerController>();
-       }
-       else
-       {
-           Debug.LogWarning("Player is not assigned.");
-       }
+        //Debug.Log("Player found: " + player.name);
+        _playerController = FindObjectOfType(typeof(PlayerController)) as PlayerController;
     }
     
-    public void TakeDamage(int damage)
-    {
-        enemyCurrentHealth -= damage;
+    //public void TakeDamage(int damage)
+    //{
+        //enemyCurrentHealth -= damage;
         
-        if (enemyCurrentHealth <= 0)
-        {
-            Die();
-        }
-    }
+        //if (enemyCurrentHealth <= 0)
+        //{
+            //_enemyManager.Die(); // Might change this to a different method
+        //}
+    //}
     
-    public void Die()
-    {
-        OnEnemyDeath?.Invoke();
-        if (_playerController != null)
-        {
-            _playerController.playerMoney += moneyDrop;
-        }
-        GameObject.Destroy(enemy);
-    }
+    //void Die()
+    //{
+        //OnEnemyDeath?.Invoke();
+        //GameObject.Destroy(enemy);
+    //}
 }

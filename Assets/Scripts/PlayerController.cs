@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
 
         if (hit.collider != null && hit.collider.CompareTag("Enemy"))
         {
-            hit.collider.GetComponent<EnemyBase>().TakeDamage(playerDamage);
+            hit.collider.GetComponent<EnemyMelee>().TakeDamage(playerDamage);
             Debug.Log("Hit enemy: " + hit.collider.name);
         }
         

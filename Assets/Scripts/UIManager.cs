@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     // UI Manager will be responsible for managing the UI elements in the game, switching scenes with the correct UI elements.
     public LevelManager levelManager;
     public PlayerController playerController; // For the Player Die method // Might not be needed
+    public WaveManager waveManager;
     public enum switchUI
     {
         MainMenu,
@@ -129,7 +130,9 @@ public class UIManager : MonoBehaviour
         }
     }
     
-    
-    
-    
+    public void UpGradeMenu()
+    {
+        SwitchUI(switchUI.UpgradeMenu);
+        playerController.playerSprite.enabled = false; // Might not need this look up in playerController on top of this script
+    }
 }
