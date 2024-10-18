@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
 
     public void Update()
     {
-        PauseingGame();
+        PausingGame();
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -113,20 +113,27 @@ public class UIManager : MonoBehaviour
         Debug.Log("UI Activated based on scene: " + sceneName);
     }
 
-    public void PauseingGame()
+    public void PausingGame()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (SceneManager.GetActiveScene().name == "Level 1")
         {
-            if (Time.timeScale == 0)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Time.timeScale = 1;
-                SwitchUI(switchUI.GamePlay);
+                if (Time.timeScale == 1)
+                {
+                    Time.timeScale = 0;
+                    SwitchUI(switchUI.GamePause);
+                }
+                else
+                {
+                    Time.timeScale = 1;
+                    SwitchUI(switchUI.GamePlay);
+                }
             }
-            else
-            {
-                Time.timeScale = 0;
-                SwitchUI(switchUI.GamePause);
-            }
+        }
+        else
+        {
+            Application.Quit();
         }
     }
     
