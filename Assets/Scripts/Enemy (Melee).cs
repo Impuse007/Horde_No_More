@@ -6,7 +6,9 @@ public class EnemyMelee : EnemyBase
 {
     private PlayerController playerController;
     private bool isAttacking = false;
-
+    
+    public event EnemyDealthHandler OnEnemyDeath;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -77,5 +79,22 @@ public class EnemyMelee : EnemyBase
         Vector3 direction = (player.transform.position - transform.position).normalized;
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position - direction * 0.1f, speed * Time.deltaTime);
         transform.rotation = Quaternion.identity; // Lock rotation
+    }
+    
+    public void TakeDamage(int damage)
+    {
+        enemyCurrentHealth -= damage;
+        
+        if (enemyCurrentHealth <= 0)
+        {
+            Die(); // Might change this to a different method
+        }
+    }
+
+    public void Die() // Might be put in the enemy base class
+    {
+        OnEnemyDeath?.Invoke();
+        GameObject.Destroy(gameObject);
+        playerController.playerMoney += moneyDrop;
     }
 }

@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     // Player Components
+    [Header("Player Components")]
     HealthManager playerManager;
-    public LevelManager levelManager; // This is not used in this script, Debugging purposes
+    public LevelManager levelManager;
+    public UIManager uiManager;
+    
     // Player Movement Values
     [Header("Player Main Stats")]
     public Slider playerHealthBar;
@@ -136,7 +140,7 @@ public class PlayerController : MonoBehaviour
 
         if (hit.collider != null && hit.collider.CompareTag("Enemy"))
         {
-            hit.collider.GetComponent<EnemyBase>().TakeDamage(playerDamage);
+            hit.collider.GetComponent<EnemyMelee>().TakeDamage(playerDamage);
             Debug.Log("Hit enemy: " + hit.collider.name);
         }
         
@@ -159,15 +163,15 @@ public class PlayerController : MonoBehaviour
     
     void Die()
     {
-        Destroy(gameObject);
-        levelManager.MainMenu();
-        Debug.Log(SceneManager.GetActiveScene().name);
+        uiManager.SwitchUI(UIManager.switchUI.GameOver);
+        playerSprite.enabled = false;
+        Time.timeScale = 0;
     }
     
     RaycastHit2D Raycast(Vector2 origin, Vector2 direction, float distance, LayerMask layer)
     {
         RaycastHit2D hit = Physics2D.Raycast(origin, direction, distance, layer);
-        Physics.Raycast(origin, direction, distance, layer);
+        //Physics.Raycast(origin, direction, distance, layer);
         return hit;
     }
     

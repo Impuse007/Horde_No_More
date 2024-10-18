@@ -8,15 +8,25 @@ public class WaveManager : MonoBehaviour
 {
     PlayerController player;
     EnemyBase enemyBase;
+    UIManager uiManager;
     public List<Wave> waves; // List of waves
     public TextMeshProUGUI waveText; // UI Text to display wave number
-    private int currentWaveIndex = 0; // Current wave index
+    public int currentWaveIndex = 0; // Current wave index
     private bool isSpawning = false; // Flag to check if spawning is in progress
     public int enemiesAlive = 0; // Number of enemies currently alive
 
     void Start()
     {
+        waveText = GameObject.Find("UI Manager/Canvas/Gameplay/WaveText")?.GetComponent<TextMeshProUGUI>();
+
+        if (waveText == null)
+        {
+            Debug.LogError("WaveText not found. Ensure there is a TextMeshProUGUI component named 'WaveText' in the scene.");
+            return;
+        }
         StartCoroutine(SpawnWaves());
+        
+        uiManager = GameObject.Find("GameManager/UI Manager")?.GetComponent<UIManager>();
     }
 
     private IEnumerator SpawnWaves()
@@ -48,6 +58,11 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(currentWave.waveDelay);
 
             currentWaveIndex++;
+            
+            if (currentWaveIndex >= waves.Count)
+            {
+                WinGame();
+            }
         }
     }
 
@@ -61,7 +76,7 @@ public class WaveManager : MonoBehaviour
 
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
-        enemy.GetComponent<EnemyBase>().OnEnemyDeath += HandleEnemyDeath; // Subscribe to the enemy death event
+        enemy.GetComponent<EnemyMelee>().OnEnemyDeath += HandleEnemyDeath; // Subscribe to the enemy death event
         GameObject player = GameObject.FindWithTag("Player");
     }
 
@@ -101,5 +116,11 @@ public class WaveManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         waveText.gameObject.SetActive(false);
+    }
+    
+    public void WinGame()
+    {
+        uiManager.SwitchUI(UIManager.switchUI.GameWin);
+        Debug.Log("You win!");
     }
 }
