@@ -36,7 +36,7 @@ public class WaveManager : MonoBehaviour
             Wave currentWave = waves[currentWaveIndex];
             isSpawning = true;
 
-            waveText.text = "Wave " + currentWave.waveNumber;
+            waveText.text = "Wave " + currentWave.waveNumber + "/30";
             waveText.gameObject.SetActive(true);
             yield return new WaitForSeconds(2f); // Display the text for 2 seconds
             waveText.gameObject.SetActive(false);
@@ -100,7 +100,7 @@ public class WaveManager : MonoBehaviour
         }
 
         Wave currentWave = waves[currentWaveIndex];
-        waveText.text = "Wave " + currentWave.waveNumber;
+        waveText.text = "Wave " + currentWave.waveNumber + "/30 Incoming!"; 
         waveText.gameObject.SetActive(true);
         StartCoroutine(HideWaveTextAfterDelay(2f)); // Hide the text after 2 seconds
 

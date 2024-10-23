@@ -38,8 +38,9 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown = 3.0f;
     public float playerInvincibilityTime = 1.0f;
     private float dashTime;
-    private float dashCooldownTime;
+    private float dashCooldownTime; // Sets the cooldown time for the dash when the game is starting
     private bool isDashing;
+    public TextMeshProUGUI dashCooldownText;
     
     // Player Flash Values
     [Header("Player Flash Stats")]
@@ -88,6 +89,7 @@ public class PlayerController : MonoBehaviour
 
         playerHealthBar.value = (int)playerCurrentHealth;
         moneyText.text = "Money: " + playerMoney;
+        dashCooldownText.text = "Dash Cooldown: " + dashCooldownTime.ToString("F1");
         
         //Debug.Log(dashCooldownTime);
     }
@@ -105,7 +107,7 @@ public class PlayerController : MonoBehaviour
         playerSprite.flipX = Input.mousePosition.x < Screen.width / 2;
     }
     
-    private IEnumerator Dash()
+    private IEnumerator Dash() // Bugged as the Player can double dash when pressing space bar quickly enough.
     { 
         Vector2 mousePosition = Input.mousePosition;
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);

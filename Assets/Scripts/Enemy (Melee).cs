@@ -6,14 +6,16 @@ public class EnemyMelee : EnemyBase
 {
     private PlayerController playerController;
     private bool isAttacking = false;
+    private Rigidbody2D rb;
     
     public event EnemyDealthHandler OnEnemyDeath;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         enemyCurrentHealth = enemyMaxHealth;
         player = GameObject.FindWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
 
         // Ensure playerHealthManager is assigned
         if (player != null)
@@ -27,13 +29,13 @@ public class EnemyMelee : EnemyBase
     }
 
     // Update is called once per frame
-    void Update()
+    public void FixedUpdate()
     {
         if (!isAttacking)
         {
             EnemyMeleeMovement();
         }
-        
+
         if (Time.time >= nextAttackTime)
         {
             EnemyMeleeAttack();
@@ -58,13 +60,13 @@ public class EnemyMelee : EnemyBase
             Debug.Log("Player hit by enemy: " + gameObject.name);
             StartCoroutine(EndAttack());
         }
-        
+
         transform.rotation = Quaternion.identity;
     }
 
     private IEnumerator EndAttack()
     {
-        yield return new WaitForSeconds(attackCooldown); 
+        yield return new WaitForSeconds(attackCooldown);
         isAttacking = false;
     }
 
@@ -77,14 +79,15 @@ public class EnemyMelee : EnemyBase
         }
 
         Vector3 direction = (player.transform.position - transform.position).normalized;
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position - direction * 0.1f, speed * Time.deltaTime);
+        Vector3 newPosition = transform.position + direction * speed * Time.fixedDeltaTime;
+        rb.MovePosition(newPosition);
         transform.rotation = Quaternion.identity; // Lock rotation
     }
-    
+
     public void TakeDamage(int damage)
     {
         enemyCurrentHealth -= damage;
-        
+
         if (enemyCurrentHealth <= 0)
         {
             Die(); // Might change this to a different method
