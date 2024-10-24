@@ -23,10 +23,11 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public float playerCurrentHealth;
     
     // Player Attack Values
-    [Header("Player Attack Stats")]
-    public Transform attackPoint;
+    [Header("Player Basic Attack Stats")]
+    public Transform basicAttackPoint;
+    public GameObject basicAttackPrefab;
     public int playerDamage = 10;
-    public float basicAttackRange = 1.0f;
+    public float basicAttackRange = 1.0f; // Might be used for future reference
     public float basicAttackCooldown = 1.0f;
     public float nextAttackTime = 0.0f;
     public LayerMask enemyLayers;
@@ -132,16 +133,8 @@ public class PlayerController : MonoBehaviour
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 attackDirection = (mousePosition - (Vector2)transform.position).normalized;
         
-        RaycastHit2D hit = Physics2D.Raycast(attackPoint.position, attackDirection, basicAttackRange, enemyLayers);
-        Debug.DrawRay(attackPoint.position, attackDirection * basicAttackRange, Color.red);
-
-        if (hit.collider != null && hit.collider.CompareTag("Enemy"))
-        {
-            hit.collider.GetComponent<EnemyMelee>().TakeDamage(playerDamage);
-            Debug.Log("Hit enemy: " + hit.collider.name);
-        }
-        
-        playerAnimator.SetTrigger("Attack");
+        GameObject basicAttack = Instantiate(basicAttackPrefab, basicAttackPoint.position, Quaternion.identity);
+        basicAttack.GetComponent<Rigidbody2D>().velocity = attackDirection * 10;
     }
     
     public void TakeDamage(int damage)

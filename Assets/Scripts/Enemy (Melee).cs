@@ -6,6 +6,7 @@ public class EnemyMelee : EnemyBase
 {
     private PlayerController playerController;
     private bool isAttacking = false;
+    private bool isDead = false;
     private Rigidbody2D rb;
     
     public event EnemyDealthHandler OnEnemyDeath;
@@ -88,8 +89,9 @@ public class EnemyMelee : EnemyBase
     {
         enemyCurrentHealth -= damage;
 
-        if (enemyCurrentHealth <= 0)
+        if (enemyCurrentHealth <= 0 && !isDead)
         {
+            isDead = true;
             Die(); // Might change this to a different method
         }
     }
