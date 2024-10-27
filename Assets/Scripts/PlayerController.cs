@@ -57,6 +57,9 @@ public class PlayerController : MonoBehaviour
     [Header("Player Animations")]
     public Animator playerAnimator;
     
+    [Header("Player Debugging")]
+    public TMP_Text playerHealthText;
+    
     public void Start()
     {
         playerCurrentHealth = playerMaxHealth;
@@ -67,6 +70,7 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
         PlayerMoves();
+        playerHealthText.text = playerCurrentHealth + "/" + playerMaxHealth;
         
         if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTime <= 0)
         {
