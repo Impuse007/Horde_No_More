@@ -32,6 +32,15 @@ public class PlayerController : MonoBehaviour
     public float nextAttackTime = 0.0f;
     public LayerMask enemyLayers;
     
+    [Header("Player Special Attack Stats")]
+    public Transform specialAttackPoint;
+    public GameObject specialAttackPrefab;
+    public int specialAttackDamage = 20;
+    public float specialAttackRange = 1.0f;
+    public float specialAttackCooldown = 5.0f;
+    public float nextSpecialAttackTime = 0.0f;
+    public LayerMask enemyLayersSpecial;
+    
     // Player Dash Values
     [Header("Player Dash Stats")]
     public float dashSpeed = 15.0f;
@@ -60,7 +69,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Debugging")]
     public TMP_Text playerHealthText;
     
-    public void Start()
+    public void Awake()
     {
         playerCurrentHealth = playerMaxHealth;
         playerHealthBar.maxValue = playerMaxHealth;
@@ -136,9 +145,23 @@ public class PlayerController : MonoBehaviour
         // Attack in the direction of the mouse
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 attackDirection = (mousePosition - (Vector2)transform.position).normalized;
-        
+
         GameObject basicAttack = Instantiate(basicAttackPrefab, basicAttackPoint.position, Quaternion.identity);
         basicAttack.GetComponent<Rigidbody2D>().velocity = attackDirection * 10;
+        
+        StartCoroutine(DestroyBasicAttackAfterRange(basicAttack, basicAttackPoint.position, basicAttackRange));
+    }
+    
+    private IEnumerator DestroyBasicAttackAfterRange(GameObject basicAttack, Vector2 startPosition, float range)
+    {
+        while (basicAttack != null && Vector2.Distance(startPosition, basicAttack.transform.position) < range)
+        {
+            yield return null;
+        }
+        if (basicAttack != null)
+        {
+            Destroy(basicAttack);
+        }
     }
     
     public void TakeDamage(int damage)

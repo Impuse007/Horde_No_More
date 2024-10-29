@@ -17,7 +17,6 @@ public class UIManager : MonoBehaviour
     {
         MainMenu,
         GameOver,
-        GameWin,
         GamePause,
         GamePlay,
         UpgradeMenu,
@@ -29,7 +28,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject mainMenuUI;
     [SerializeField] GameObject upgradeMenuUI;
     [SerializeField] GameObject gameOverUI;
-    [SerializeField] GameObject gameWinUI;
     [SerializeField] GameObject gamePauseUI;
     [SerializeField] GameObject gamePlayUI;
     [SerializeField] GameObject controlsMenuUI;
@@ -62,7 +60,6 @@ public class UIManager : MonoBehaviour
     {
         mainMenuUI.SetActive(false);
         gameOverUI.SetActive(false);
-        gameWinUI.SetActive(false);
         gamePauseUI.SetActive(false);
         gamePlayUI.SetActive(false);
         upgradeMenuUI.SetActive(false);
@@ -80,9 +77,6 @@ public class UIManager : MonoBehaviour
                 break;
             case switchUI.GameOver:
                 gameOverUI.SetActive(true);
-                break;
-            case switchUI.GameWin:
-                gameWinUI.SetActive(true);
                 break;
             case switchUI.GamePause:
                 gamePauseUI.SetActive(true);
@@ -114,10 +108,6 @@ public class UIManager : MonoBehaviour
         else if (sceneName == "Level 1")
         {
             SwitchUI(switchUI.GamePlay);
-        }
-        else if (sceneName == "Game Win")
-        {
-            SwitchUI(switchUI.GameWin);
         }
         
         Debug.Log("UI Activated based on scene: " + sceneName);
@@ -152,6 +142,7 @@ public class UIManager : MonoBehaviour
     
     public void UpGradeMenu() // G is capital in UpGradeMenu, change to UpgradeMenu
     {
+        //SceneManager.LoadScene("Main Menu");
         SwitchUI(switchUI.UpgradeMenu);
         //playerController.playerSprite.enabled = false; // Might not need this look up in playerController on top of this script
     }

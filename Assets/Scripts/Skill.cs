@@ -13,7 +13,9 @@ public class Skill
     public int healthIncrease;
     public int speedIncrease;
     public int dashIncrease;
-    public int weaponDamageIncrease;
+    public int weaponBasicDamageIncrease;
+    public int weaponBasicSpeedIncrease;
+    public int weaponBasicRangeIncrease;
     
     public GameObject skillPrefab;
     public TMP_Text skillStatusText;
@@ -27,7 +29,7 @@ public class Skill
         UpdateSkillStatusText();
     }
     
-    public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncrease, int weaponDamageIncrease)
+    public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncrease, int weaponBasicDamageIncrease)
     {
         this.skillName = name;
         this.description = desc;
@@ -36,7 +38,7 @@ public class Skill
         this.healthIncrease = healthIncrease;
         this.speedIncrease = speedIncrease;
         this.dashIncrease = dashIncrease;
-        this.weaponDamageIncrease = weaponDamageIncrease;
+        this.weaponBasicDamageIncrease = weaponBasicDamageIncrease;
     }
 
     public void Unlock(PlayerController playerController)
@@ -45,9 +47,9 @@ public class Skill
         playerController.playerMaxHealth += healthIncrease;
         playerController.speed += speedIncrease;
         playerController.dashSpeed += dashIncrease;
-        playerController.playerDamage += weaponDamageIncrease;
+        playerController.playerDamage += weaponBasicDamageIncrease;
         UpdateSkillStatusText();
-        Debug.Log(skillName + " has been unlocked! Health: " + healthIncrease + ", Speed: " + speedIncrease + ", Dash: " + dashIncrease + ", Weapon Damage: " + weaponDamageIncrease);
+        Debug.Log(skillName + " has been unlocked! Health: " + healthIncrease + ", Speed: " + speedIncrease + ", Dash: " + dashIncrease + ", Weapon Damage: " + weaponBasicDamageIncrease);
     }
     
     public void UpdateSkillStatusText()

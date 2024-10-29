@@ -79,9 +79,19 @@ public class EnemyMelee : EnemyBase
             return;
         }
 
+        
         Vector3 direction = (player.transform.position - transform.position).normalized;
-        Vector3 newPosition = transform.position + direction * speed * Time.fixedDeltaTime;
+        Vector3 targetPosition = player.transform.position - direction;
+        Vector3 newPosition = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.fixedDeltaTime);
         rb.MovePosition(newPosition);
+        if (direction.x > 0)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        else if (direction.x < 0)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
         transform.rotation = Quaternion.identity; // Lock rotation
     }
 

@@ -133,7 +133,7 @@ public class WaveManager : MonoBehaviour
     
     public void WinGame() // Add the results of the game and show game win text
     {
-        uiManager.SwitchUI(UIManager.switchUI.GameWin);
+        uiManager.SwitchUI(UIManager.switchUI.ResultsMenu);
         Debug.Log("You win!");
     }
 }
