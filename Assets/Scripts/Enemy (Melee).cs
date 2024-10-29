@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMelee : EnemyBase
 {
     private PlayerController playerController;
+    public Transform SpriteTransform;
     private bool isAttacking = false;
     private bool isDead = false;
     private Rigidbody2D rb;
@@ -86,11 +87,11 @@ public class EnemyMelee : EnemyBase
         rb.MovePosition(newPosition);
         if (direction.x > 0)
         {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            SpriteTransform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
         else if (direction.x < 0)
         {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            SpriteTransform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
         transform.rotation = Quaternion.identity; // Lock rotation
     }
