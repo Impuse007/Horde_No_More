@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,8 @@ public class UIManager : MonoBehaviour
     public LevelManager levelManager;
     public PlayerController playerController; // For the Player Die method // Might not be needed
     public WaveManager waveManager;
+    
+    public TMP_Text playerMoneyText;
     public enum switchUI
     {
         MainMenu,
@@ -18,7 +21,8 @@ public class UIManager : MonoBehaviour
         GamePause,
         GamePlay,
         UpgradeMenu,
-        ControlsMenu
+        ControlsMenu,
+        ResultsMenu
     }
     
     [Header("UI Elements")]
@@ -29,6 +33,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject gamePauseUI;
     [SerializeField] GameObject gamePlayUI;
     [SerializeField] GameObject controlsMenuUI;
+    [SerializeField] GameObject resultsMenuUI;
     
     public void Start()
     {
@@ -40,6 +45,7 @@ public class UIManager : MonoBehaviour
     public void Update()
     {
         PausingGame();
+        playerMoneyText.text = "Money: " + playerController.playerMoney;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -61,6 +67,7 @@ public class UIManager : MonoBehaviour
         gamePlayUI.SetActive(false);
         upgradeMenuUI.SetActive(false);
         controlsMenuUI.SetActive(false);
+        resultsMenuUI.SetActive(false);
         
         switch (ui)
         {
@@ -88,6 +95,9 @@ public class UIManager : MonoBehaviour
                 break;
             case switchUI.ControlsMenu:
                 controlsMenuUI.SetActive(true);
+                break;
+            case switchUI.ResultsMenu:
+                resultsMenuUI.SetActive(true);
                 break;
                 
         }
@@ -140,9 +150,9 @@ public class UIManager : MonoBehaviour
         }
     }
     
-    public void UpGradeMenu()
+    public void UpGradeMenu() // G is capital in UpGradeMenu, change to UpgradeMenu
     {
         SwitchUI(switchUI.UpgradeMenu);
-        playerController.playerSprite.enabled = false; // Might not need this look up in playerController on top of this script
+        //playerController.playerSprite.enabled = false; // Might not need this look up in playerController on top of this script
     }
 }

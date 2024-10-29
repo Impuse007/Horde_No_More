@@ -22,19 +22,13 @@ public class LevelManager : MonoBehaviour
     {
         Application.LoadLevel(levelName);
         Player.SetActive(true);
+        Player.transform.position = new Vector3(0, 0, 0);
     }
     
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
         Player.SetActive(false);
-    }
-    
-    
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Player.SetActive(true);
     }
     
     public void QuitGame()

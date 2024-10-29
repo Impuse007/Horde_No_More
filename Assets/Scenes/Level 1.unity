@@ -5433,6 +5433,10 @@ MonoBehaviour:
     - {fileID: 1602193903}
     - {fileID: 2073171402}
     waveDelay: 0
+    moneyDrop: 5
+    enemyDamage: 10
+    enemyHealth: 50
+    enemySpeed: 3
   - waveNumber: 2
     enemyPrefabs:
     - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
@@ -5446,6 +5450,10 @@ MonoBehaviour:
     - {fileID: 1602193903}
     - {fileID: 2073171402}
     waveDelay: 0
+    moneyDrop: 10
+    enemyDamage: 15
+    enemyHealth: 80
+    enemySpeed: 4
   - waveNumber: 3
     enemyPrefabs:
     - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
@@ -5459,6 +5467,10 @@ MonoBehaviour:
     - {fileID: 1602193903}
     - {fileID: 2073171402}
     waveDelay: 0
+    moneyDrop: 0
+    enemyDamage: 0
+    enemyHealth: 0
+    enemySpeed: 0
   waveText: {fileID: 0}
   currentWaveIndex: 0
   enemiesAlive: 0

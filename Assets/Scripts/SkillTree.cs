@@ -31,9 +31,11 @@ public class SkillTree : MonoBehaviour
             playerController.playerMoney -= skill.cost;
             skill.Unlock(playerController);
             unlockedSkills.Add(skill);
+            skill.UpdateSkillStatusText();
             if (skill.skillPrefab != null)
             {
                 skill.skillPrefab.SetActive(true);
+                //skill.nextSkill.UpdateSkillStatusText();
                 Debug.Log("Skill unlocked: " + skillName);
             }
         }

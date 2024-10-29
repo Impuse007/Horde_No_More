@@ -16,11 +16,17 @@ public class Skill
     public int weaponDamageIncrease;
     
     public GameObject skillPrefab;
+    public TMP_Text skillStatusText;
     
     // Index of the next skill in the skill tree
     [HideInInspector]
     public Skill nextSkill;
 
+    public void Start()
+    {
+        UpdateSkillStatusText();
+    }
+    
     public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncrease, int weaponDamageIncrease)
     {
         this.skillName = name;
@@ -40,6 +46,15 @@ public class Skill
         playerController.speed += speedIncrease;
         playerController.dashSpeed += dashIncrease;
         playerController.playerDamage += weaponDamageIncrease;
+        UpdateSkillStatusText();
         Debug.Log(skillName + " has been unlocked! Health: " + healthIncrease + ", Speed: " + speedIncrease + ", Dash: " + dashIncrease + ", Weapon Damage: " + weaponDamageIncrease);
+    }
+    
+    public void UpdateSkillStatusText()
+    {
+        if (skillStatusText != null)
+        {
+            skillStatusText.text = isUnlocked ? "Bought" : "Not Bought";
+        }
     }
 }

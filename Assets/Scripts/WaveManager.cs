@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,8 @@ public class WaveManager : MonoBehaviour
     PlayerController player;
     EnemyBase enemyBase;
     UIManager uiManager;
+    GameManager gameManager;
+    Results_Screen resultsScreen;
     public List<Wave> waves; // List of waves
     public TextMeshProUGUI waveText; // UI Text to display wave number
     public int currentWaveIndex = 0; // Current wave index
@@ -45,7 +48,7 @@ public class WaveManager : MonoBehaviour
 
             foreach (GameObject enemyPrefab in currentWave.enemyPrefabs)
             {
-                SpawnEnemy(enemyPrefab, currentWave.spawnPoints);
+                SpawnEnemy(enemyPrefab, currentWave.spawnPoints, currentWave);
             }
 
             isSpawning = false;
@@ -66,7 +69,7 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    private void SpawnEnemy(GameObject enemyPrefab, Transform[] spawnPoints)
+    private void SpawnEnemy(GameObject enemyPrefab, Transform[] spawnPoints, Wave currentWave)
     {
         if (spawnPoints.Length == 0)
         {
@@ -76,6 +79,15 @@ public class WaveManager : MonoBehaviour
 
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        
+        EnemyMelee enemyMelee = enemy.GetComponent<EnemyMelee>();
+        if (enemyMelee != null)
+        {
+            enemyMelee.moneyDrop = currentWave.moneyDrop;
+            enemyMelee.enemyDamage = currentWave.enemyDamage;
+            enemyMelee.speed = currentWave.enemySpeed;
+        }
+        
         enemy.GetComponent<EnemyMelee>().OnEnemyDeath += HandleEnemyDeath; // Subscribe to the enemy death event
         GameObject player = GameObject.FindWithTag("Player");
     }
@@ -83,6 +95,7 @@ public class WaveManager : MonoBehaviour
     private void HandleEnemyDeath()
     {
         enemiesAlive--;
+        //gameManager.AddKill();
 
         if (enemiesAlive <= 0)
         {
@@ -102,13 +115,13 @@ public class WaveManager : MonoBehaviour
         Wave currentWave = waves[currentWaveIndex];
         waveText.text = "Wave " + currentWave.waveNumber + "/30 Incoming!"; 
         waveText.gameObject.SetActive(true);
-        StartCoroutine(HideWaveTextAfterDelay(2f)); // Hide the text after 2 seconds
+        StartCoroutine(HideWaveTextAfterDelay(4f)); // Hide the text after 4 seconds
 
         enemiesAlive = currentWave.enemyPrefabs.Count;
 
         foreach (GameObject enemyPrefab in currentWave.enemyPrefabs)
         {
-            SpawnEnemy(enemyPrefab, currentWave.spawnPoints);
+            SpawnEnemy(enemyPrefab, currentWave.spawnPoints, currentWave);
         }
     }
 
@@ -118,7 +131,7 @@ public class WaveManager : MonoBehaviour
         waveText.gameObject.SetActive(false);
     }
     
-    public void WinGame()
+    public void WinGame() // Add the results of the game and show game win text
     {
         uiManager.SwitchUI(UIManager.switchUI.GameWin);
         Debug.Log("You win!");
