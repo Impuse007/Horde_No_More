@@ -99,6 +99,7 @@ public class EnemyMelee : EnemyBase
     public void TakeDamage(int damage)
     {
         enemyCurrentHealth -= damage;
+        StartCoroutine(FlashRed());
 
         if (enemyCurrentHealth <= 0 && !isDead)
         {
@@ -112,5 +113,13 @@ public class EnemyMelee : EnemyBase
         OnEnemyDeath?.Invoke();
         GameObject.Destroy(gameObject);
         playerController.playerMoney += moneyDrop;
+    }
+    
+    public IEnumerator FlashRed()
+    {
+        SpriteRenderer spriteRenderer = SpriteTransform.GetComponent<SpriteRenderer>();
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = Color.white;
     }
 }
