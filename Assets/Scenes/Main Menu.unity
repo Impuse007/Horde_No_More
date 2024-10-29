@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocked
+  m_text: Not Brought
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 14.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -694,7 +694,9 @@ MonoBehaviour:
     healthIncrease: 10
     speedIncrease: 0
     dashIncrease: 0
-    weaponDamageIncrease: 0
+    weaponBasicDamageIncrease: 0
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
     skillPrefab: {fileID: 1856340161}
     skillStatusText: {fileID: 1829083035}
   - skillName: Health Upgrade 2
@@ -704,7 +706,9 @@ MonoBehaviour:
     healthIncrease: 25
     speedIncrease: 0
     dashIncrease: 0
-    weaponDamageIncrease: 0
+    weaponBasicDamageIncrease: 0
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
     skillPrefab: {fileID: 1899787475}
     skillStatusText: {fileID: 1722808076}
   - skillName: Health Upgrade 3
@@ -714,7 +718,9 @@ MonoBehaviour:
     healthIncrease: 25
     speedIncrease: 0
     dashIncrease: 0
-    weaponDamageIncrease: 0
+    weaponBasicDamageIncrease: 0
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
     skillPrefab: {fileID: 1121757221}
     skillStatusText: {fileID: 1298193810}
   - skillName: Health Upgrade 4
@@ -724,7 +730,9 @@ MonoBehaviour:
     healthIncrease: 25
     speedIncrease: 0
     dashIncrease: 0
-    weaponDamageIncrease: 0
+    weaponBasicDamageIncrease: 0
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
     skillPrefab: {fileID: 749335725}
     skillStatusText: {fileID: 695369806}
   - skillName: Health Upgrade 5
@@ -734,7 +742,9 @@ MonoBehaviour:
     healthIncrease: 50
     speedIncrease: 0
     dashIncrease: 0
-    weaponDamageIncrease: 0
+    weaponBasicDamageIncrease: 0
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
     skillPrefab: {fileID: 0}
     skillStatusText: {fileID: 1124664586}
   - skillName: Damage Upgrade 1
@@ -744,7 +754,9 @@ MonoBehaviour:
     healthIncrease: 0
     speedIncrease: 0
     dashIncrease: 0
-    weaponDamageIncrease: 5
+    weaponBasicDamageIncrease: 0
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
     skillPrefab: {fileID: 0}
     skillStatusText: {fileID: 1369399138}
   - skillName: Damage Upgrade 2
@@ -754,7 +766,9 @@ MonoBehaviour:
     healthIncrease: 0
     speedIncrease: 0
     dashIncrease: 0
-    weaponDamageIncrease: 10
+    weaponBasicDamageIncrease: 0
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
     skillPrefab: {fileID: 0}
     skillStatusText: {fileID: 1719688909}
   - skillName: Damage Upgrade 3
@@ -764,9 +778,11 @@ MonoBehaviour:
     healthIncrease: 0
     speedIncrease: 0
     dashIncrease: 0
-    weaponDamageIncrease: 10
+    weaponBasicDamageIncrease: 0
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
     skillPrefab: {fileID: 1278526633}
-    skillStatusText: {fileID: 1719688909}
+    skillStatusText: {fileID: 33647257}
   - skillName: Damage Upgrade 4
     description: Increases Player Damage by 10
     cost: 300
@@ -774,9 +790,11 @@ MonoBehaviour:
     healthIncrease: 0
     speedIncrease: 0
     dashIncrease: 0
-    weaponDamageIncrease: 10
+    weaponBasicDamageIncrease: 0
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
     skillPrefab: {fileID: 862202895}
-    skillStatusText: {fileID: 1719688909}
+    skillStatusText: {fileID: 1346900641}
   - skillName: Damage Upgrade 5
     description: Increases Player Damage by 10
     cost: 300
@@ -784,9 +802,11 @@ MonoBehaviour:
     healthIncrease: 0
     speedIncrease: 0
     dashIncrease: 0
-    weaponDamageIncrease: 10
+    weaponBasicDamageIncrease: 0
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
     skillPrefab: {fileID: 537060696}
-    skillStatusText: {fileID: 1719688909}
+    skillStatusText: {fileID: 1197934877}
   unlockedSkills: []
   nameText: {fileID: 929263970}
   descText: {fileID: 1196058297}
@@ -4633,7 +4653,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocked
+  m_text: Not Brought
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4660,7 +4680,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 14.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8019,7 +8039,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocked
+  m_text: Not Brought
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8046,7 +8066,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 14.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8764,7 +8784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocked
+  m_text: Not Brought
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8791,7 +8811,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 14.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9249,7 +9269,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Version 0.6.3
+  m_text: Version 0.6.3.2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9632,7 +9652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocked
+  m_text: Not Brought
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9659,7 +9679,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 14.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9743,7 +9763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1313301691
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10038,7 +10058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocked
+  m_text: Not Brought
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10065,7 +10085,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 14.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10153,7 +10173,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocked
+  m_text: Not Brought
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10180,7 +10200,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 14.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12230,7 +12250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocked
+  m_text: Not Brought
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12257,7 +12277,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 14.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12364,7 +12384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocked
+  m_text: Not Brought
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12391,7 +12411,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 14.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13362,7 +13382,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocked
+  m_text: Not Brought
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13389,7 +13409,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 14.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
