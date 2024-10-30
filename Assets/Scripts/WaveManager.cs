@@ -86,9 +86,18 @@ public class WaveManager : MonoBehaviour
             enemyMelee.moneyDrop = currentWave.moneyDrop;
             enemyMelee.enemyDamage = currentWave.enemyDamage;
             enemyMelee.speed = currentWave.enemySpeed;
+            enemy.GetComponent<EnemyMelee>().OnEnemyDeath += HandleEnemyDeath; // Subscribe to the enemy death event
         }
         
-        enemy.GetComponent<EnemyMelee>().OnEnemyDeath += HandleEnemyDeath; // Subscribe to the enemy death event
+        RangeEnemy rangeEnemy = enemy.GetComponent<RangeEnemy>();
+        if (rangeEnemy != null)
+        {
+            rangeEnemy.moneyDrop = currentWave.moneyDrop;
+            rangeEnemy.enemyDamage = currentWave.enemyDamage;
+            rangeEnemy.speed = currentWave.enemySpeed;
+            enemy.GetComponent<RangeEnemy>().OnEnemyDeath += HandleEnemyDeath; // Subscribe to the enemy death event
+        }
+        
         GameObject player = GameObject.FindWithTag("Player");
     }
 

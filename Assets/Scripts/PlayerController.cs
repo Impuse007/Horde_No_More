@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public float basicAttackRange = 1.0f; // Might be used for future reference
     public float basicAttackCooldown = 1.0f;
     public float nextAttackTime = 0.0f;
+    public float basicAttackSpeed = 10.0f;
     public LayerMask enemyLayers;
     
     [Header("Player Special Attack Stats")]
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public float specialAttackRange = 1.0f;
     public float specialAttackCooldown = 5.0f;
     public float nextSpecialAttackTime = 0.0f;
+    public float specialAttackSpeed = 10.0f;
     public LayerMask enemyLayersSpecial;
     
     // Player Dash Values
@@ -100,6 +102,16 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Attacked");
             }
         }
+        
+        if (Time.time >= nextSpecialAttackTime)
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                SpecialAttack();
+                nextSpecialAttackTime = Time.time + 1f / specialAttackCooldown;
+                Debug.Log("Special Attacked");
+            }
+        }
 
         playerHealthBar.value = (int)playerCurrentHealth;
         moneyText.text = "Money: " + playerMoney;
@@ -130,7 +142,7 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         float startTime = Time.time;
         
-        while (Time.time < startTime + dashDuration)
+        while (Time.time < startTime + dashDuration) // dashDuration could be bugged with the timer of the dash
         {
             transform.Translate(dashDirection * dashSpeed * Time.deltaTime, Space.World);
             yield return null;
@@ -140,16 +152,28 @@ public class PlayerController : MonoBehaviour
         dashCooldownTime = dashCooldown;
     }
 
-    public void BasicAttack()
+    public void BasicAttack() // Using Mouse0 to attack 
     {
         // Attack in the direction of the mouse
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 attackDirection = (mousePosition - (Vector2)transform.position).normalized;
 
         GameObject basicAttack = Instantiate(basicAttackPrefab, basicAttackPoint.position, Quaternion.identity);
-        basicAttack.GetComponent<Rigidbody2D>().velocity = attackDirection * 10;
+        basicAttack.GetComponent<Rigidbody2D>().velocity = attackDirection * basicAttackSpeed;
         
         StartCoroutine(DestroyBasicAttackAfterRange(basicAttack, basicAttackPoint.position, basicAttackRange));
+    }
+    
+    public void SpecialAttack() // Using Mouse1 to attack
+    {
+        // Attack in the direction of the mouse
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 attackDirection = (mousePosition - (Vector2)transform.position).normalized;
+
+        GameObject specialAttack = Instantiate(specialAttackPrefab, specialAttackPoint.position, Quaternion.identity);
+        specialAttack.GetComponent<Rigidbody2D>().velocity = attackDirection * specialAttackSpeed;
+        
+        StartCoroutine(DestroyBasicAttackAfterRange(specialAttack, specialAttackPoint.position, specialAttackRange));
     }
     
     private IEnumerator DestroyBasicAttackAfterRange(GameObject basicAttack, Vector2 startPosition, float range)
@@ -161,6 +185,18 @@ public class PlayerController : MonoBehaviour
         if (basicAttack != null)
         {
             Destroy(basicAttack);
+        }
+    }
+    
+    private IEnumerator DestorySpecialAttackAfterRange(GameObject specialAttack, Vector2 startPosition, float range)
+    {
+        while (specialAttack != null && Vector2.Distance(startPosition, specialAttack.transform.position) < range)
+        {
+            yield return null;
+        }
+        if (specialAttack != null)
+        {
+            Destroy(specialAttack);
         }
     }
     
