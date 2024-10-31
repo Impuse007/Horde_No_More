@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed = 15.0f;
     public float dashDuration = 0.3f;
     public float dashCooldown = 3.0f;
-    public float playerInvincibilityTime = 1.0f;
+    public float nextDashTime = 0.0f;
     private float dashTime;
     private float dashCooldownTime; // Sets the cooldown time for the dash when the game is starting
     private bool isDashing;
@@ -159,18 +159,18 @@ public class PlayerController : MonoBehaviour
         Vector2 mousePosition = Input.mousePosition;
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         Vector2 dashDirection = (worldPosition - (Vector2)transform.position).normalized;
-        
+
         isDashing = true;
+        dashCooldownTime = dashCooldown; // Set the cooldown time immediately after starting the dash
         float startTime = Time.time;
-        
-        while (Time.time < startTime + dashDuration) // dashDuration could be bugged with the timer of the dash
+
+        while (Time.time < startTime + dashDuration)
         {
             transform.Translate(dashDirection * dashSpeed * Time.deltaTime, Space.World);
             yield return null;
         }
-        
+
         isDashing = false;
-        dashCooldownTime = dashCooldown;
     }
 
     public void BasicAttack() // Using Mouse0 to attack 

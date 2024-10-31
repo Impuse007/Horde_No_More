@@ -7,7 +7,6 @@ public class RangeEnemy : EnemyBase
 {
     public int rangeDamage = 10;
     public int rangeHealth = 50;
-    public int rangeCurrentHealth;
     public float moveSpeed = 2f;
     public float stopDistance = 5f;
     public float shootCooldown = 2f;
@@ -25,7 +24,7 @@ public class RangeEnemy : EnemyBase
 
     void Start()
     {
-        rangeHealth = rangeCurrentHealth;
+        rangeHealth = enemyCurrentHealth;
         GameObject playerObject = GameObject.FindWithTag("Player");
 
         if (playerObject != null)
@@ -84,8 +83,8 @@ public class RangeEnemy : EnemyBase
 
     public void TakeDamage(int damage)
     {
-        rangeCurrentHealth -= damage;
-        if (rangeCurrentHealth <= 0)
+        enemyCurrentHealth -= damage;
+        if (enemyCurrentHealth <= 0)
         {
             Die();
         }
