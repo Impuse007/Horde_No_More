@@ -17,10 +17,17 @@ public class SkillTree : MonoBehaviour
     
     private Skill currentSkill;
 
+    public Skill waveAttackSkill;
+
     private void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
         unlockedSkills = new List<Skill>();
+    }
+    
+    public bool IsWaveAttackUnlocked()
+    {
+        return waveAttackSkill != null && waveAttackSkill.isUnlocked;
     }
 
     public void UnlockSkill(string skillName)

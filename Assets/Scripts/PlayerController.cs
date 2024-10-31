@@ -71,6 +71,9 @@ public class PlayerController : MonoBehaviour
     [Header("Player Debugging")]
     public TMP_Text playerHealthText;
     
+    [Header("Skill Manager")]
+    public SkillTree skillTree;
+    
     public void Awake()
     {
         playerCurrentHealth = playerMaxHealth;
@@ -166,14 +169,20 @@ public class PlayerController : MonoBehaviour
     
     public void SpecialAttack() // Using Mouse1 to attack
     {
+        if (!skillTree.IsWaveAttackUnlocked())
+        {
+            Debug.Log("Special Attack is not unlocked yet.");
+            return;
+        }
+
         // Attack in the direction of the mouse
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 attackDirection = (mousePosition - (Vector2)transform.position).normalized;
 
         GameObject specialAttack = Instantiate(specialAttackPrefab, specialAttackPoint.position, Quaternion.identity);
         specialAttack.GetComponent<Rigidbody2D>().velocity = attackDirection * specialAttackSpeed;
-        
-        StartCoroutine(DestroyBasicAttackAfterRange(specialAttack, specialAttackPoint.position, specialAttackRange));
+
+        StartCoroutine(DestorySpecialAttackAfterRange(specialAttack, specialAttackPoint.position, specialAttackRange));
     }
     
     private IEnumerator DestroyBasicAttackAfterRange(GameObject basicAttack, Vector2 startPosition, float range)
@@ -197,6 +206,19 @@ public class PlayerController : MonoBehaviour
         if (specialAttack != null)
         {
             Destroy(specialAttack);
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Rigidbody2D enemyRb = collision.GetComponent<Rigidbody2D>();
+            if (enemyRb != null)
+            {
+                Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+                enemyRb.AddForce(knockbackDirection * specialAttackSpeed, ForceMode2D.Impulse);
+            }
         }
     }
     
