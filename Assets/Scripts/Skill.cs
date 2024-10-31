@@ -16,9 +16,16 @@ public class Skill
     public int weaponBasicDamageIncrease;
     public int weaponBasicSpeedIncrease;
     public int weaponBasicRangeIncrease;
+    public int weaponSpecialDamageIncrease;
+    public int weaponSpecialSpeedIncrease;
+    public int weaponSpecialRangeIncrease;
+    public int weaponSpecialCooldownDecrease;
+    public int playerHealingIncrease;
+    public int playerHealingCooldownDecrease;
     
     // Ability to unlock the skill
     public bool unlockSpecialAbility;
+    public bool unlockHealingAbility;
     
     public GameObject skillPrefab;
     public TMP_Text skillStatusText;
@@ -32,7 +39,7 @@ public class Skill
         UpdateSkillStatusText();
     }
     
-    public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncrease, int weaponBasicDamageIncrease, int weaponBasicRangeIncrease, int weaponBasicSpeedIncrease, bool unlockSpecialAbility)
+    public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncrease, int weaponBasicDamageIncrease, int weaponBasicRangeIncrease, int weaponBasicSpeedIncrease, bool unlockSpecialAbility, int weaponSpecialDamageIncrease, int weaponSpecialSpeedIncrease, int weaponSpecialCooldownDecrease, bool unlockHealingAbility, int playerHealingIncrease, int playerHealingCooldownDecrease)
     {
         this.skillName = name;
         this.description = desc;
@@ -45,6 +52,12 @@ public class Skill
         this.weaponBasicRangeIncrease = weaponBasicRangeIncrease;
         this.weaponBasicSpeedIncrease = weaponBasicSpeedIncrease;
         this.unlockSpecialAbility = unlockSpecialAbility;
+        this.weaponSpecialDamageIncrease = weaponSpecialDamageIncrease;
+        this.weaponSpecialSpeedIncrease = weaponSpecialSpeedIncrease;
+        this.weaponSpecialCooldownDecrease = weaponSpecialCooldownDecrease;
+        this.unlockHealingAbility = unlockHealingAbility;
+        this.playerHealingIncrease = playerHealingIncrease;
+        this.playerHealingCooldownDecrease = playerHealingCooldownDecrease;
     }
 
     public void Unlock(PlayerController playerController)
@@ -56,10 +69,20 @@ public class Skill
         playerController.playerDamage += weaponBasicDamageIncrease;
         playerController.basicAttackSpeed += weaponBasicSpeedIncrease;
         playerController.basicAttackRange += weaponBasicRangeIncrease;
+        playerController.specialAttackDamage += weaponSpecialDamageIncrease;
+        playerController.specialAttackSpeed += weaponSpecialSpeedIncrease;
+        playerController.specialAttackCooldown -= weaponSpecialCooldownDecrease;
+        playerController.healingAmount += playerHealingIncrease;
+        playerController.healingCooldown -= playerHealingCooldownDecrease;
         
         if (unlockSpecialAbility)
         {
             playerController.isSpecialAttackUnlocked = true;
+        }
+        
+        if (unlockHealingAbility)
+        {
+            playerController.isHealingUnlocked = true;
         }
         
         UpdateSkillStatusText();

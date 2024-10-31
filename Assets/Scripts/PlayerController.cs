@@ -42,7 +42,15 @@ public class PlayerController : MonoBehaviour
     public float specialAttackCooldown = 5.0f;
     public float nextSpecialAttackTime = 0.0f;
     public float specialAttackSpeed = 10.0f;
+    public TMP_Text specialAttackCooldownText;
     public LayerMask enemyLayersSpecial;
+    
+    [Header("Player Healing Stats")]
+    public bool isHealingUnlocked;
+    public int healingAmount = 20;
+    public float healingCooldown = 5.0f;
+    public float nextHealingTime = 0.0f;
+    public TMP_Text healingCooldownText;
     
     // Player Dash Values
     [Header("Player Dash Stats")]
@@ -112,16 +120,25 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 SpecialAttack();
-                nextSpecialAttackTime = Time.time + 1f / specialAttackCooldown;
+                nextSpecialAttackTime = Time.time + specialAttackCooldown;
                 Debug.Log("Special Attacked");
+            }
+        }
+        
+        if (Time.time >= nextHealingTime)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Heal();
+                Debug.Log("Healed");
             }
         }
 
         playerHealthBar.value = (int)playerCurrentHealth;
         moneyText.text = "Money: " + playerMoney;
         dashCooldownText.text = "Dash Cooldown: " + dashCooldownTime.ToString("F1");
-        
-        //Debug.Log(dashCooldownTime);
+        healingCooldownText.text = "Healing Cooldown: " + (nextHealingTime - Time.time).ToString("F1");
+        specialAttackCooldownText.text = "Special Attack Cooldown: " + (nextSpecialAttackTime - Time.time).ToString("F1");
     }
     
     public void PlayerMoves()
@@ -176,6 +193,12 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        if (Time.time < nextSpecialAttackTime)
+        {
+            Debug.Log("Special Attack is on cooldown.");
+            return;
+        }
+
         // Attack in the direction of the mouse
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 attackDirection = (mousePosition - (Vector2)transform.position).normalized;
@@ -190,7 +213,26 @@ public class PlayerController : MonoBehaviour
             specialAttackRb.isKinematic = true; // Ensure the special attack does not affect the player's physics
         }
 
+        nextSpecialAttackTime = Time.time + specialAttackCooldown; // Set the next allowed special attack time
         StartCoroutine(DestorySpecialAttackAfterRange(specialAttack, specialAttackPoint.position, specialAttackRange));
+    }
+    
+    public void Heal()
+    {
+        if (!isHealingUnlocked)
+        {
+            Debug.Log("Healing is not unlocked yet.");
+            return;
+        }
+
+        if (Time.time < nextHealingTime)
+        {
+            Debug.Log("Healing is on cooldown.");
+            return;
+        }
+
+        playerCurrentHealth += healingAmount;
+        nextHealingTime = Time.time + healingCooldown;
     }
     
     private IEnumerator DestroyBasicAttackAfterRange(GameObject basicAttack, Vector2 startPosition, float range)
