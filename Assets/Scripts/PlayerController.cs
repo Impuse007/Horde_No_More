@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask enemyLayers;
     
     [Header("Player Special Attack Stats")]
+    public bool isSpecialAttackUnlocked;
     public Transform specialAttackPoint;
     public GameObject specialAttackPrefab;
     public int specialAttackDamage = 20;
@@ -169,7 +170,7 @@ public class PlayerController : MonoBehaviour
     
     public void SpecialAttack() // Using Mouse1 to attack
     {
-        if (!skillTree.IsWaveAttackUnlocked())
+        if (!isSpecialAttackUnlocked)
         {
             Debug.Log("Special Attack is not unlocked yet.");
             return;
@@ -180,7 +181,14 @@ public class PlayerController : MonoBehaviour
         Vector2 attackDirection = (mousePosition - (Vector2)transform.position).normalized;
 
         GameObject specialAttack = Instantiate(specialAttackPrefab, specialAttackPoint.position, Quaternion.identity);
-        specialAttack.GetComponent<Rigidbody2D>().velocity = attackDirection * specialAttackSpeed;
+        Rigidbody2D specialAttackRb = specialAttack.GetComponent<Rigidbody2D>();
+
+        if (specialAttackRb != null)
+        {
+            specialAttackRb.velocity = attackDirection * specialAttackSpeed;
+            specialAttackRb.gravityScale = 0; // Ensure the special attack does not fall down
+            specialAttackRb.isKinematic = true; // Ensure the special attack does not affect the player's physics
+        }
 
         StartCoroutine(DestorySpecialAttackAfterRange(specialAttack, specialAttackPoint.position, specialAttackRange));
     }
