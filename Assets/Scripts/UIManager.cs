@@ -83,6 +83,7 @@ public class UIManager : MonoBehaviour
                 break;
             case switchUI.GamePlay:
                 gamePlayUI.SetActive(true);
+                playerController.playerSprite.enabled = true; // Might not need this look up in playerController on top of this script
                 break;
             case switchUI.UpgradeMenu:
                 upgradeMenuUI.SetActive(true);

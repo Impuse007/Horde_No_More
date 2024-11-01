@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public LevelManager levelManager;
     public UIManager uiManager;
     public PlayerController playerController;
+    public SkillTree skillTree;
     
     public int playerScore;
     public int highScore;
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
     
     public void Awake()
     {
-        
+        LoadGame();
     }
 
     public void Update()
@@ -51,5 +52,30 @@ public class GameManager : MonoBehaviour
     public void AddMoney(int money)
     {
         moneyEarned += money;
+    }
+    
+    public void SavingGame()
+    {
+        
+    }
+    
+    public void LoadGame()
+    {
+        GameData data = Save.SaveSystem.LoadGame();
+        if (data != null)
+        {
+            playerController.playerMoney = data.playerMoney;
+            playerController.playerMaxHealth = data.playerMaxHealth;
+            playerController.playerCurrentHealth = data.playerCurrentHealth;
+            skillTree.unlockedSkills = new List<Skill>();
+            foreach (var skillName in data.unlockedSkills)
+            {
+                Skill skill = skillTree.GetSkillByName(skillName);
+                if (skill != null)
+                {
+                    skillTree.unlockedSkills.Add(skill);
+                }
+            }
+        }
     }
 }

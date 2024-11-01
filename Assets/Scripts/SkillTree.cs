@@ -71,4 +71,16 @@ public class SkillTree : MonoBehaviour
             Debug.LogWarning("No skill selected!");
         }
     }
+    
+    public Skill GetSkillByName(string skillName)
+    {
+        foreach (Skill skill in unlockedSkills)
+        {
+            if (skill.skillName == skillName)
+            {
+                return skill;
+            }
+        }
+        return null;
+    }
 }
