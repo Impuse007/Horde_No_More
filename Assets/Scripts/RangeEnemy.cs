@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RangeEnemy : EnemyBase
 {
+    EnemyBase enemyBase;
+
     public int rangeDamage = 10;
     public int rangeHealth = 50;
+    public int rangeCurrentHealth;
     public float moveSpeed = 2f;
     public float stopDistance = 5f;
     public float shootCooldown = 2f;
     public GameObject arrowPrefab;
     public Transform shootPoint;
+
+    public Slider healthBar;
 
     private Transform player;
     private float nextShootTime;
@@ -24,7 +30,7 @@ public class RangeEnemy : EnemyBase
 
     void Start()
     {
-        rangeHealth = enemyCurrentHealth;
+        rangeCurrentHealth = rangeHealth;
         GameObject playerObject = GameObject.FindWithTag("Player");
 
         if (playerObject != null)
@@ -38,6 +44,12 @@ public class RangeEnemy : EnemyBase
         }
 
         rb = GetComponent<Rigidbody2D>();
+        
+        if (healthBar != null)
+        {
+            healthBar.maxValue = rangeHealth;
+            healthBar.value = rangeCurrentHealth;
+        }
     }
 
     void Update()
@@ -77,16 +89,22 @@ public class RangeEnemy : EnemyBase
         EnemyRangeArrow arrowScript = arrow.GetComponent<EnemyRangeArrow>();
         if (arrowScript != null)
         {
-            arrowScript.arrowDamage = rangeDamage; // Set the arrow's damage to the enemy's damage value
+            arrowScript.arrowDamage = rangeDamage;
         }
     }
 
     public void TakeDamage(int damage)
     {
-        enemyCurrentHealth -= damage;
-        if (enemyCurrentHealth <= 0)
+        rangeCurrentHealth -= damage;
+        if (rangeCurrentHealth <= 0)
         {
             Die();
+        }
+
+        // Update the health bar
+        if (healthBar != null)
+        {
+            healthBar.value = rangeCurrentHealth;
         }
     }
 

@@ -93,7 +93,6 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
         PlayerMoves();
-        playerHealthText.text = playerCurrentHealth + "/" + playerMaxHealth;
         
         if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTime <= 0)
         {

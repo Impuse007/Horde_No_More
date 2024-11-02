@@ -399,6 +399,7 @@ MonoBehaviour:
   shootCooldown: 2
   arrowPrefab: {fileID: 5495153910262932525, guid: f108903d1fcb3114eaf72ba0c4222a10, type: 3}
   shootPoint: {fileID: 3407721462118261786}
+  healthBar: {fileID: 1091113251590225456}
 --- !u!1 &4466643366633873906
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +586,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
