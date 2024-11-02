@@ -16,6 +16,7 @@ public class RangeEnemy : EnemyBase
     public float shootCooldown = 2f;
     public GameObject arrowPrefab;
     public Transform shootPoint;
+    public Transform spriteTransform;
 
     public Slider healthBar;
 
@@ -70,6 +71,16 @@ public class RangeEnemy : EnemyBase
                 nextShootTime = Time.time + shootCooldown;
             }
         }
+        
+        Vector2 direction = (player.position - transform.position).normalized;
+        if (direction.x > 0)
+        {
+            spriteTransform.localScale = new Vector3(Mathf.Abs(spriteTransform.localScale.x), spriteTransform.localScale.y, spriteTransform.localScale.z);
+        }
+        else if (direction.x < 0)
+        {
+            spriteTransform.localScale = new Vector3(-Mathf.Abs(spriteTransform.localScale.x), spriteTransform.localScale.y, spriteTransform.localScale.z);
+        }
     }
 
     void MoveTowardsPlayer()
@@ -106,11 +117,21 @@ public class RangeEnemy : EnemyBase
         {
             healthBar.value = rangeCurrentHealth;
         }
+        
+        StartCoroutine(FlashRed());
     }
 
     void Die()
     {
         OnEnemyDeath?.Invoke();
         Destroy(gameObject);
+    }
+    
+    private IEnumerator FlashRed()
+    {
+        SpriteRenderer spriteRenderer = spriteTransform.GetComponent<SpriteRenderer>();
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = Color.white;
     }
 }

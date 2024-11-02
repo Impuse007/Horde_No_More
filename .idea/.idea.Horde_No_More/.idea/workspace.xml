@@ -8,8 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Enemies/Range Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemies/Range Enemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RangeEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RangeEnemy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +150,7 @@
       <workItem from="1730389715843" duration="6338000" />
       <workItem from="1730398806134" duration="117000" />
       <workItem from="1730492841543" duration="3379000" />
-      <workItem from="1730564124063" duration="7952000" />
+      <workItem from="1730564124063" duration="8825000" />
     </task>
     <servers />
   </component>
