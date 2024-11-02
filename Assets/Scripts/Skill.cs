@@ -22,6 +22,7 @@ public class Skill
     public int weaponSpecialCooldownDecrease;
     public int playerHealingIncrease;
     public int playerHealingCooldownDecrease;
+    public int playerEarningIncrease;
     
     // Ability to unlock the skill
     public bool unlockSpecialAbility;
@@ -39,7 +40,7 @@ public class Skill
         UpdateSkillStatusText();
     }
     
-    public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncreaseSpeed, int weaponBasicDamageIncrease, int weaponBasicRangeIncrease, int weaponBasicSpeedIncrease, bool unlockSpecialAbility, int weaponSpecialDamageIncrease, int weaponSpecialSpeedIncrease, int weaponSpecialCooldownDecrease, bool unlockHealingAbility, int playerHealingIncrease, int playerHealingCooldownDecrease)
+    public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncreaseSpeed, int weaponBasicDamageIncrease, int weaponBasicRangeIncrease, int weaponBasicSpeedIncrease, bool unlockSpecialAbility, int weaponSpecialDamageIncrease, int weaponSpecialSpeedIncrease, int weaponSpecialCooldownDecrease, bool unlockHealingAbility, int playerHealingIncrease, int playerHealingCooldownDecrease, int playerEarningIncrease)
     {
         this.skillName = name;
         this.description = desc;
@@ -58,6 +59,7 @@ public class Skill
         this.unlockHealingAbility = unlockHealingAbility;
         this.playerHealingIncrease = playerHealingIncrease;
         this.playerHealingCooldownDecrease = playerHealingCooldownDecrease;
+        this.playerEarningIncrease = playerEarningIncrease;
     }
 
     public void Unlock(PlayerController playerController)
@@ -74,6 +76,7 @@ public class Skill
         playerController.specialAttackCooldown -= weaponSpecialCooldownDecrease;
         playerController.healingAmount += playerHealingIncrease;
         playerController.healingCooldown -= playerHealingCooldownDecrease;
+        playerController.playerMoney += playerEarningIncrease;
         
         if (unlockSpecialAbility)
         {

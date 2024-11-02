@@ -136,9 +136,9 @@ public class PlayerController : MonoBehaviour
 
         playerHealthBar.value = (int)playerCurrentHealth;
         moneyText.text = "Money: " + playerMoney;
-        dashCooldownText.text = "Dash Cooldown: " + dashCooldownTime.ToString("F1");
-        healingCooldownText.text = "Healing Cooldown: " + (nextHealingTime - Time.time).ToString("F1");
-        specialAttackCooldownText.text = "Special Attack Cooldown: " + (nextSpecialAttackTime - Time.time).ToString("F1");
+        dashCooldownText.text = "Dash Cooldown: " + Mathf.Max(0, dashCooldownTime).ToString("F1");
+        healingCooldownText.text = "Healing Cooldown: " + Mathf.Max(0, nextHealingTime - Time.time).ToString("F1");
+        specialAttackCooldownText.text = "Special Attack Cooldown: " + Mathf.Max(0, nextSpecialAttackTime - Time.time).ToString("F1");
     }
     
     public void PlayerMoves()

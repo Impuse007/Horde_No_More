@@ -4,7 +4,7 @@ using UnityEngine.PlayerLoop;
 
 namespace DefaultNamespace
 {
-    public class Results_Screen
+    public class Results_Screen : MonoBehaviour
     {
         GameManager gameManager;
         PlayerController playerController;
