@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -20,6 +21,10 @@ public class GameManager : MonoBehaviour
     
     public void Awake()
     {
+        if (!File.Exists(Save.SaveSystem._savePath))
+        {
+            NewGame();
+        }
         LoadGame();
     }
 
@@ -56,7 +61,7 @@ public class GameManager : MonoBehaviour
     
     public void SavingGame()
     {
-        
+        Save.SaveSystem.SaveGame(playerController, skillTree);
     }
     
     public void LoadGame()
@@ -77,5 +82,23 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+    
+    public void NewGame()
+    {
+        playerController.playerMoney = 0;
+        playerController.playerMaxHealth = 100;
+        playerController.playerCurrentHealth = 100;
+        skillTree.unlockedSkills = new List<Skill>();
+        foreach (var skill in skillTree.skills)
+        {
+            skill.isUnlocked = false;
+            if (skill.skillPrefab != null)
+            {
+                skill.skillPrefab.SetActive(false);
+            }
+            skill.UpdateSkillStatusText();
+        }
+        SavingGame();
     }
 }

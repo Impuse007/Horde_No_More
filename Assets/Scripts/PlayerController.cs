@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
     [Header("Player Main Stats")]
     public Slider playerHealthBar;
     public float playerMaxHealth = 100;
+    public float playerCurrentHealth;
     public float speed = 5.0f;
-    [HideInInspector] public float playerCurrentHealth;
     
     // Player Attack Values
     [Header("Player Basic Attack Stats")]
@@ -291,6 +291,7 @@ public class PlayerController : MonoBehaviour
         uiManager.SwitchUI(UIManager.switchUI.GameOver);
         playerSprite.enabled = false;
         Time.timeScale = 0;
+        FindObjectOfType<GameManager>().SavingGame();
     }
     
     RaycastHit2D Raycast(Vector2 origin, Vector2 direction, float distance, LayerMask layer)

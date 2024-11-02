@@ -38,6 +38,7 @@ public class SkillTree : MonoBehaviour
                 //skill.nextSkill.UpdateSkillStatusText();
                 Debug.Log("Skill unlocked: " + skillName);
             }
+            FindObjectOfType<GameManager>().SavingGame();
         }
         else
         {

@@ -6,7 +6,7 @@ namespace Save
 {
     public static class SaveSystem
     {
-        private static string _savePath = Application.persistentDataPath + "/gamedata.save";
+        public static string _savePath = Application.persistentDataPath + "/gamedata.save";
 
         public static void SaveGame(PlayerController player, SkillTree skillTree)
         {

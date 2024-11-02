@@ -12,7 +12,7 @@ public class Skill
     // Values to increase
     public int healthIncrease;
     public int speedIncrease;
-    public int dashIncrease;
+    public int dashIncreaseSpeed;
     public int weaponBasicDamageIncrease;
     public int weaponBasicSpeedIncrease;
     public int weaponBasicRangeIncrease;
@@ -39,7 +39,7 @@ public class Skill
         UpdateSkillStatusText();
     }
     
-    public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncrease, int weaponBasicDamageIncrease, int weaponBasicRangeIncrease, int weaponBasicSpeedIncrease, bool unlockSpecialAbility, int weaponSpecialDamageIncrease, int weaponSpecialSpeedIncrease, int weaponSpecialCooldownDecrease, bool unlockHealingAbility, int playerHealingIncrease, int playerHealingCooldownDecrease)
+    public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncreaseSpeed, int weaponBasicDamageIncrease, int weaponBasicRangeIncrease, int weaponBasicSpeedIncrease, bool unlockSpecialAbility, int weaponSpecialDamageIncrease, int weaponSpecialSpeedIncrease, int weaponSpecialCooldownDecrease, bool unlockHealingAbility, int playerHealingIncrease, int playerHealingCooldownDecrease)
     {
         this.skillName = name;
         this.description = desc;
@@ -47,7 +47,7 @@ public class Skill
         this.isUnlocked = false;
         this.healthIncrease = healthIncrease;
         this.speedIncrease = speedIncrease;
-        this.dashIncrease = dashIncrease;
+        this.dashIncreaseSpeed = dashIncreaseSpeed;
         this.weaponBasicDamageIncrease = weaponBasicDamageIncrease;
         this.weaponBasicRangeIncrease = weaponBasicRangeIncrease;
         this.weaponBasicSpeedIncrease = weaponBasicSpeedIncrease;
@@ -65,7 +65,7 @@ public class Skill
         isUnlocked = true;
         playerController.playerMaxHealth += healthIncrease;
         playerController.speed += speedIncrease;
-        playerController.dashSpeed += dashIncrease;
+        playerController.dashSpeed += dashIncreaseSpeed;
         playerController.playerDamage += weaponBasicDamageIncrease;
         playerController.basicAttackSpeed += weaponBasicSpeedIncrease;
         playerController.basicAttackRange += weaponBasicRangeIncrease;
@@ -86,7 +86,7 @@ public class Skill
         }
         
         UpdateSkillStatusText();
-        Debug.Log(skillName + " has been unlocked! Health: " + healthIncrease + ", Speed: " + speedIncrease + ", Dash: " + dashIncrease + ", Weapon Damage: " + weaponBasicDamageIncrease);
+        Debug.Log(skillName + " has been unlocked! Health: " + healthIncrease + ", Speed: " + speedIncrease + ", Dash: " + dashIncreaseSpeed + ", Weapon Damage: " + weaponBasicDamageIncrease);
     }
     
     public void UpdateSkillStatusText()
