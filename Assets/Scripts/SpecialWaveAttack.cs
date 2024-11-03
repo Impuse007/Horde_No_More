@@ -19,17 +19,17 @@ namespace DefaultNamespace
         {
             if (other.CompareTag("Enemy"))
             {
-                Rigidbody2D enemyRb = other.GetComponent<Rigidbody2D>();
-                if (enemyRb != null)
-                {
-                    Vector2 knockbackDirection = (other.transform.position + transform.position); // Calculate the knockback direction
-                    enemyRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse); // Apply the knockback force
-                    Debug.Log("Knockback applied to " + other.name); 
-                }
-                else
-                {
-                    Debug.LogWarning("No Rigidbody2D found on " + other.name);
-                }
+                //Rigidbody2D enemyRb = other.GetComponent<Rigidbody2D>();
+                //if (enemyRb != null)
+                //{
+                //    Vector2 knockbackDirection = (other.transform.position + transform.position); // Calculate the knockback direction
+                //    enemyRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse); // Apply the knockback force
+                //    Debug.Log("Knockback applied to " + other.name); 
+                //}
+                //else
+                //{
+                //    Debug.LogWarning("No Rigidbody2D found on " + other.name);
+                //}
                 
                 EnemyMelee enemyMelee = other.GetComponent<EnemyMelee>();
                 if (enemyMelee != null)

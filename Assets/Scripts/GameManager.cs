@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Save;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -21,11 +22,14 @@ public class GameManager : MonoBehaviour
     
     public void Awake()
     {
+        playerController = FindObjectOfType<PlayerController>();
+        skillTree = FindObjectOfType<SkillTree>();
+        
         if (!File.Exists(Save.SaveSystem._savePath))
         {
             NewGame();
         }
-        LoadGame();
+        LoadGame(playerController, skillTree);
     }
 
     public void Update()
@@ -64,20 +68,21 @@ public class GameManager : MonoBehaviour
         Save.SaveSystem.SaveGame(playerController, skillTree);
     }
     
-    public void LoadGame()
+    public static void LoadGame(PlayerController player, SkillTree skillTree)
     {
-        GameData data = Save.SaveSystem.LoadGame();
+        GameData data = SaveSystem.LoadGame();
         if (data != null)
         {
-            playerController.playerMoney = data.playerMoney;
-            playerController.playerMaxHealth = data.playerMaxHealth;
-            playerController.playerCurrentHealth = data.playerCurrentHealth;
-            skillTree.unlockedSkills = new List<Skill>();
-            foreach (var skillName in data.unlockedSkills)
+            player.playerMoney = data.playerMoney;
+            player.playerMaxHealth = data.playerMaxHealth;
+            player.playerCurrentHealth = data.playerCurrentHealth;
+
+            foreach (string skillName in data.unlockedSkills)
             {
-                Skill skill = skillTree.GetSkillByName(skillName);
+                Skill skill = skillTree.skills.Find(s => s.skillName == skillName);
                 if (skill != null)
                 {
+                    skill.Unlock(player);
                     skillTree.unlockedSkills.Add(skill);
                 }
             }

@@ -21,5 +21,4 @@ public class GameData
             unlockedSkills.Add(skill.skillName);
         }
     }
-        
 }
