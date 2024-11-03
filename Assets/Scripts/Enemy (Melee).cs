@@ -1,15 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMelee : EnemyBase
 {
     private PlayerController playerController;
-    public Transform SpriteTransform;
+    public SpriteRenderer SpriteTransform;
     private bool isAttacking = false;
     private bool isDead = false;
     private Rigidbody2D rb;
-    
+
+    public Animator animator;
+
     public event EnemyDealthHandler OnEnemyDeath;
 
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class EnemyMelee : EnemyBase
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
 
-        // Ensure playerHealthManager is assigned
+        // Ensure playerController is assigned
         if (player != null)
         {
             playerController = player.GetComponent<PlayerController>();
@@ -31,7 +32,7 @@ public class EnemyMelee : EnemyBase
     }
 
     // Update is called once per frame
-    public void FixedUpdate()
+    void FixedUpdate()
     {
         if (!isAttacking)
         {
@@ -49,7 +50,7 @@ public class EnemyMelee : EnemyBase
     {
         if (player == null || playerController == null)
         {
-            Debug.LogWarning("Player or PlayerHealthManager is not assigned.");
+            Debug.LogWarning("Player or PlayerController is not assigned.");
             return;
         }
 
@@ -58,40 +59,50 @@ public class EnemyMelee : EnemyBase
         if (distanceToPlayer <= attackRange)
         {
             isAttacking = true;
-            playerController.TakeDamage(enemyDamage);
-            Debug.Log("Player hit by enemy: " + gameObject.name);
-            StartCoroutine(EndAttack());
+            Debug.Log("Triggering attack animation");
+            animator.SetTrigger("Attack");
+            StartCoroutine(PerformAttack());
         }
 
         transform.rotation = Quaternion.identity;
     }
 
-    private IEnumerator EndAttack()
+    private IEnumerator PerformAttack()
     {
-        yield return new WaitForSeconds(attackCooldown);
+        // Wait for the attack animation to reach the point where damage should be dealt
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length / 2);
+
+        if (player != null && playerController != null)
+        {
+            playerController.TakeDamage(enemyDamage);
+            Debug.Log("Player hit by enemy: " + gameObject.name);
+        }
+
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length / 2);
         isAttacking = false;
     }
 
     public void EnemyMeleeMovement()
     {
+        animator.ResetTrigger("Attack");
+        
         if (player == null)
         {
             Debug.LogWarning("Player is not assigned.");
             return;
         }
 
-        
         Vector3 direction = (player.transform.position - transform.position).normalized;
         Vector3 targetPosition = player.transform.position - direction;
         Vector3 newPosition = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.fixedDeltaTime);
         rb.MovePosition(newPosition);
         if (direction.x > 0)
         {
-            SpriteTransform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+           SpriteTransform.flipX = false;
         }
         else if (direction.x < 0)
         {
-            SpriteTransform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            SpriteTransform.flipX = true;
         }
         transform.rotation = Quaternion.identity; // Lock rotation
     }
@@ -114,7 +125,7 @@ public class EnemyMelee : EnemyBase
         GameObject.Destroy(gameObject);
         playerController.playerMoney += moneyDrop;
     }
-    
+
     public IEnumerator FlashRed()
     {
         SpriteRenderer spriteRenderer = SpriteTransform.GetComponent<SpriteRenderer>();

@@ -6545,10 +6545,6 @@ MonoBehaviour:
     enemyPrefabs:
     - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
     - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-    - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-    - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-    - {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
-    - {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
     spawnPoints:
     - {fileID: 546973407}
     - {fileID: 2145412341}
