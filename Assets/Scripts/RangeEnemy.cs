@@ -14,6 +14,7 @@ public class RangeEnemy : EnemyBase
     public float moveSpeed = 2f;
     public float stopDistance = 5f;
     public float shootCooldown = 2f;
+    public int moneyRangeDrop;
     public GameObject arrowPrefab;
     public Transform shootPoint;
     public Transform spriteTransform;
@@ -22,6 +23,7 @@ public class RangeEnemy : EnemyBase
 
     private Transform player;
     private float nextShootTime;
+    private bool isShooting = false;
 
     private PlayerController playerController;
     private Rigidbody2D rb;
@@ -45,7 +47,7 @@ public class RangeEnemy : EnemyBase
         }
 
         rb = GetComponent<Rigidbody2D>();
-        
+
         if (healthBar != null)
         {
             healthBar.maxValue = rangeHealth;
@@ -59,7 +61,7 @@ public class RangeEnemy : EnemyBase
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (distanceToPlayer > stopDistance)
+        if (distanceToPlayer > stopDistance && !isShooting)
         {
             MoveTowardsPlayer();
         }
@@ -67,11 +69,11 @@ public class RangeEnemy : EnemyBase
         {
             if (Time.time >= nextShootTime)
             {
-                ShootArrow();
+                StartCoroutine(ShootArrow());
                 nextShootTime = Time.time + shootCooldown;
             }
         }
-        
+
         Vector2 direction = (player.position - transform.position).normalized;
         if (direction.x > 0)
         {
@@ -87,21 +89,37 @@ public class RangeEnemy : EnemyBase
     {
         Vector2 direction = ((Vector2)player.position - (Vector2)transform.position).normalized;
         Vector2 targetPosition = (Vector2)player.position - direction;
-        Vector2 newPosition = Vector2.MoveTowards(rb.position, targetPosition, moveSpeed * Time.fixedDeltaTime);
-        rb.MovePosition(newPosition);
+        float distanceToTarget = Vector2.Distance(rb.position, targetPosition);
+
+        // Only move if the distance to the target is greater than a small threshold
+        if (distanceToTarget > stopDistance + 0.5f) // Adjust the threshold as needed
+        {
+            Vector2 newPosition = Vector2.MoveTowards(rb.position, targetPosition, moveSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(newPosition);
+        }
     }
 
-    void ShootArrow()
+    IEnumerator ShootArrow()
     {
+        isShooting = true;
+
         Vector2 direction = (player.position - shootPoint.position).normalized;
         GameObject arrow = Instantiate(arrowPrefab, shootPoint.position, Quaternion.identity);
         arrow.GetComponent<Rigidbody2D>().velocity = direction * 10f;
+
+        // Rotate the arrow to face the direction of the shot
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         EnemyRangeArrow arrowScript = arrow.GetComponent<EnemyRangeArrow>();
         if (arrowScript != null)
         {
             arrowScript.arrowDamage = rangeDamage;
         }
+
+        yield return new WaitForSeconds(0.1f); // Adjust the wait time as needed
+
+        isShooting = false;
     }
 
     public void TakeDamage(int damage)
@@ -117,7 +135,7 @@ public class RangeEnemy : EnemyBase
         {
             healthBar.value = rangeCurrentHealth;
         }
-        
+
         StartCoroutine(FlashRed());
     }
 
@@ -125,8 +143,9 @@ public class RangeEnemy : EnemyBase
     {
         OnEnemyDeath?.Invoke();
         Destroy(gameObject);
+        playerController.playerMoney += moneyRangeDrop;
     }
-    
+
     private IEnumerator FlashRed()
     {
         SpriteRenderer spriteRenderer = spriteTransform.GetComponent<SpriteRenderer>();

@@ -6808,6 +6808,8 @@ MonoBehaviour:
     enemyPrefabs:
     - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
     - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+    - {fileID: 3183264342063304872, guid: 0762a005bc3e3b144a9f7f5393106ccd, type: 3}
+    - {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
     spawnPoints:
     - {fileID: 546973407}
     - {fileID: 2145412341}
@@ -6816,9 +6818,17 @@ MonoBehaviour:
     - {fileID: 2073171402}
     waveDelay: 0
     moneyDrop: 5
-    enemyDamage: 10
-    enemyHealth: 50
-    enemySpeed: 3
+    enemyDamage: 0
+    enemyHealth: 1
+    enemySpeed: 1
+    bossDamage: 0
+    bossHealth: 1
+    bossSpeed: 10
+    bossMoneyDrop: 50
+    rangeDamage: 0
+    rangeHealth: 1
+    rangeSpeed: 7
+    rangeMoneyDrop: 1
   - waveNumber: 2
     enemyPrefabs:
     - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
@@ -6836,6 +6846,14 @@ MonoBehaviour:
     enemyDamage: 15
     enemyHealth: 80
     enemySpeed: 4
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+    rangeDamage: 0
+    rangeHealth: 0
+    rangeSpeed: 0
+    rangeMoneyDrop: 0
   - waveNumber: 3
     enemyPrefabs:
     - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
@@ -6853,6 +6871,15 @@ MonoBehaviour:
     enemyDamage: 0
     enemyHealth: 0
     enemySpeed: 0
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+    rangeDamage: 0
+    rangeHealth: 0
+    rangeSpeed: 0
+    rangeMoneyDrop: 0
+  persistentWaveText: {fileID: 0}
   waveText: {fileID: 0}
   currentWaveIndex: 0
   enemiesAlive: 0

@@ -5,7 +5,7 @@ namespace DefaultNamespace
 {
     public class EnemyRangeArrow : MonoBehaviour
     {
-        public int arrowDamage = 10; // Set the damage value for the arrow
+        public int arrowDamage; // Set the damage value for the arrow
 
         void OnTriggerEnter2D(Collider2D collision)
         {

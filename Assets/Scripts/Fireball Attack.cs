@@ -33,6 +33,12 @@ namespace DefaultNamespace
                     rangeEnemy.TakeDamage(damage); // Deal damage to the range enemy
                     Debug.Log(damage + " damage dealt to " + other.name);
                 }
+                EnemyBoss enemyBoss = other.GetComponent<EnemyBoss>();
+                if (enemyBoss != null)
+                {
+                    enemyBoss.TakeDamage(damage); // Deal damage to the boss enemy
+                    Debug.Log(damage + " damage dealt to " + other.name);
+                }
 
                 hasHit = true; // Set the flag to true
                 Destroy(gameObject); // Destroy the fireball after hitting the enemy

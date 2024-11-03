@@ -14,6 +14,7 @@ public class EnemyBoss : EnemyBase
     public float moveBossSpeed = 2f;
     public float stopDistance = 5f;
     public float shootCooldown = 2f;
+    public int moneyBossDrop;
     public GameObject arrowPrefab;
     public Transform shootPoint;
     public Transform spriteTransform;
@@ -97,6 +98,10 @@ public class EnemyBoss : EnemyBase
         GameObject arrow = Instantiate(arrowPrefab, shootPoint.position, Quaternion.identity);
         arrow.GetComponent<Rigidbody2D>().velocity = direction * 10f;
 
+        // Rotate the arrow to face the direction of the shot
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        arrow.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
         EnemyRangeArrow arrowScript = arrow.GetComponent<EnemyRangeArrow>();
         if (arrowScript != null)
         {
@@ -125,6 +130,7 @@ public class EnemyBoss : EnemyBase
     {
         OnEnemyDeath?.Invoke();
         Destroy(gameObject);
+        playerController.playerMoney += moneyBossDrop;
     }
     
     private IEnumerator FlashRed()

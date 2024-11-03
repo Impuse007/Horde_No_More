@@ -90,16 +90,31 @@ public class WaveManager : MonoBehaviour
             enemyMelee.moneyDrop = currentWave.moneyDrop;
             enemyMelee.enemyDamage = currentWave.enemyDamage;
             enemyMelee.speed = currentWave.enemySpeed;
-            enemy.GetComponent<EnemyMelee>().OnEnemyDeath += HandleEnemyDeath; // Subscribe to the enemy death event
+            enemyMelee.enemyMaxHealth = currentWave.enemyHealth;
+            enemy.GetComponent<EnemyMelee>().OnEnemyDeath += HandleEnemyDeath;
+            Debug.Log(enemyMelee.enemyCurrentHealth);
         }
         
         RangeEnemy rangeEnemy = enemy.GetComponent<RangeEnemy>();
         if (rangeEnemy != null)
         {
-            rangeEnemy.moneyDrop = currentWave.moneyDrop;
-            rangeEnemy.enemyDamage = currentWave.enemyDamage;
-            rangeEnemy.speed = currentWave.enemySpeed;
-            enemy.GetComponent<RangeEnemy>().OnEnemyDeath += HandleEnemyDeath; // Subscribe to the enemy death event
+            rangeEnemy.moneyRangeDrop = currentWave.rangeMoneyDrop;
+            rangeEnemy.rangeDamage = currentWave.rangeDamage;
+            rangeEnemy.moveSpeed = currentWave.rangeSpeed;
+            rangeEnemy.rangeHealth = currentWave.rangeHealth;
+            enemy.GetComponent<RangeEnemy>().OnEnemyDeath += HandleEnemyDeath;
+            Debug.Log(rangeEnemy.rangeCurrentHealth);
+        }
+        
+        EnemyBoss enemyBoss = enemy.GetComponent<EnemyBoss>();
+        if (enemyBoss != null)
+        {
+            enemyBoss.moneyBossDrop = currentWave.bossMoneyDrop;
+            enemyBoss.bossDamage = currentWave.bossDamage;
+            enemyBoss.moveBossSpeed = currentWave.bossSpeed;
+            enemyBoss.bossHealth = currentWave.bossHealth;
+            enemy.GetComponent<EnemyBoss>().OnEnemyDeath += HandleEnemyDeath;
+            Debug.Log(enemyBoss.bossCurrentHealth);
         }
         
         GameObject player = GameObject.FindWithTag("Player");
@@ -108,7 +123,7 @@ public class WaveManager : MonoBehaviour
     private void HandleEnemyDeath()
     {
         enemiesAlive--;
-        //gameManager.AddKill();
+        gameManager.AddKill();
 
         if (enemiesAlive <= 0)
         {
