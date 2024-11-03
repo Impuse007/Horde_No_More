@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="90da82e4-6e32-4478-b7bf-d13780ae865a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/Enemy_Attack_Anim.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Animations/Enemy_Attack_Anim.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/Enemy_Movement_Animation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Animations/Enemy_Movement_Animation.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/Melee Enemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Animations/Melee Enemy.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemies/Arrow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Arrow_Sprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemies/Arrow_Sprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Melee Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemies/Melee Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy (Melee).cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy (Melee).cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Results Screen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Results Screen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +39,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy (Melee).cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy Base.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyBoss.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
@@ -160,7 +154,7 @@
       <workItem from="1730564124063" duration="9109000" />
       <workItem from="1730648692284" duration="3000" />
       <workItem from="1730648700474" duration="503000" />
-      <workItem from="1730649243768" duration="4705000" />
+      <workItem from="1730649243768" duration="7108000" />
     </task>
     <servers />
   </component>

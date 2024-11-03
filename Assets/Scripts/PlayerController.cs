@@ -132,14 +132,18 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Healed");
             }
         }
-
-        playerHealthBar.value = (int)playerCurrentHealth;
+        
         moneyText.text = "Money: " + playerMoney;
         dashCooldownText.text = "Dash Cooldown: " + Mathf.Max(0, dashCooldownTime).ToString("F1");
         healingCooldownText.text = "Healing Cooldown: " + Mathf.Max(0, nextHealingTime - Time.time).ToString("F1");
         specialAttackCooldownText.text = "Special Attack Cooldown: " + Mathf.Max(0, nextSpecialAttackTime - Time.time).ToString("F1");
     }
-    
+
+    public void LateUpdate()
+    {
+        playerHealthBar.value = (int)playerCurrentHealth; // Hopefully this will update the health bar after new game is started
+    }
+
     public void PlayerMoves()
     {
         float horizontal = Input.GetAxis("Horizontal");

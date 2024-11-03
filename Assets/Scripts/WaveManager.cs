@@ -13,6 +13,7 @@ public class WaveManager : MonoBehaviour
     GameManager gameManager;
     Results_Screen resultsScreen;
     public List<Wave> waves; // List of waves
+    public TextMeshProUGUI persistentWaveText; // UI Text to display persistent wave number
     public TextMeshProUGUI waveText; // UI Text to display wave number
     public int currentWaveIndex = 0; // Current wave index
     private bool isSpawning = false; // Flag to check if spawning is in progress
@@ -21,6 +22,7 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         waveText = GameObject.Find("UI Manager/Canvas/Gameplay/WaveText")?.GetComponent<TextMeshProUGUI>();
+        persistentWaveText = GameObject.Find("UI Manager/Canvas/Gameplay/PersistentWaveText")?.GetComponent<TextMeshProUGUI>();
 
         if (waveText == null)
         {
@@ -37,12 +39,14 @@ public class WaveManager : MonoBehaviour
         while (currentWaveIndex < waves.Count)
         {
             Wave currentWave = waves[currentWaveIndex];
+            persistentWaveText.text = "Wave " + currentWave.waveNumber + "/30";
             isSpawning = true;
 
-            waveText.text = "Wave " + currentWave.waveNumber + "/30";
+            waveText.text = "Wave Incoming!";
             waveText.gameObject.SetActive(true);
-            yield return new WaitForSeconds(2f); // Display the text for 2 seconds
+            yield return new WaitForSeconds(1f); // Display the text for 2 seconds
             waveText.gameObject.SetActive(false);
+            
 
             enemiesAlive = currentWave.enemyPrefabs.Count;
 
@@ -122,7 +126,7 @@ public class WaveManager : MonoBehaviour
         }
 
         Wave currentWave = waves[currentWaveIndex];
-        waveText.text = "Wave " + currentWave.waveNumber + "/30 Incoming!"; 
+        waveText.text = "Wave Incoming!"; 
         waveText.gameObject.SetActive(true);
         StartCoroutine(HideWaveTextAfterDelay(4f)); // Hide the text after 4 seconds
 
