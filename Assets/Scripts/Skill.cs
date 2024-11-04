@@ -91,6 +91,11 @@ public class Skill
             playerController.isHealingUnlocked = true;
         }
         
+        if (skillPrefab != null)
+        {
+            skillPrefab.SetActive(true);
+        }
+        
         UpdateSkillStatusText();
         Debug.Log(skillName + " has been unlocked! Health: " + healthIncrease + ", Speed: " + speedIncrease + ", Dash: " + dashIncreaseSpeed + ", Weapon Damage: " + weaponBasicDamageIncrease);
     }
