@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using DefaultNamespace;
 using Save;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
     public UIManager uiManager;
     public PlayerController playerController;
     public SkillTree skillTree;
+    Skill unSkill;
+    public Results_Screen resultsScreen;
     
     public int playerScore;
     public int highScore;
@@ -97,6 +100,19 @@ public class GameManager : MonoBehaviour
     {
         playerController.playerMoney = 0;
         playerController.playerMaxHealth = 75;
+        playerController.speed = 5;
+        unSkill.unlockSpecialAbility = false;
+        unSkill.unlockHealingAbility = false;
+        playerController.dashSpeed = 15.0f;
+        playerController.dashCooldown = 3.0f;
+        playerController.healingAmount = 20;
+        playerController.healingCooldown = 5.0f;
+        playerController.specialAttackDamage = 20;
+        playerController.specialAttackRange = 1.0f;
+        playerController.specialAttackCooldown = 5.0f;
+        playerController.playerDamage = 10;
+        playerController.basicAttackRange = 1.0f; // Might be used for fut
+        playerController.basicAttackCooldown = 1.0f;
         skillTree.unlockedSkills = new List<Skill>();
         foreach (var skill in skillTree.skills)
         {
@@ -107,7 +123,8 @@ public class GameManager : MonoBehaviour
             //}
             skill.UpdateSkillStatusText();
         }
-        SavingGame();
+        SavingGame(); 
+        ResetResults();
     }
 
     public void PlayerWon()
@@ -120,5 +137,13 @@ public class GameManager : MonoBehaviour
     {
         uiManager.ShowLoseText();
         SavingGame();
+    }
+    
+    public void ResetResults()
+    {
+        timeInGame = 0;
+        waveNumber = 0;
+        kills = 0;
+        moneyEarned = 0;
     }
 }

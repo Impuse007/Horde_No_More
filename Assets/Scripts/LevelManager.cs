@@ -1,3 +1,4 @@
+using Save;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     public PlayerController playerController;
     public GameObject Player;
+    public GameManager gameManager;
     
     public void StartGame(string levelName)
     {
@@ -14,6 +16,7 @@ public class LevelManager : MonoBehaviour
         playerController.playerCurrentHealth = playerController.playerMaxHealth;
         playerController.isInvincible = false;
         UpdateHealthBar();
+        gameManager.ResetResults();
         Time.timeScale = 1;
     }
     
@@ -25,6 +28,7 @@ public class LevelManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
+        SaveSystem.SaveGame(playerController, playerController.skillTree);
         Player.SetActive(false);
     }
     
