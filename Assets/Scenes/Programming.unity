@@ -1097,6 +1097,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.3986994
       objectReference: {fileID: 0}
+    - target: {fileID: 4213275404066494616, guid: 79f6d9a018248b84683b6ad48c35ec08, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4424015331185167999, guid: 79f6d9a018248b84683b6ad48c35ec08, type: 3}
       propertyPath: healthText
       value: 
