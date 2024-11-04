@@ -31,6 +31,7 @@ public class WaveManager : MonoBehaviour
         }
         StartCoroutine(SpawnWaves());
         
+        gameManager = GameObject.Find("GameManager")?.GetComponent<GameManager>();
         uiManager = GameObject.Find("GameManager/UI Manager")?.GetComponent<UIManager>();
     }
 
@@ -39,20 +40,24 @@ public class WaveManager : MonoBehaviour
         while (currentWaveIndex < waves.Count)
         {
             Wave currentWave = waves[currentWaveIndex];
-            persistentWaveText.text = "Wave " + currentWave.waveNumber + "/30";
             isSpawning = true;
 
             waveText.text = "Wave Incoming!";
             waveText.gameObject.SetActive(true);
-            yield return new WaitForSeconds(1f); // Display the text for 2 seconds
+            yield return new WaitForSeconds(1f);
             waveText.gameObject.SetActive(false);
+
+            persistentWaveText.text = "Wave " + currentWave.waveNumber + "/30";
             
+            enemiesAlive = 0;
 
-            enemiesAlive = currentWave.enemyPrefabs.Count;
-
-            foreach (GameObject enemyPrefab in currentWave.enemyPrefabs)
+            foreach (Wave.EnemySpawnInfo enemySpawnInfo in currentWave.enemySpawnInfos)
             {
-                SpawnEnemy(enemyPrefab, currentWave.spawnPoints, currentWave);
+                for (int i = 0; i < enemySpawnInfo.spawnCount; i++)
+                {
+                    SpawnEnemy(enemySpawnInfo.enemyPrefab, currentWave.spawnPoints, currentWave);
+                    enemiesAlive++;
+                }
             }
 
             isSpawning = false;
@@ -65,7 +70,7 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(currentWave.waveDelay);
 
             currentWaveIndex++;
-            
+
             if (currentWaveIndex >= waves.Count)
             {
                 WinGame();
@@ -141,15 +146,20 @@ public class WaveManager : MonoBehaviour
         }
 
         Wave currentWave = waves[currentWaveIndex];
-        waveText.text = "Wave Incoming!"; 
+        waveText.text = "Wave Incoming!";
         waveText.gameObject.SetActive(true);
-        StartCoroutine(HideWaveTextAfterDelay(4f)); // Hide the text after 4 seconds
+        StartCoroutine(HideWaveTextAfterDelay(3f));
+        persistentWaveText.text = "Wave " + currentWave.waveNumber + "/30";
 
-        enemiesAlive = currentWave.enemyPrefabs.Count;
+        enemiesAlive = 0;
 
-        foreach (GameObject enemyPrefab in currentWave.enemyPrefabs)
+        foreach (Wave.EnemySpawnInfo enemySpawnInfo in currentWave.enemySpawnInfos)
         {
-            SpawnEnemy(enemyPrefab, currentWave.spawnPoints, currentWave);
+            for (int i = 0; i < enemySpawnInfo.spawnCount; i++)
+            {
+                SpawnEnemy(enemySpawnInfo.enemyPrefab, currentWave.spawnPoints, currentWave);
+                enemiesAlive++;
+            }
         }
     }
 
@@ -159,7 +169,7 @@ public class WaveManager : MonoBehaviour
         waveText.gameObject.SetActive(false);
     }
     
-    public void WinGame() // Add the results of the game and show game win text
+    public void WinGame()
     {
         uiManager.SwitchUI(UIManager.switchUI.ResultsMenu);
         Debug.Log("You win!");

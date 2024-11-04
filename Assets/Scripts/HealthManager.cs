@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth;
     public int currentHealth;
-    
-    void Start()
-    {
-        currentHealth = maxHealth;
-    }
     
     public void TakeDamage(int damage)
     {

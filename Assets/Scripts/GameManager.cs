@@ -28,8 +28,12 @@ public class GameManager : MonoBehaviour
         if (!File.Exists(Save.SaveSystem._savePath))
         {
             NewGame();
+            Debug.Log("New Save File Created");
         }
-        LoadGame(playerController, skillTree);
+        else
+        {
+            LoadGame(playerController, skillTree);
+        }
     }
 
     public void Update()
@@ -92,18 +96,29 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         playerController.playerMoney = 0;
-        playerController.playerMaxHealth = 100;
-        playerController.playerCurrentHealth = 100;
+        playerController.playerMaxHealth = 75;
         skillTree.unlockedSkills = new List<Skill>();
         foreach (var skill in skillTree.skills)
         {
             skill.isUnlocked = false;
-            if (skill.skillPrefab != null)
-            {
-                skill.skillPrefab.SetActive(false);
-            }
+            //if (skill.skillPrefab != null)
+            //{
+            //    skill.skillPrefab.SetActive(false);
+            //}
             skill.UpdateSkillStatusText();
         }
+        SavingGame();
+    }
+
+    public void PlayerWon()
+    {
+        uiManager.ShowWinText();
+        SavingGame();
+    }
+    
+    public void PlayerLost()
+    {
+        uiManager.ShowLoseText();
         SavingGame();
     }
 }

@@ -136,8 +136,8 @@ public class EnemyBoss : EnemyBase
     private IEnumerator FlashRed()
     {
         SpriteRenderer spriteRenderer = spriteTransform.GetComponent<SpriteRenderer>();
-        spriteRenderer.color = Color.red;
+        spriteRenderer.color = Color.black;
         yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = Color.white;
+        spriteRenderer.color = Color.red;
     }
 }

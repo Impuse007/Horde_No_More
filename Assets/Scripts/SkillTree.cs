@@ -32,13 +32,13 @@ public class SkillTree : MonoBehaviour
             skill.Unlock(playerController);
             unlockedSkills.Add(skill);
             skill.UpdateSkillStatusText();
-            FindObjectOfType<GameManager>().SavingGame();
             if (skill.skillPrefab != null)
             {
                 skill.skillPrefab.SetActive(true);
                 //skill.nextSkill.UpdateSkillStatusText();
                 Debug.Log("Skill unlocked: " + skillName);
             }
+            FindObjectOfType<GameManager>().SavingGame();
         }
         else
         {

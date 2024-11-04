@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     // Player Movement Values
     [Header("Player Main Stats")]
     public Slider playerHealthBar;
-    public float playerMaxHealth = 100;
+    public float playerMaxHealth = 75;
     public float playerCurrentHealth;
     public float speed = 5.0f;
     
@@ -68,6 +68,8 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer playerSprite;
     public int numberOfFlashes = 3;
     public float flashDuration = 0.1f;
+    public bool isInvincible;
+    public float invincibleDuration = 2.0f;
     
     // Money Values
     [Header("Player Money Stats")]
@@ -85,9 +87,17 @@ public class PlayerController : MonoBehaviour
     
     public void Awake()
     {
-        playerCurrentHealth = playerMaxHealth;
+        playerManager = GetComponent<HealthManager>();
         playerHealthBar.maxValue = playerMaxHealth;
+        playerHealthBar.value = playerCurrentHealth;
+        playerCurrentHealth = playerMaxHealth;
         playerSprite = GetComponent<SpriteRenderer>();
+        
+        if (playerManager != null)
+        {
+            playerManager.maxHealth = (int)playerMaxHealth;
+            playerManager.currentHealth = (int)playerCurrentHealth;
+        }
     }
     
     public void Update()
@@ -119,7 +129,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 SpecialAttack();
-                nextSpecialAttackTime = Time.time + specialAttackCooldown;
+                //nextSpecialAttackTime = Time.time + specialAttackCooldown;
                 Debug.Log("Special Attacked");
             }
         }
@@ -133,6 +143,8 @@ public class PlayerController : MonoBehaviour
             }
         }
         
+        playerHealthBar.maxValue = playerMaxHealth;
+        playerHealthBar.value = (int)playerCurrentHealth;
         moneyText.text = "Money: " + playerMoney;
         dashCooldownText.text = "Dash Cooldown: " + Mathf.Max(0, dashCooldownTime).ToString("F1");
         healingCooldownText.text = "Healing Cooldown: " + Mathf.Max(0, nextHealingTime - Time.time).ToString("F1");
@@ -220,7 +232,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(DestorySpecialAttackAfterRange(specialAttack, specialAttackPoint.position, specialAttackRange));
     }
     
-    public void Heal()
+    private void Heal()
     {
         if (!isHealingUnlocked)
         {
@@ -277,8 +289,10 @@ public class PlayerController : MonoBehaviour
     
     public void TakeDamage(int damage)
     {
+        if (isInvincible) return; // If the player is invincible, do not take damage
+
         playerCurrentHealth -= damage;
-        
+
         if (playerCurrentHealth <= 0)
         {
             Die();
@@ -286,7 +300,15 @@ public class PlayerController : MonoBehaviour
         else
         {
             StartCoroutine(FlashPlayer());
+            StartCoroutine(InvincibilityCoroutine());
         }
+    }
+    
+    private IEnumerator InvincibilityCoroutine()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(invincibleDuration);
+        isInvincible = false;
     }
     
     void Die()

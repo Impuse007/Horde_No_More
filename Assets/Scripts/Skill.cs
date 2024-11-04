@@ -13,6 +13,7 @@ public class Skill
     public int healthIncrease;
     public int speedIncrease;
     public int dashIncreaseSpeed;
+    public int dashDecreaseCooldown;
     public int weaponBasicDamageIncrease;
     public int weaponBasicSpeedIncrease;
     public int weaponBasicRangeIncrease;
@@ -40,7 +41,7 @@ public class Skill
         UpdateSkillStatusText();
     }
     
-    public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncreaseSpeed, int weaponBasicDamageIncrease, int weaponBasicRangeIncrease, int weaponBasicSpeedIncrease, bool unlockSpecialAbility, int weaponSpecialDamageIncrease, int weaponSpecialSpeedIncrease, int weaponSpecialCooldownDecrease, bool unlockHealingAbility, int playerHealingIncrease, int playerHealingCooldownDecrease, int playerEarningIncrease)
+    public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncreaseSpeed, int weaponBasicDamageIncrease, int weaponBasicRangeIncrease, int weaponBasicSpeedIncrease, bool unlockSpecialAbility, int weaponSpecialDamageIncrease, int weaponSpecialSpeedIncrease, int weaponSpecialCooldownDecrease, bool unlockHealingAbility, int playerHealingIncrease, int playerHealingCooldownDecrease, int playerEarningIncrease, int dashDecreaseCooldown)
     {
         this.skillName = name;
         this.description = desc;
@@ -49,6 +50,7 @@ public class Skill
         this.healthIncrease = healthIncrease;
         this.speedIncrease = speedIncrease;
         this.dashIncreaseSpeed = dashIncreaseSpeed;
+        this.dashDecreaseCooldown = dashDecreaseCooldown;
         this.weaponBasicDamageIncrease = weaponBasicDamageIncrease;
         this.weaponBasicRangeIncrease = weaponBasicRangeIncrease;
         this.weaponBasicSpeedIncrease = weaponBasicSpeedIncrease;
@@ -68,6 +70,7 @@ public class Skill
         playerController.playerMaxHealth += healthIncrease;
         playerController.speed += speedIncrease;
         playerController.dashSpeed += dashIncreaseSpeed;
+        playerController.dashCooldown -= dashDecreaseCooldown;
         playerController.playerDamage += weaponBasicDamageIncrease;
         playerController.basicAttackSpeed += weaponBasicSpeedIncrease;
         playerController.basicAttackRange += weaponBasicRangeIncrease;

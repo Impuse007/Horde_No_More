@@ -15,7 +15,7 @@ namespace DefaultNamespace
         
         public void Update()
         {
-            //killsText.text = "Kills: " + gameManager.kills;
+            killsText.text = "Kills: " + gameManager.kills;
             //playerMoneyText.text = "Money: " + gameManager.playerController.playerMoney;
             timeText.text = "Time: " + gameManager.timeInGame;
         }

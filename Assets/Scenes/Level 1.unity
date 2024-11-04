@@ -508,6 +508,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &240110437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 240110438}
+  m_Layer: 0
+  m_Name: Spawners (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &240110438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240110437}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.13, y: -22.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &256618594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1197,7 @@ Transform:
   m_GameObject: {fileID: 546973406}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.96, y: -5.67, z: 0}
+  m_LocalPosition: {x: -23.92, y: -5.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1340,6 +1371,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &621496467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 621496468}
+  m_Layer: 0
+  m_Name: Spawners (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &621496468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621496467}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.18, y: 22.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &667048107
 GameObject:
   m_ObjectHideFlags: 0
@@ -6805,80 +6867,487 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - waveNumber: 1
-    enemyPrefabs:
-    - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-    - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-    - {fileID: 3183264342063304872, guid: 0762a005bc3e3b144a9f7f5393106ccd, type: 3}
-    - {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 20
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 5
     spawnPoints:
     - {fileID: 546973407}
+    - {fileID: 1612632253}
     - {fileID: 2145412341}
+    - {fileID: 621496468}
     - {fileID: 2039588179}
+    - {fileID: 1085929285}
     - {fileID: 1602193903}
+    - {fileID: 240110438}
     - {fileID: 2073171402}
-    waveDelay: 0
-    moneyDrop: 5
-    enemyDamage: 0
-    enemyHealth: 1
-    enemySpeed: 1
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 2
+    enemyDamage: 5
+    enemyHealth: 20
+    enemySpeed: 3
+    rangeDamage: 3
+    rangeHealth: 5
+    rangeSpeed: 3
+    rangeMoneyDrop: 2
     bossDamage: 0
-    bossHealth: 1
-    bossSpeed: 10
-    bossMoneyDrop: 50
-    rangeDamage: 0
-    rangeHealth: 1
-    rangeSpeed: 7
-    rangeMoneyDrop: 1
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
   - waveNumber: 2
-    enemyPrefabs:
-    - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-    - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-    - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-    - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 25
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 8
     spawnPoints:
     - {fileID: 546973407}
+    - {fileID: 1612632253}
     - {fileID: 2145412341}
+    - {fileID: 621496468}
     - {fileID: 2039588179}
+    - {fileID: 1085929285}
     - {fileID: 1602193903}
+    - {fileID: 240110438}
     - {fileID: 2073171402}
-    waveDelay: 0
-    moneyDrop: 10
-    enemyDamage: 15
-    enemyHealth: 80
-    enemySpeed: 4
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 3
+    enemyDamage: 8
+    enemyHealth: 25
+    enemySpeed: 3
+    rangeDamage: 4
+    rangeHealth: 10
+    rangeSpeed: 3
+    rangeMoneyDrop: 2
     bossDamage: 0
     bossHealth: 0
     bossSpeed: 0
     bossMoneyDrop: 0
-    rangeDamage: 0
-    rangeHealth: 0
-    rangeSpeed: 0
-    rangeMoneyDrop: 0
   - waveNumber: 3
-    enemyPrefabs:
-    - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-    - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-    - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-    - {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 30
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 8
     spawnPoints:
     - {fileID: 546973407}
+    - {fileID: 1612632253}
     - {fileID: 2145412341}
+    - {fileID: 621496468}
     - {fileID: 2039588179}
+    - {fileID: 1085929285}
     - {fileID: 1602193903}
+    - {fileID: 240110438}
     - {fileID: 2073171402}
-    waveDelay: 0
-    moneyDrop: 0
-    enemyDamage: 0
-    enemyHealth: 0
-    enemySpeed: 0
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 4
+    enemyDamage: 12
+    enemyHealth: 30
+    enemySpeed: 4
+    rangeDamage: 6
+    rangeHealth: 15
+    rangeSpeed: 3
+    rangeMoneyDrop: 4
     bossDamage: 0
     bossHealth: 0
     bossSpeed: 0
     bossMoneyDrop: 0
-    rangeDamage: 0
-    rangeHealth: 0
-    rangeSpeed: 0
-    rangeMoneyDrop: 0
+  - waveNumber: 4
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 30
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 12
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 5
+    enemyDamage: 12
+    enemyHealth: 40
+    enemySpeed: 4
+    rangeDamage: 8
+    rangeHealth: 20
+    rangeSpeed: 3
+    rangeMoneyDrop: 6
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+  - waveNumber: 5
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 35
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 12
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 6
+    enemyDamage: 16
+    enemyHealth: 50
+    enemySpeed: 4
+    rangeDamage: 12
+    rangeHealth: 30
+    rangeSpeed: 3
+    rangeMoneyDrop: 8
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+  - waveNumber: 6
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 35
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 12
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 8
+    enemyDamage: 16
+    enemyHealth: 65
+    enemySpeed: 4
+    rangeDamage: 12
+    rangeHealth: 35
+    rangeSpeed: 4
+    rangeMoneyDrop: 10
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+  - waveNumber: 7
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 40
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 15
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 10
+    enemyDamage: 16
+    enemyHealth: 75
+    enemySpeed: 4
+    rangeDamage: 12
+    rangeHealth: 45
+    rangeSpeed: 4
+    rangeMoneyDrop: 12
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+  - waveNumber: 8
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 45
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 15
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 15
+    enemyDamage: 18
+    enemyHealth: 80
+    enemySpeed: 6
+    rangeDamage: 15
+    rangeHealth: 50
+    rangeSpeed: 5
+    rangeMoneyDrop: 20
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+  - waveNumber: 9
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 45
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 15
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 18
+    enemyDamage: 22
+    enemyHealth: 90
+    enemySpeed: 6
+    rangeDamage: 15
+    rangeHealth: 65
+    rangeSpeed: 5
+    rangeMoneyDrop: 24
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+  - waveNumber: 10
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 45
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 15
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 20
+    enemyDamage: 25
+    enemyHealth: 90
+    enemySpeed: 6
+    rangeDamage: 18
+    rangeHealth: 65
+    rangeSpeed: 5
+    rangeMoneyDrop: 24
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+  - waveNumber: 11
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 45
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 15
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 25
+    enemyDamage: 25
+    enemyHealth: 90
+    enemySpeed: 6
+    rangeDamage: 18
+    rangeHealth: 65
+    rangeSpeed: 5
+    rangeMoneyDrop: 30
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+  - waveNumber: 12
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 50
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 20
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 25
+    enemyDamage: 25
+    enemyHealth: 90
+    enemySpeed: 6
+    rangeDamage: 18
+    rangeHealth: 65
+    rangeSpeed: 5
+    rangeMoneyDrop: 30
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+  - waveNumber: 13
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 50
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 20
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 30
+    enemyDamage: 25
+    enemyHealth: 105
+    enemySpeed: 6
+    rangeDamage: 22
+    rangeHealth: 65
+    rangeSpeed: 6
+    rangeMoneyDrop: 35
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+  - waveNumber: 14
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 50
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 20
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 35
+    enemyDamage: 30
+    enemyHealth: 115
+    enemySpeed: 6
+    rangeDamage: 22
+    rangeHealth: 70
+    rangeSpeed: 6
+    rangeMoneyDrop: 40
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+  - waveNumber: 15
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 50
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 20
+    - enemyPrefab: {fileID: 3183264342063304872, guid: 0762a005bc3e3b144a9f7f5393106ccd, type: 3}
+      spawnCount: 1
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 40
+    enemyDamage: 35
+    enemyHealth: 125
+    enemySpeed: 7
+    rangeDamage: 22
+    rangeHealth: 70
+    rangeSpeed: 6
+    rangeMoneyDrop: 40
+    bossDamage: 100
+    bossHealth: 500
+    bossSpeed: 5
+    bossMoneyDrop: 500
   persistentWaveText: {fileID: 0}
   waveText: {fileID: 0}
   currentWaveIndex: 0
@@ -7519,6 +7988,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1085929284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1085929285}
+  m_Layer: 0
+  m_Name: Spawners (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1085929285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085929284}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.14, y: -3.27, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1137156629
 GameObject:
   m_ObjectHideFlags: 0
@@ -8554,7 +9054,7 @@ Transform:
   m_GameObject: {fileID: 1476486034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.55, y: 5.16, z: 0}
+  m_LocalPosition: {x: 21.85, y: 5.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8753,7 +9253,38 @@ Transform:
   m_GameObject: {fileID: 1602193902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.82, y: -6.15, z: 0}
+  m_LocalPosition: {x: -14.56, y: -22.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1612632252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612632253}
+  m_Layer: 0
+  m_Name: Spawners (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1612632253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612632252}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.92, y: -0.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25677,6 +26208,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1918038192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1918038193}
+  m_Layer: 0
+  m_Name: Spawners (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1918038193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918038192}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.85, y: 10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1925542214
 GameObject:
   m_ObjectHideFlags: 0
@@ -25761,6 +26323,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1941359826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1941359827}
+  m_Layer: 0
+  m_Name: Spawners (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1941359827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941359826}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.11, y: -17.39, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1969448476
 GameObject:
   m_ObjectHideFlags: 0
@@ -25954,7 +26547,7 @@ Transform:
   m_GameObject: {fileID: 2039588178}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.12, y: 5.13, z: 0}
+  m_LocalPosition: {x: -24.14, y: 5.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26069,7 +26662,7 @@ Transform:
   m_GameObject: {fileID: 2073171401}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.95, y: -21.2, z: 0}
+  m_LocalPosition: {x: -2.65, y: -22.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26184,7 +26777,7 @@ Transform:
   m_GameObject: {fileID: 2145412340}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.36, y: 21.02, z: 0}
+  m_LocalPosition: {x: -1.36, y: 22.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26200,11 +26793,17 @@ SceneRoots:
   - {fileID: 124939093}
   - {fileID: 927701820}
   - {fileID: 546973407}
+  - {fileID: 1612632253}
   - {fileID: 2145412341}
+  - {fileID: 621496468}
   - {fileID: 2039588179}
+  - {fileID: 1085929285}
   - {fileID: 1602193903}
+  - {fileID: 240110438}
   - {fileID: 2073171402}
+  - {fileID: 1941359827}
   - {fileID: 1476486035}
+  - {fileID: 1918038193}
   - {fileID: 1790676329}
   - {fileID: 733162480}
   - {fileID: 957955138}

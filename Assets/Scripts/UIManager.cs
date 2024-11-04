@@ -13,6 +13,19 @@ public class UIManager : MonoBehaviour
     public WaveManager waveManager;
     
     public TMP_Text playerMoneyText;
+    
+    // Results Screen
+    public TMP_Text winText;
+    public TMP_Text loseText;
+    
+    // Upgrade Stats Text
+    public TMP_Text playerHealthText;
+    public TMP_Text playerDamageText;
+    public TMP_Text playerSpeedText;
+    public TMP_Text playerSpecialAttackText;
+    public TMP_Text playerHealingText;
+    public TMP_Text playerDashSpeedText;
+    
     public enum switchUI
     {
         MainMenu,
@@ -21,7 +34,8 @@ public class UIManager : MonoBehaviour
         GamePlay,
         UpgradeMenu,
         ControlsMenu,
-        ResultsMenu
+        ResultsMenu,
+        optionsMenu
     }
     
     [Header("UI Elements")]
@@ -32,6 +46,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject gamePlayUI;
     [SerializeField] GameObject controlsMenuUI;
     [SerializeField] GameObject resultsMenuUI;
+    [SerializeField] GameObject optionsMenuUI;
     
     public void Start()
     {
@@ -44,6 +59,12 @@ public class UIManager : MonoBehaviour
     {
         PausingGame();
         playerMoneyText.text = "Money: " + playerController.playerMoney;
+        playerDamageText.text = "Damage: " + playerController.playerDamage;
+        playerHealthText.text = "Health: " + playerController.playerMaxHealth;
+        playerSpeedText.text = "Speed: " + playerController.speed;
+        playerSpecialAttackText.text = "Special Attack: " + playerController.specialAttackDamage;
+        playerHealingText.text = "Healing: " + playerController.healingAmount;
+        playerDashSpeedText.text = "Dash Speed: " + playerController.dashSpeed;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -65,21 +86,25 @@ public class UIManager : MonoBehaviour
         upgradeMenuUI.SetActive(false);
         controlsMenuUI.SetActive(false);
         resultsMenuUI.SetActive(false);
+        optionsMenuUI.SetActive(false);
         
         switch (ui)
         {
             case switchUI.MainMenu:
                 mainMenuUI.SetActive(true);
                 Time.timeScale = 1; // Might not need this look up in playerController on top of this script
-                playerController.playerCurrentHealth = playerController.playerMaxHealth; // Might not need this look up in playerController on top of this script
                 playerController.playerSprite.enabled = true; // Might not need this look up in playerController on top of this script
                 playerController.playerSprite.color = new Color(1, 1, 1, 1); // Might not need this look up in playerController on top of this script
                 break;
             case switchUI.GameOver:
                 gameOverUI.SetActive(true);
+                ShowLoseText();
                 break;
             case switchUI.GamePause:
                 gamePauseUI.SetActive(true);
+                break;
+            case switchUI.optionsMenu:
+                optionsMenuUI.SetActive(true);
                 break;
             case switchUI.GamePlay:
                 gamePlayUI.SetActive(true);
@@ -93,6 +118,8 @@ public class UIManager : MonoBehaviour
                 break;
             case switchUI.ResultsMenu:
                 resultsMenuUI.SetActive(true);
+                ShowWinText(); 
+                Time.timeScale = 0;
                 break;
                 
         }
@@ -143,8 +170,29 @@ public class UIManager : MonoBehaviour
     
     public void UpGradeMenu() // G is capital in UpGradeMenu, change to UpgradeMenu
     {
-        //SceneManager.LoadScene("Main Menu");
         SwitchUI(switchUI.UpgradeMenu);
-        //playerController.playerSprite.enabled = false; // Might not need this look up in playerController on top of this script
+    }
+    
+    public void OptionsMenu()
+    {
+        SwitchUI(switchUI.optionsMenu);
+    }
+    
+    public void ShowWinText()
+    {
+        winText.gameObject.SetActive(true);
+        loseText.gameObject.SetActive(false);
+    }
+    
+    public void ShowLoseText()
+    {
+        loseText.gameObject.SetActive(true);
+        winText.gameObject.SetActive(false);
+    }
+    
+    public void MainMenu()
+    {
+        mainMenuUI.SetActive(true);
+        optionsMenuUI.SetActive(false);
     }
 }
