@@ -1,3 +1,4 @@
+using Save;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,6 +26,7 @@ public class LevelManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
+        SaveSystem.SaveGame(playerController, playerController.skillTree);
         Player.SetActive(false);
     }
     
