@@ -4313,6 +4313,7 @@ MonoBehaviour:
   uiManager: {fileID: 833094288}
   playerController: {fileID: 1817422594}
   skillTree: {fileID: 95439723}
+  resultsScreen: {fileID: 0}
   playerScore: 0
   highScore: 0
   timeInGame: 0
@@ -15367,6 +15368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 1817422594}
   Player: {fileID: 1817422592}
+  gameManager: {fileID: 301666272}
 --- !u!1 &1107675794
 GameObject:
   m_ObjectHideFlags: 0
@@ -18644,7 +18646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1240174563
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19370,7 +19372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1313301691
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22627,7 +22629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1614462724
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22716,7 +22718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1625078611
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28148,7 +28150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1980983070
 RectTransform:
   m_ObjectHideFlags: 0

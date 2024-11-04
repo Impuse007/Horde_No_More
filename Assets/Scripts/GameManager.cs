@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using DefaultNamespace;
 using Save;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public UIManager uiManager;
     public PlayerController playerController;
     public SkillTree skillTree;
+    public Results_Screen resultsScreen;
     
     public int playerScore;
     public int highScore;
@@ -107,7 +109,8 @@ public class GameManager : MonoBehaviour
             //}
             skill.UpdateSkillStatusText();
         }
-        SavingGame();
+        SavingGame(); 
+        ResetResults();
     }
 
     public void PlayerWon()
@@ -120,5 +123,13 @@ public class GameManager : MonoBehaviour
     {
         uiManager.ShowLoseText();
         SavingGame();
+    }
+    
+    public void ResetResults()
+    {
+        timeInGame = 0;
+        waveNumber = 0;
+        kills = 0;
+        moneyEarned = 0;
     }
 }
