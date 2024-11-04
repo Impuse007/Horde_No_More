@@ -96,7 +96,7 @@ public class EnemyBoss : EnemyBase
     {
         Vector2 direction = (player.position - shootPoint.position).normalized;
         GameObject arrow = Instantiate(arrowPrefab, shootPoint.position, Quaternion.identity);
-        arrow.GetComponent<Rigidbody2D>().velocity = direction * 10f;
+        arrow.GetComponent<Rigidbody2D>().velocity = direction * 25f;
 
         // Rotate the arrow to face the direction of the shot
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

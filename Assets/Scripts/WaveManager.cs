@@ -47,7 +47,7 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             waveText.gameObject.SetActive(false);
 
-            persistentWaveText.text = "Wave " + currentWave.waveNumber + "/15";
+            persistentWaveText.text = "Wave " + currentWave.waveNumber + "/30";
             
             enemiesAlive = 0;
 
@@ -149,7 +149,7 @@ public class WaveManager : MonoBehaviour
         waveText.text = "Wave Incoming!";
         waveText.gameObject.SetActive(true);
         StartCoroutine(HideWaveTextAfterDelay(3f));
-        persistentWaveText.text = "Wave " + currentWave.waveNumber + "/15";
+        persistentWaveText.text = "Wave " + currentWave.waveNumber + "/30";
 
         enemiesAlive = 0;
 

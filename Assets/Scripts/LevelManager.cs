@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
     public PlayerController playerController;
     public GameObject Player;
     public GameManager gameManager;
+    public SFXManager sfxManager;
     
     public void StartGame(string levelName)
     {
@@ -18,6 +19,7 @@ public class LevelManager : MonoBehaviour
         UpdateHealthBar();
         gameManager.ResetResults();
         Time.timeScale = 1;
+        sfxManager.PlayGamePlayMusic();
     }
     
     public void UpdateHealthBar()
@@ -30,6 +32,7 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
         SaveSystem.SaveGame(playerController, playerController.skillTree);
         Player.SetActive(false);
+        sfxManager.PlayMainMenuMusic();
     }
     
     public void QuitGame()

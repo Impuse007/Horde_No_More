@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90da82e4-6e32-4478-b7bf-d13780ae865a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/SFXMusic.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SFXMusic/Music.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SFXMusic/Music/Horde No More Gameplay Music.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SFXMusic/Music/Horde No More Gameplay Music.mp3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SFXMusic/Music/Horde No More Main Menu Music.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SFXMusic/Music/Horde No More Main Menu Music.mp3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SFX Manager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SFX Manager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyBoss.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyBoss.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +55,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy Base.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyBoss.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SFX Manager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -154,7 +170,7 @@
       <workItem from="1730648692284" duration="3000" />
       <workItem from="1730648700474" duration="503000" />
       <workItem from="1730649243768" duration="7974000" />
-      <workItem from="1730681916689" duration="1681000" />
+      <workItem from="1730681916689" duration="5744000" />
     </task>
     <servers />
   </component>
