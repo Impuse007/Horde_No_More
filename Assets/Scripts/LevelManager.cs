@@ -1,40 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public PlayerController playerController;
     public GameObject Player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
-    public void LoadLevel(string levelName)
+    public void StartGame(string levelName)
     {
         Application.LoadLevel(levelName);
         Player.SetActive(true);
+        Player.transform.position = new Vector3(0, 0, 0);
+        playerController.playerCurrentHealth = playerController.playerMaxHealth;
+        playerController.isInvincible = false;
+        UpdateHealthBar();
+        Time.timeScale = 1;
+    }
+    
+    public void UpdateHealthBar()
+    {
+        playerController.playerHealthBar.value = playerController.playerCurrentHealth;
     }
     
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
         Player.SetActive(false);
-    }
-    
-    
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Player.SetActive(true);
     }
     
     public void QuitGame()

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,25 +11,42 @@ public class UIManager : MonoBehaviour
     public LevelManager levelManager;
     public PlayerController playerController; // For the Player Die method // Might not be needed
     public WaveManager waveManager;
+    
+    public TMP_Text playerMoneyText;
+    
+    // Results Screen
+    public TMP_Text winText;
+    public TMP_Text loseText;
+    
+    // Upgrade Stats Text
+    public TMP_Text playerHealthText;
+    public TMP_Text playerDamageText;
+    public TMP_Text playerSpeedText;
+    public TMP_Text playerSpecialAttackText;
+    public TMP_Text playerHealingText;
+    public TMP_Text playerDashSpeedText;
+    
     public enum switchUI
     {
         MainMenu,
         GameOver,
-        GameWin,
         GamePause,
         GamePlay,
         UpgradeMenu,
-        ControlsMenu
+        ControlsMenu,
+        ResultsMenu,
+        optionsMenu
     }
     
     [Header("UI Elements")]
     [SerializeField] GameObject mainMenuUI;
     [SerializeField] GameObject upgradeMenuUI;
     [SerializeField] GameObject gameOverUI;
-    [SerializeField] GameObject gameWinUI;
     [SerializeField] GameObject gamePauseUI;
     [SerializeField] GameObject gamePlayUI;
     [SerializeField] GameObject controlsMenuUI;
+    [SerializeField] GameObject resultsMenuUI;
+    [SerializeField] GameObject optionsMenuUI;
     
     public void Start()
     {
@@ -39,7 +57,14 @@ public class UIManager : MonoBehaviour
 
     public void Update()
     {
-        PauseingGame();
+        PausingGame();
+        playerMoneyText.text = "Money: " + playerController.playerMoney;
+        playerDamageText.text = "Damage: " + playerController.playerDamage;
+        playerHealthText.text = "Health: " + playerController.playerMaxHealth;
+        playerSpeedText.text = "Speed: " + playerController.speed;
+        playerSpecialAttackText.text = "Special Attack: " + playerController.specialAttackDamage;
+        playerHealingText.text = "Healing: " + playerController.healingAmount;
+        playerDashSpeedText.text = "Dash Speed: " + playerController.dashSpeed;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -56,38 +81,45 @@ public class UIManager : MonoBehaviour
     {
         mainMenuUI.SetActive(false);
         gameOverUI.SetActive(false);
-        gameWinUI.SetActive(false);
         gamePauseUI.SetActive(false);
         gamePlayUI.SetActive(false);
         upgradeMenuUI.SetActive(false);
         controlsMenuUI.SetActive(false);
+        resultsMenuUI.SetActive(false);
+        optionsMenuUI.SetActive(false);
         
         switch (ui)
         {
             case switchUI.MainMenu:
                 mainMenuUI.SetActive(true);
                 Time.timeScale = 1; // Might not need this look up in playerController on top of this script
-                playerController.playerCurrentHealth = playerController.playerMaxHealth; // Might not need this look up in playerController on top of this script
                 playerController.playerSprite.enabled = true; // Might not need this look up in playerController on top of this script
                 playerController.playerSprite.color = new Color(1, 1, 1, 1); // Might not need this look up in playerController on top of this script
                 break;
             case switchUI.GameOver:
                 gameOverUI.SetActive(true);
-                break;
-            case switchUI.GameWin:
-                gameWinUI.SetActive(true);
+                ShowLoseText();
                 break;
             case switchUI.GamePause:
                 gamePauseUI.SetActive(true);
                 break;
+            case switchUI.optionsMenu:
+                optionsMenuUI.SetActive(true);
+                break;
             case switchUI.GamePlay:
                 gamePlayUI.SetActive(true);
+                playerController.playerSprite.enabled = true; // Might not need this look up in playerController on top of this script
                 break;
             case switchUI.UpgradeMenu:
                 upgradeMenuUI.SetActive(true);
                 break;
             case switchUI.ControlsMenu:
                 controlsMenuUI.SetActive(true);
+                break;
+            case switchUI.ResultsMenu:
+                resultsMenuUI.SetActive(true);
+                ShowWinText(); 
+                Time.timeScale = 0;
                 break;
                 
         }
@@ -105,34 +137,62 @@ public class UIManager : MonoBehaviour
         {
             SwitchUI(switchUI.GamePlay);
         }
-        else if (sceneName == "Game Win")
-        {
-            SwitchUI(switchUI.GameWin);
-        }
         
         Debug.Log("UI Activated based on scene: " + sceneName);
     }
 
-    public void PauseingGame()
+    public void PausingGame()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (SceneManager.GetActiveScene().name == "Level 1")
         {
-            if (Time.timeScale == 0)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Time.timeScale = 1;
-                SwitchUI(switchUI.GamePlay);
+                if (Time.timeScale == 1)
+                {
+                    Time.timeScale = 0;
+                    SwitchUI(switchUI.GamePause);
+                }
+                else
+                {
+                    Time.timeScale = 1;
+                    SwitchUI(switchUI.GamePlay);
+                }
             }
-            else
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Time.timeScale = 0;
-                SwitchUI(switchUI.GamePause);
+                Application.Quit();
             }
         }
     }
     
-    public void UpGradeMenu()
+    public void UpGradeMenu() // G is capital in UpGradeMenu, change to UpgradeMenu
     {
         SwitchUI(switchUI.UpgradeMenu);
-        playerController.playerSprite.enabled = false; // Might not need this look up in playerController on top of this script
+    }
+    
+    public void OptionsMenu()
+    {
+        SwitchUI(switchUI.optionsMenu);
+    }
+    
+    public void ShowWinText()
+    {
+        winText.gameObject.SetActive(true);
+        loseText.gameObject.SetActive(false);
+    }
+    
+    public void ShowLoseText()
+    {
+        loseText.gameObject.SetActive(true);
+        winText.gameObject.SetActive(false);
+    }
+    
+    public void MainMenu()
+    {
+        mainMenuUI.SetActive(true);
+        optionsMenuUI.SetActive(false);
     }
 }
