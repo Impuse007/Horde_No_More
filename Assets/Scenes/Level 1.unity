@@ -1172,6 +1172,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &541323816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 541323818}
+  - component: {fileID: 541323819}
+  m_Layer: 0
+  m_Name: Cursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &541323818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541323816}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 959.501, y: 571.9379, z: -6.8953886}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &541323819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541323816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0132563325c0d948bb72e042566373d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTextureArray:
+  - {fileID: 2800000, guid: 77261d8cbae0afa40b1fff6dae74120d, type: 3}
+  - {fileID: 2800000, guid: d4fe9a6cce7984a458b189f7d28a94dc, type: 3}
+  - {fileID: 2800000, guid: d4fe9a6cce7984a458b189f7d28a94dc, type: 3}
+  - {fileID: 2800000, guid: ff4275cdfa9fe1f4f992b607f4aa7832, type: 3}
+  frameCount: 4
+  frameRate: 0.2
+  clickPostion: {x: 0, y: 0}
 --- !u!1 &546973406
 GameObject:
   m_ObjectHideFlags: 0
@@ -27317,3 +27369,4 @@ SceneRoots:
   - {fileID: 1790676329}
   - {fileID: 733162480}
   - {fileID: 957955138}
+  - {fileID: 541323818}
