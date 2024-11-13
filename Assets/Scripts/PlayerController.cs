@@ -169,19 +169,22 @@ public class PlayerController : MonoBehaviour
         playerSprite.flipX = Input.mousePosition.x < Screen.width / 2;
     }
     
-    private IEnumerator Dash() // Bugged as the Player can double dash when pressing space bar quickly enough.
-    { 
-        Vector2 mousePosition = Input.mousePosition;
-        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector2 dashDirection = (worldPosition - (Vector2)transform.position).normalized;
+    private IEnumerator Dash() // Changed based off feedback to instead of cursor the dash works with the Player direction
+    {
+        Vector2 movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+
+        if (movementDirection == Vector2.zero)
+        {
+            yield break; // if there is no movement from the Player
+        }
 
         isDashing = true;
-        dashCooldownTime = dashCooldown; // Set the cooldown time immediately after starting the dash
+        dashCooldownTime = dashCooldown;
         float startTime = Time.time;
 
         while (Time.time < startTime + dashDuration)
         {
-            transform.Translate(dashDirection * dashSpeed * Time.deltaTime, Space.World);
+            transform.Translate(movementDirection * dashSpeed * Time.deltaTime, Space.World);
             yield return null;
         }
 
