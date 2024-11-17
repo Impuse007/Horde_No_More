@@ -134,7 +134,6 @@ public class GameManager : MonoBehaviour
         }
         SavingGame(); 
         ResetResults();
-        SfxManager.PlayGamePlayMusic();
     }
 
     public void PlayerWon()
