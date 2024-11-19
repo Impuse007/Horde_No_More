@@ -10063,7 +10063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorTextureArray:
-  - {fileID: 2800000, guid: d81ed2b1a55433748be5c4c012f1a78f, type: 3}
+  - {fileID: 2800000, guid: ab855c3307798f04085de2198ef17631, type: 3}
   frameCount: 0
   frameRate: 0
   clickPosition: {x: 4, y: 4}

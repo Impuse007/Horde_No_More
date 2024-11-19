@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 956930ba9ea82684f964b067685cda42
+guid: 06887597bc648e943806c4dc38891455
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,396 +93,383 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_0
+      name: Reworked_Attack_Animation-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48fa52e32c78f0e45b13813ebac89410
-      internalID: -702071836
+      spriteID: 84570b0f91ec32a43afd61fb982247d3
+      internalID: -597098033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_1
+      name: Reworked_Attack_Animation-Sheet_1
       rect:
         serializedVersion: 2
         x: 48
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3e347bcf49ecdc4db56c163a4c764be
-      internalID: -1420378878
+      spriteID: a6182c1d48eb79a4ab4cdd62f3adb5f1
+      internalID: -716800965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_2
+      name: Reworked_Attack_Animation-Sheet_2
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca3dbdec16cf7744daa9392e36afa4da
-      internalID: 1708649063
+      spriteID: 489abe87354c4544aa7b6e7cc8ecb5ec
+      internalID: 769678929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_3
+      name: Reworked_Attack_Animation-Sheet_3
       rect:
         serializedVersion: 2
         x: 144
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4467d2c8970a0e54f9cc7ac2db0a27c4
-      internalID: -482147965
+      spriteID: 1ea577f798be11c4ca851283acd216b1
+      internalID: 1324579986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_4
+      name: Reworked_Attack_Animation-Sheet_4
       rect:
         serializedVersion: 2
         x: 192
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bfec5a9538cfcb40ae98aa3f41571c2
-      internalID: 797249080
+      spriteID: 28dbd316d17b8e64780afae809d18b25
+      internalID: 1054175932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_5
+      name: Reworked_Attack_Animation-Sheet_5
       rect:
         serializedVersion: 2
         x: 240
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f12a101981677f4ca0b4071dce0ab4f
-      internalID: 499934067
+      spriteID: 92534aff03d247145bfaf0f7438949ce
+      internalID: -367381136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_6
+      name: Reworked_Attack_Animation-Sheet_6
       rect:
         serializedVersion: 2
         x: 288
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed44409371b53fc468757085ecf15bc4
-      internalID: -1957002479
+      spriteID: 8e2d32730de64b14fb45934707f09461
+      internalID: -1679449557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_7
+      name: Reworked_Attack_Animation-Sheet_7
       rect:
         serializedVersion: 2
         x: 336
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9df692d4b433d940a44fe4958da17b9
-      internalID: -868131459
+      spriteID: fd458b3f126edb6438997da89a6ae654
+      internalID: 1444625436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_8
+      name: Reworked_Attack_Animation-Sheet_8
       rect:
         serializedVersion: 2
         x: 384
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cbabd98557c5d44caac59ac09498c44
-      internalID: 1008321410
+      spriteID: 4f08012c118fd734dbd7b53108e95f07
+      internalID: 743364828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_9
+      name: Reworked_Attack_Animation-Sheet_9
       rect:
         serializedVersion: 2
         x: 432
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00a3a824dd730d548be021c9cd9317e4
-      internalID: -671695023
+      spriteID: 0a55956d1bdfaaf4d869dd5b9d3b3953
+      internalID: -1433479735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_10
+      name: Reworked_Attack_Animation-Sheet_10
       rect:
         serializedVersion: 2
         x: 480
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2184c0251fb437d49a1fae2d7c2737bb
-      internalID: -509975495
+      spriteID: fa0e07addd99f14488c66713f3eb14b4
+      internalID: 689754473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_11
+      name: Reworked_Attack_Animation-Sheet_11
       rect:
         serializedVersion: 2
         x: 528
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c711154c4b241e40b2c1d3fb8ab6d89
-      internalID: -548264637
+      spriteID: e70c34fa2c7986f4ea6b271e6ad4e368
+      internalID: 1172171284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_12
+      name: Reworked_Attack_Animation-Sheet_12
       rect:
         serializedVersion: 2
         x: 576
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 837ce9a0ef526254c937fe135dc125f0
-      internalID: -22526689
+      spriteID: 01fd2f319fbe9654ab75080f35695de9
+      internalID: 1118701232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_13
+      name: Reworked_Attack_Animation-Sheet_13
       rect:
         serializedVersion: 2
         x: 624
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ad89ced985d6154e819e34ad626ef69
-      internalID: 4632614
+      spriteID: 41ae540a849a2dc47ab25683074789a7
+      internalID: 1876420815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_14
+      name: Reworked_Attack_Animation-Sheet_14
       rect:
         serializedVersion: 2
         x: 672
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c08135d555d077f4a93351d6839a70db
-      internalID: 119676123
+      spriteID: 647b58425139f734db2dc509d198de8f
+      internalID: -572033689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_15
+      name: Reworked_Attack_Animation-Sheet_15
       rect:
         serializedVersion: 2
         x: 720
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e246a7ac9ebfa14cb361b9982bf0466
-      internalID: -1754495437
+      spriteID: 39335f9bc257bbd43934ef7010d0535c
+      internalID: 433516189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_16
+      name: Reworked_Attack_Animation-Sheet_16
       rect:
         serializedVersion: 2
         x: 768
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5de91ceb82fa2f74ea2d0ec87af5b022
-      internalID: 1573946024
+      spriteID: b2b51860aa3510b4baea212cc103827b
+      internalID: 555771774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reworked_Attack_Animation-Sheet2_17
+      name: Reworked_Attack_Animation-Sheet_17
       rect:
         serializedVersion: 2
         x: 816
-        y: 0
+        y: 11
         width: 48
-        height: 48
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a764181e6be8a824e927627f7c4baaf1
-      internalID: -343981851
+      spriteID: 6ca7ad1f1f6cff148a340e6bee73e6b7
+      internalID: 231114609
       vertices: []
       indices: 
       edges: []
@@ -498,24 +485,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Reworked_Attack_Animation-Sheet2_0: -702071836
-      Reworked_Attack_Animation-Sheet2_1: -1420378878
-      Reworked_Attack_Animation-Sheet2_10: -509975495
-      Reworked_Attack_Animation-Sheet2_11: -548264637
-      Reworked_Attack_Animation-Sheet2_12: -22526689
-      Reworked_Attack_Animation-Sheet2_13: 4632614
-      Reworked_Attack_Animation-Sheet2_14: 119676123
-      Reworked_Attack_Animation-Sheet2_15: -1754495437
-      Reworked_Attack_Animation-Sheet2_16: 1573946024
-      Reworked_Attack_Animation-Sheet2_17: -343981851
-      Reworked_Attack_Animation-Sheet2_2: 1708649063
-      Reworked_Attack_Animation-Sheet2_3: -482147965
-      Reworked_Attack_Animation-Sheet2_4: 797249080
-      Reworked_Attack_Animation-Sheet2_5: 499934067
-      Reworked_Attack_Animation-Sheet2_6: -1957002479
-      Reworked_Attack_Animation-Sheet2_7: -868131459
-      Reworked_Attack_Animation-Sheet2_8: 1008321410
-      Reworked_Attack_Animation-Sheet2_9: -671695023
+      Reworked_Attack_Animation-Sheet_0: -597098033
+      Reworked_Attack_Animation-Sheet_1: -716800965
+      Reworked_Attack_Animation-Sheet_10: 689754473
+      Reworked_Attack_Animation-Sheet_11: 1172171284
+      Reworked_Attack_Animation-Sheet_12: 1118701232
+      Reworked_Attack_Animation-Sheet_13: 1876420815
+      Reworked_Attack_Animation-Sheet_14: -572033689
+      Reworked_Attack_Animation-Sheet_15: 433516189
+      Reworked_Attack_Animation-Sheet_16: 555771774
+      Reworked_Attack_Animation-Sheet_17: 231114609
+      Reworked_Attack_Animation-Sheet_2: 769678929
+      Reworked_Attack_Animation-Sheet_3: 1324579986
+      Reworked_Attack_Animation-Sheet_4: 1054175932
+      Reworked_Attack_Animation-Sheet_5: -367381136
+      Reworked_Attack_Animation-Sheet_6: -1679449557
+      Reworked_Attack_Animation-Sheet_7: 1444625436
+      Reworked_Attack_Animation-Sheet_8: 743364828
+      Reworked_Attack_Animation-Sheet_9: -1433479735
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
