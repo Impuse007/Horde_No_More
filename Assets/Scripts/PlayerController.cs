@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     public float specialAttackCooldown = 5.0f;
     public float nextSpecialAttackTime = 0.0f;
     public float specialAttackSpeed = 10.0f;
-    public TMP_Text specialAttackCooldownText;
+    public TMP_Text specialAttackCooldownText; // Moved in another script
     public LayerMask enemyLayersSpecial;
     
     [Header("Player Healing Stats")]
@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
         moneyText.text = "Money: " + playerMoney;
         dashCooldownText.text = "Dash Cooldown: " + Mathf.Max(0, dashCooldownTime).ToString("F1");
         healingCooldownText.text = "Healing Cooldown: " + Mathf.Max(0, nextHealingTime - Time.time).ToString("F1");
-        specialAttackCooldownText.text = "Special Attack Cooldown: " + Mathf.Max(0, nextSpecialAttackTime - Time.time).ToString("F1");
+        //specialAttackCooldownText.text = "Special Attack Cooldown: " + Mathf.Max(0, nextSpecialAttackTime - Time.time).ToString("F1");
     }
 
     public void LateUpdate()
@@ -193,6 +193,7 @@ public class PlayerController : MonoBehaviour
 
     public void BasicAttack() // Using Mouse0 to attack 
     {
+        SFXManager.instance.PlayPlayerSFX(0);
         // Attack in the direction of the mouse
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 attackDirection = (mousePosition - (Vector2)transform.position).normalized;
