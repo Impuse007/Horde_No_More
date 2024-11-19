@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
     public int healingAmount = 20;
     public float healingCooldown = 5.0f;
     public float nextHealingTime = 0.0f;
-    public TMP_Text healingCooldownText;
+    public TMP_Text healingCooldownText; // Moved in another script
     
     // Player Dash Values
     [Header("Player Dash Stats")]
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown = 3.0f;
     public float nextDashTime = 0.0f;
     private float dashTime;
-    private float dashCooldownTime; // Sets the cooldown time for the dash when the game is starting
+    private float dashCooldownTime; // Going to move this to the skill cooldown script for the cooldown
     private bool isDashing;
     public TextMeshProUGUI dashCooldownText;
     
@@ -147,7 +147,8 @@ public class PlayerController : MonoBehaviour
         playerHealthBar.value = (int)playerCurrentHealth;
         moneyText.text = "Money: " + playerMoney;
         dashCooldownText.text = "Dash Cooldown: " + Mathf.Max(0, dashCooldownTime).ToString("F1");
-        healingCooldownText.text = "Healing Cooldown: " + Mathf.Max(0, nextHealingTime - Time.time).ToString("F1");
+        // Don't need this anymore or the text in the values up top
+        //healingCooldownText.text = "Healing Cooldown: " + Mathf.Max(0, nextHealingTime - Time.time).ToString("F1"); 
         //specialAttackCooldownText.text = "Special Attack Cooldown: " + Mathf.Max(0, nextSpecialAttackTime - Time.time).ToString("F1");
     }
 
