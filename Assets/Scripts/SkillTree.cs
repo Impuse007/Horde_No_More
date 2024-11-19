@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class SkillTree : MonoBehaviour
 {
@@ -22,10 +23,25 @@ public class SkillTree : MonoBehaviour
     {
         playerController = FindObjectOfType<PlayerController>();
         unlockedSkills = new List<Skill>();
-        AddEventTriggers();
+
+        // Set the alpha for the skill image to 0.5
+        foreach (Skill skill in skills)
+        {
+            GameObject skillGameObject = EventSystem.current.currentSelectedGameObject;
+            if (skillGameObject != null)
+            {
+                Image skillImage = skillGameObject.GetComponent<Image>();
+                if (skillImage != null)
+                {
+                    Color color = skillImage.color;
+                    color.a = 0.5f;
+                    skillImage.color = color;
+                }
+            }
+        }
     }
 
-    public void UnlockSkill(string skillName)
+    public void UnlockSkill(string skillName) // You can buy the skill again
     {
         Skill skill = skills.Find(s => s.skillName == skillName);
         if (skill != null && !skill.isUnlocked && playerController.playerMoney >= skill.cost)
@@ -34,11 +50,17 @@ public class SkillTree : MonoBehaviour
             skill.Unlock(playerController);
             unlockedSkills.Add(skill);
             skill.UpdateSkillStatusText();
-            if (skill.skillPrefab != null)
+            GameObject skillGameObject = EventSystem.current.currentSelectedGameObject;
+            if (skillGameObject != null)
             {
-                skill.skillPrefab.SetActive(true);
-                Debug.Log("Skill unlocked: " + skillName);
+                skillGameObject.SetActive(true);
+                Image skillImage = skillGameObject.GetComponent<Image>();
+                if (skillImage != null)
+                {
+                    skillImage.color = Color.green;
+                }
             }
+            Debug.Log("Skill unlocked: " + skillName);
             FindObjectOfType<GameManager>().SavingGame();
         }
         else
@@ -86,43 +108,9 @@ public class SkillTree : MonoBehaviour
         return null;
     }
 
-    private void AddEventTriggers()
-    {
-        foreach (Skill skill in skills)
-        {
-            if (skill.skillPrefab != null)
-            {
-                EventTrigger trigger = skill.skillPrefab.GetComponent<EventTrigger>();
-                if (trigger == null)
-                {
-                    trigger = skill.skillPrefab.gameObject.AddComponent<EventTrigger>();
-                }
-
-                EventTrigger.Entry entryEnter = new EventTrigger.Entry();
-                entryEnter.eventID = EventTriggerType.PointerEnter;
-                entryEnter.callback.AddListener((eventData) => { OnPointerEnterSkill(skill.skillName); });
-                trigger.triggers.Add(entryEnter);
-
-                EventTrigger.Entry entryExit = new EventTrigger.Entry();
-                entryExit.eventID = EventTriggerType.PointerExit;
-                entryExit.callback.AddListener((eventData) => { OnPointerExitSkill(); });
-                trigger.triggers.Add(entryExit);
-
-                EventTrigger.Entry entryClick = new EventTrigger.Entry();
-                entryClick.eventID = EventTriggerType.PointerClick;
-                entryClick.callback.AddListener((eventData) => { UnlockSkill(skill.skillName); });
-                trigger.triggers.Add(entryClick);
-
-                EventTrigger.Entry entryDown = new EventTrigger.Entry();
-                entryDown.eventID = EventTriggerType.PointerDown;
-                entryDown.callback.AddListener((eventData) => { UnlockSkill(skill.skillName); });
-                trigger.triggers.Add(entryDown);
-            }
-        }
-    }
-
     public void OnPointerEnterSkill(string skillName)
     {
+        GameObject skillGameObject = EventSystem.current.currentSelectedGameObject;
         Skill skill = skills.Find(s => s.skillName == skillName);
         if (skill != null)
         {
@@ -130,12 +118,38 @@ public class SkillTree : MonoBehaviour
             descText.text = skill.description;
             costText.text = "Cost: " + skill.cost;
         }
+        if (skillGameObject != null)
+        {
+            
+            Image skillImage = skillGameObject.GetComponent<Image>();
+            if (skillImage != null)
+            {
+                Color color = skillImage.color;
+                color.a = 1f;
+                skillImage.color = color;
+            }
+            Debug.Log("Skill hovered: " + skillGameObject.name);
+        }
     }
 
     public void OnPointerExitSkill()
     {
-        nameText.text = "";
-        descText.text = "";
-        costText.text = "";
+        GameObject skillGameObject = EventSystem.current.currentSelectedGameObject;
+        if (skillGameObject != null)
+        {
+            nameText.text = "";
+            descText.text = "";
+            costText.text = "";
+            
+            // Reset the skill GameObject's alpha
+            Image skillImage = skillGameObject.GetComponent<Image>();
+            if (skillImage != null)
+            {
+                Color color = skillImage.color;
+                color.a = 0.5f; // Make it semi-transparent
+                skillImage.color = color;
+            }
+            Debug.Log("Skill hover exited: " + skillGameObject.name);
+        }
     }
 }
