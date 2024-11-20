@@ -10,17 +10,18 @@ public class EnemyMelee : EnemyBase
     private Rigidbody2D rb;
 
     public Animator animator;
+    public MoneyDrop MoneyDrop;
+    public WaveManager waveManager;
 
     public event EnemyDealthHandler OnEnemyDeath;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         enemyCurrentHealth = enemyMaxHealth;
         player = GameObject.FindWithTag("Player");
+        MoneyDrop = FindObjectOfType<MoneyDrop>();
         rb = GetComponent<Rigidbody2D>();
-
-        // Ensure playerController is assigned
+        
         if (player != null)
         {
             playerController = player.GetComponent<PlayerController>();
@@ -30,8 +31,7 @@ public class EnemyMelee : EnemyBase
             Debug.LogWarning("Player is not assigned.");
         }
     }
-
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
         if (!isAttacking)
@@ -69,7 +69,6 @@ public class EnemyMelee : EnemyBase
 
     private IEnumerator PerformAttack()
     {
-        // Wait for the attack animation to reach the point where damage should be dealt
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length / 2);
 
         if (player != null && playerController != null)
@@ -92,11 +91,14 @@ public class EnemyMelee : EnemyBase
             return;
         }
 
+        // Move towards player and stop at a certain distance
+        int maxDistance = 5;
         Vector3 direction = (player.transform.position - transform.position).normalized;
         Vector3 targetPosition = player.transform.position - direction;
-        Vector3 newPosition = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.fixedDeltaTime);
+        Vector3 newPosition = Vector3.MoveTowards(transform.position, targetPosition, maxDistance * Time.fixedDeltaTime);
         rb.MovePosition(newPosition);
-        if (direction.x > 0)
+        
+        if (direction.x > 0) // Flip sprite based on direction
         {
            SpriteTransform.flipX = false;
         }
@@ -122,8 +124,14 @@ public class EnemyMelee : EnemyBase
     public void Die() // Might be put in the enemy base class
     {
         OnEnemyDeath?.Invoke();
-        GameObject.Destroy(gameObject);
+        DropMoneyAndGiveToPlayer();
         playerController.playerMoney += moneyDrop;
+        GameObject.Destroy(gameObject);
+    }
+    
+    private void DropMoneyAndGiveToPlayer()
+    {
+        MoneyDrop.DropMoney(transform.position);
     }
 
     public IEnumerator FlashRed()
