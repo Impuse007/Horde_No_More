@@ -7,6 +7,7 @@ using DefaultNamespace;
 public class EnemyBoss : EnemyBase
 {
     EnemyBase enemyBase;
+    MoneyDrop moneyPrefab;
 
     public int bossDamage = 10;
     public int bossHealth = 50;
@@ -130,6 +131,7 @@ public class EnemyBoss : EnemyBase
     {
         OnEnemyDeath?.Invoke();
         Destroy(gameObject);
+        moneyPrefab.DropMoney(transform.position);
         playerController.playerMoney += moneyBossDrop;
     }
     

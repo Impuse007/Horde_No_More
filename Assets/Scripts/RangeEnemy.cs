@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class RangeEnemy : EnemyBase
 {
     EnemyBase enemyBase;
+    MoneyDrop moneyPrefab;
 
     public int rangeDamage = 10;
     public int rangeHealth = 50;
@@ -143,6 +144,7 @@ public class RangeEnemy : EnemyBase
     {
         OnEnemyDeath?.Invoke();
         Destroy(gameObject);
+        moneyPrefab.DropMoney(transform.position);
         playerController.playerMoney += moneyRangeDrop;
     }
 
