@@ -126,10 +126,10 @@ public class GameManager : MonoBehaviour
         foreach (var skill in skillTree.skills)
         {
             skill.isUnlocked = false;
-            //if (skill.skillPrefab != null)
-            //{
-            //    skill.skillPrefab.SetActive(false);
-            //}
+            if (skill.skillPrefab != null)
+            {
+                skill.skillPrefab.SetActive(false);
+            }
             skill.UpdateSkillStatusText();
         }
         SavingGame(); 

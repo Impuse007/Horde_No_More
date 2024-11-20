@@ -23,22 +23,6 @@ public class SkillTree : MonoBehaviour
     {
         playerController = FindObjectOfType<PlayerController>();
         unlockedSkills = new List<Skill>();
-
-        // Set the alpha for the skill image to 0.5
-        foreach (Skill skill in skills)
-        {
-            GameObject skillGameObject = EventSystem.current.currentSelectedGameObject;
-            if (skillGameObject != null)
-            {
-                Image skillImage = skillGameObject.GetComponent<Image>();
-                if (skillImage != null)
-                {
-                    Color color = skillImage.color;
-                    color.a = 0.5f;
-                    skillImage.color = color;
-                }
-            }
-        }
     }
 
     public void UnlockSkill(string skillName) // You can buy the skill again
@@ -121,11 +105,11 @@ public class SkillTree : MonoBehaviour
         if (skillGameObject != null)
         {
             
-            Image skillImage = skillGameObject.GetComponent<Image>();
+            Image skillImage = skillGameObject.GetComponent<Image>();   
             if (skillImage != null)
             {
                 Color color = skillImage.color;
-                color.a = 1f;
+                color.a = 1.0f;
                 skillImage.color = color;
             }
             Debug.Log("Skill hovered: " + skillGameObject.name);
@@ -141,15 +125,19 @@ public class SkillTree : MonoBehaviour
             descText.text = "";
             costText.text = "";
             
-            // Reset the skill GameObject's alpha
             Image skillImage = skillGameObject.GetComponent<Image>();
             if (skillImage != null)
             {
                 Color color = skillImage.color;
-                color.a = 0.5f; // Make it semi-transparent
+                color.a = 0.39f;
                 skillImage.color = color;
             }
             Debug.Log("Skill hover exited: " + skillGameObject.name);
         }
+    }
+
+    public GameObject GetSkillGameObject(Skill skill)
+    {
+        return GameObject.Find(skill.skillName);
     }
 }
