@@ -8148,14 +8148,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.42352942, g: 0.42352942, b: 0.42352942, a: 0.54509807}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 703907762, guid: 60dbe423f25c3544baf58bf72f0cbc7e, type: 3}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22825,14 +22825,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.54509807}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 703907762, guid: 60dbe423f25c3544baf58bf72f0cbc7e, type: 3}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22937,7 +22937,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1393829751}
   - component: {fileID: 1393829753}
-  - component: {fileID: 1393829752}
   m_Layer: 5
   m_Name: Wave Cooldown
   m_TagString: Untagged
@@ -22954,7 +22953,7 @@ RectTransform:
   m_GameObject: {fileID: 1393829750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1524179253}
@@ -22965,25 +22964,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -64.25, y: 50}
+  m_AnchoredPosition: {x: -64.25, y: 76}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1393829752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393829750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdb1202a711a9534fb7f90250a40cd8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldownImages:
-  - {fileID: 1390386148}
-  cooldownTexts:
-  - {fileID: 2023089818}
 --- !u!222 &1393829753
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24244,7 +24227,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5b753d0c2a8590343817d4c1edb03f5a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27587,7 +27570,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1730351071}
   - component: {fileID: 1730351073}
-  - component: {fileID: 1730351072}
   m_Layer: 5
   m_Name: Healing Cooldown
   m_TagString: Untagged
@@ -27604,7 +27586,7 @@ RectTransform:
   m_GameObject: {fileID: 1730351070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1906171667}
@@ -27614,25 +27596,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 56.25, y: 50}
+  m_AnchoredPosition: {x: 122, y: 76}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1730351072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730351070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdb1202a711a9534fb7f90250a40cd8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldownImages:
-  - {fileID: 546991451}
-  cooldownTexts:
-  - {fileID: 1479266522}
 --- !u!222 &1730351073
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30666,7 +30632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 89f9ce45e3ecc274aa6e45ef9f42b3f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
