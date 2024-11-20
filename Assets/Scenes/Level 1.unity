@@ -1250,10 +1250,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorTextureArray:
-  - {fileID: 2800000, guid: 77261d8cbae0afa40b1fff6dae74120d, type: 3}
-  - {fileID: 2800000, guid: d4fe9a6cce7984a458b189f7d28a94dc, type: 3}
-  - {fileID: 2800000, guid: d4fe9a6cce7984a458b189f7d28a94dc, type: 3}
-  - {fileID: 2800000, guid: ff4275cdfa9fe1f4f992b607f4aa7832, type: 3}
+  - {fileID: 2800000, guid: 37143f732cd4f6f4585d87a251542df8, type: 3}
+  - {fileID: 2800000, guid: 30e4aee19fdcfa24293ff8d048093955, type: 3}
+  - {fileID: 2800000, guid: f11e7d5649dac9d4e863a63942267397, type: 3}
+  - {fileID: 2800000, guid: 7f5b841e8dc3e924b8a5a4b978168988, type: 3}
   frameCount: 4
   frameRate: 0.2
   clickPosition: {x: 4, y: 4}
@@ -8148,6 +8148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1010269852}
   - component: {fileID: 1010269853}
+  - component: {fileID: 1010269857}
   m_Layer: 0
   m_Name: House_2_Sprite
   m_TagString: Untagged
@@ -8222,6 +8223,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1839735485 &1010269857
+Tilemap:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010269851}
+  m_Enabled: 1
+  m_Tiles: {}
+  m_AnimatedTiles: {}
+  m_TileAssetArray: []
+  m_TileSpriteArray: []
+  m_TileMatrixArray: []
+  m_TileColorArray: []
+  m_TileObjectToInstantiateArray: []
+  m_AnimationFrameRate: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Origin: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0, y: 0, z: 1}
+  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileOrientation: 0
+  m_TileOrientationMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
 --- !u!1 &1018240816
 GameObject:
   m_ObjectHideFlags: 0
