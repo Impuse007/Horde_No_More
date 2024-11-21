@@ -67,6 +67,10 @@ public class RangeEnemy : EnemyBase
         {
             MoveTowardsPlayer();
         }
+        else if (distanceToPlayer == stopDistance)
+        {
+            MoveTowardsPlayer();
+        }
         else
         {
             if (Time.time >= nextShootTime)
@@ -94,10 +98,11 @@ public class RangeEnemy : EnemyBase
         float distanceToTarget = Vector2.Distance(rb.position, targetPosition);
 
         // Only move if the distance to the target is greater than a small threshold
-        if (distanceToTarget > stopDistance + 0.5f) // Adjust the threshold as needed
+        if (distanceToTarget > stopDistance + 0.5f && Vector2.Distance(transform.position, player.position) > stopDistance)
         {
             Vector2 newPosition = Vector2.MoveTowards(rb.position, targetPosition, moveSpeed * Time.fixedDeltaTime);
             rb.MovePosition(newPosition);
+            rb.velocity = Vector2.zero;
         }
     }
 

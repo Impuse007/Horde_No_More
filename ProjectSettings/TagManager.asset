@@ -9,12 +9,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Buildings
   - Water
   - UI
-  - Enemies
-  - 
-  - 
+  - Melee Enemy
+  - Range Enemy
+  - Weapon
   - 
   - 
   - 

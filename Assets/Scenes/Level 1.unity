@@ -666,7 +666,9 @@ GameObject:
   m_Component:
   - component: {fileID: 260081755}
   - component: {fileID: 260081756}
-  m_Layer: 0
+  - component: {fileID: 260081759}
+  - component: {fileID: 260081760}
+  m_Layer: 3
   m_Name: House_3_Regular_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,6 +742,101 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1839735485 &260081759
+Tilemap:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260081754}
+  m_Enabled: 1
+  m_Tiles: {}
+  m_AnimatedTiles: {}
+  m_TileAssetArray: []
+  m_TileSpriteArray: []
+  m_TileMatrixArray: []
+  m_TileColorArray: []
+  m_TileObjectToInstantiateArray: []
+  m_AnimationFrameRate: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Origin: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0, y: 0, z: 1}
+  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileOrientation: 0
+  m_TileOrientationMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+--- !u!60 &260081760
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260081754}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.005819991, y: 0.32180923}
+      - {x: -0.30100268, y: 0.17110081}
+      - {x: -0.30123794, y: -0.07108176}
+      - {x: -0.292315, y: -0.0711292}
+      - {x: -0.2908553, y: -0.09411228}
+      - {x: -0.29286093, y: -0.21542783}
+      - {x: -0.2964304, y: -0.31909537}
+      - {x: 0.28281203, y: -0.32090467}
+      - {x: 0.28213847, y: -0.071719885}
+      - {x: 0.2910027, y: -0.07090456}
+      - {x: 0.29190725, y: 0.170098}
+      - {x: 0.1136186, y: 0.26300818}
+  m_UseDelaunayMesh: 0
 --- !u!1 &263079564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,7 +1144,8 @@ GameObject:
   m_Component:
   - component: {fileID: 481543577}
   - component: {fileID: 481543578}
-  m_Layer: 0
+  - component: {fileID: 481543579}
+  m_Layer: 3
   m_Name: House_3_Damaged_Sprite 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1121,6 +1219,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &481543579
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481543576}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.004514329, y: 0.32166892}
+      - {x: -0.30202726, y: 0.17161529}
+      - {x: -0.30134022, y: -0.06937619}
+      - {x: -0.29265085, y: -0.07180343}
+      - {x: -0.29164028, y: -0.20722795}
+      - {x: -0.29134232, y: -0.32}
+      - {x: 0.2809692, y: -0.3210395}
+      - {x: 0.28165543, y: -0.07150942}
+      - {x: 0.29198316, y: -0.06943559}
+      - {x: 0.29210952, y: -0.06800655}
+      - {x: 0.29112855, y: 0.16913879}
+      - {x: 0.13066861, y: 0.25240967}
+  m_UseDelaunayMesh: 0
 --- !u!1 &490696732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1286,8 @@ GameObject:
   m_Component:
   - component: {fileID: 490696733}
   - component: {fileID: 490696734}
-  m_Layer: 0
+  - component: {fileID: 490696735}
+  m_Layer: 3
   m_Name: House_4_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1205,6 +1361,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &490696735
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490696732}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.0041402057, y: 0.32194647}
+      - {x: -0.29041225, y: 0.17204206}
+      - {x: -0.2912895, y: -0.07180943}
+      - {x: -0.28052488, y: -0.07173234}
+      - {x: -0.28544465, y: -0.20625556}
+      - {x: -0.28408352, y: -0.3210698}
+      - {x: 0.29186928, y: -0.31946513}
+      - {x: 0.29252303, y: -0.07067958}
+      - {x: 0.3023775, y: -0.06946514}
+      - {x: 0.30167845, y: 0.1705344}
+      - {x: 0.1488339, y: 0.25089705}
+  m_UseDelaunayMesh: 0
 --- !u!1 &541323816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,7 +1709,8 @@ GameObject:
   m_Component:
   - component: {fileID: 667048108}
   - component: {fileID: 667048109}
-  m_Layer: 0
+  - component: {fileID: 667048110}
+  m_Layer: 3
   m_Name: House_1_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1571,6 +1784,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &667048110
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667048107}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.002824232, y: 0.32241237}
+      - {x: -0.2902476, y: 0.16818582}
+      - {x: -0.29185587, y: -0.063520156}
+      - {x: -0.29213065, y: -0.07712262}
+      - {x: -0.27898994, y: -0.21804117}
+      - {x: -0.2834641, y: -0.32080415}
+      - {x: 0.29276294, y: -0.3216082}
+      - {x: 0.29300332, y: -0.07317569}
+      - {x: 0.30115467, y: -0.06758763}
+      - {x: 0.30115467, y: 0.16989708}
+      - {x: 0.114020586, y: 0.2733611}
+  m_UseDelaunayMesh: 0
 --- !u!1 &670317517
 GameObject:
   m_ObjectHideFlags: 0
@@ -8004,6 +8273,7 @@ MonoBehaviour:
     bossMoneyDrop: 10000
   persistentWaveText: {fileID: 0}
   waveText: {fileID: 0}
+  enemiesLeft: {fileID: 0}
   currentWaveIndex: 0
   enemiesAlive: 0
 --- !u!4 &927701820
@@ -8149,7 +8419,8 @@ GameObject:
   - component: {fileID: 1010269852}
   - component: {fileID: 1010269853}
   - component: {fileID: 1010269857}
-  m_Layer: 0
+  - component: {fileID: 1010269858}
+  m_Layer: 3
   m_Name: House_2_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8261,6 +8532,69 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!60 &1010269858
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010269851}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.96, y: 0.64}
+    newSize: {x: 0.96, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.12112102, y: -0.07698466}
+      - {x: 0.12301848, y: 0.16981535}
+      - {x: -0.1340246, y: 0.30390152}
+      - {x: -0.17572916, y: 0.32}
+      - {x: -0.47, y: 0.17484614}
+      - {x: -0.47038516, y: 0.16758078}
+      - {x: -0.47111237, y: -0.07125221}
+      - {x: -0.4625861, y: -0.07167943}
+      - {x: -0.4623727, y: -0.32200316}
+      - {x: 0.46280825, y: -0.32063672}
+      - {x: 0.4589878, y: -0.08146119}
+      - {x: 0.4590284, y: -0.07857939}
+    - - {x: 0.28, y: -0.17}
+      - {x: 0.33879814, y: -0.13838202}
+      - {x: 0.34, y: -0.16}
+      - {x: 0.35999998, y: -0.17999999}
+      - {x: 0.34, y: -0.16}
+      - {x: 0.32, y: -0.16}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1018240816
 GameObject:
   m_ObjectHideFlags: 0
@@ -8607,7 +8941,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1073978332}
   - component: {fileID: 1073978333}
-  m_Layer: 0
+  - component: {fileID: 1073978334}
+  m_Layer: 3
   m_Name: House_1_Sprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8681,6 +9016,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &1073978334
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073978331}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.003599137, y: 0.32215214}
+      - {x: -0.30170682, y: 0.17341362}
+      - {x: -0.30279806, y: -0.07085694}
+      - {x: -0.29166728, y: -0.070378885}
+      - {x: -0.29184106, y: -0.21}
+      - {x: -0.29105672, y: -0.32051203}
+      - {x: 0.28259268, y: -0.32153594}
+      - {x: 0.2822219, y: -0.07607762}
+      - {x: 0.29403773, y: -0.075289294}
+      - {x: 0.29493514, y: 0.17063075}
+      - {x: 0.1358256, y: 0.2532837}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1085929284
 GameObject:
   m_ObjectHideFlags: 0
@@ -9167,7 +9558,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1246431514}
   - component: {fileID: 1246431515}
-  m_Layer: 0
+  - component: {fileID: 1246431516}
+  m_Layer: 3
   m_Name: Tree2_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9241,6 +9633,78 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &1246431516
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246431513}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.48, y: 0.48}
+    newSize: {x: 0.48, y: 0.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.059042066, y: 0.07949295}
+      - {x: 0.0051887278, y: 0.13223876}
+      - {x: -0.050787717, y: 0.0803005}
+      - {x: -0.07068333, y: 0.04992533}
+      - {x: -0.08956134, y: 0.010234216}
+      - {x: -0.08988645, y: -0.010104477}
+      - {x: -0.12148423, y: -0.03957619}
+      - {x: -0.12045554, y: -0.05964112}
+      - {x: -0.07936891, y: -0.10065028}
+      - {x: -0.062245257, y: -0.10126907}
+      - {x: -0.06036685, y: -0.16973333}
+      - {x: -0.060426176, y: -0.19035628}
+      - {x: -0.04015349, y: -0.20999588}
+      - {x: -0.0096547045, y: -0.22092699}
+      - {x: 0.019456273, y: -0.2211414}
+      - {x: 0.050543595, y: -0.20939505}
+      - {x: 0.07013966, y: -0.19057068}
+      - {x: 0.06966124, y: -0.17179406}
+      - {x: 0.059748888, y: -0.13750693}
+      - {x: 0.05818539, y: -0.1105472}
+      - {x: 0.088858984, y: -0.10154785}
+      - {x: 0.1102458, y: -0.08045734}
+      - {x: 0.1315611, y: -0.061284836}
+      - {x: 0.13320749, y: -0.042410303}
+      - {x: 0.11124807, y: -0.02031194}
+      - {x: 0.092432976, y: 0.010790526}
+      - {x: 0.08253982, y: 0.04762083}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1256940240
 GameObject:
   m_ObjectHideFlags: 0
@@ -9251,7 +9715,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1256940241}
   - component: {fileID: 1256940242}
-  m_Layer: 0
+  - component: {fileID: 1256940243}
+  m_Layer: 3
   m_Name: Church
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9325,6 +9790,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &1256940243
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256940240}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.051937155, y: 0.5946832}
+      - {x: -0.1252423, y: 0.26639798}
+      - {x: -0.29619613, y: 0.35309947}
+      - {x: -0.4685561, y: 0.25704175}
+      - {x: -0.47059864, y: -0.5626407}
+      - {x: 0.6026408, y: -0.5626408}
+      - {x: 0.6016197, y: -0.1159509}
+      - {x: 0.43388158, y: -0.11606844}
+      - {x: 0.42490634, y: -0.038641006}
+      - {x: 0.23989315, y: -0.12860471}
+      - {x: 0.24088061, y: 0.24647766}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1263379149
 GameObject:
   m_ObjectHideFlags: 0
@@ -10206,7 +10727,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1641310885}
   - component: {fileID: 1641310886}
-  m_Layer: 0
+  - component: {fileID: 1641310887}
+  m_Layer: 3
   m_Name: Well_Sprite 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10280,6 +10802,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &1641310887
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641310884}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.2377833, y: 0.3112928}
+      - {x: -0.29171482, y: 0.21780992}
+      - {x: -0.291411, y: 0.18602465}
+      - {x: -0.2204846, y: 0.1859309}
+      - {x: -0.22554007, y: 0.04348288}
+      - {x: -0.2191027, y: -0.2721103}
+      - {x: -0.18193631, y: -0.30043525}
+      - {x: -0.11799745, y: -0.3141958}
+      - {x: 0.06741279, y: -0.3135262}
+      - {x: 0.1525856, y: -0.29213694}
+      - {x: 0.1688288, y: -0.27150482}
+      - {x: 0.17334996, y: 0.18636082}
+      - {x: 0.2510693, y: 0.18691133}
+      - {x: 0.25126255, y: 0.21865211}
+      - {x: 0.20195965, y: 0.3117738}
+    - - {x: -0.16, y: 0.16}
+      - {x: -0.08, y: 0.16}
+      - {x: -0.08, y: 0.14999999}
+      - {x: -0.07, y: 0.13}
+      - {x: -0.089999996, y: 0.099999994}
+      - {x: -0.12, y: 0.099999994}
+      - {x: -0.13, y: 0.089999996}
+      - {x: -0.16, y: 0.08}
+    - - {x: 0.03, y: 0.11}
+      - {x: 0.03, y: 0.14999999}
+      - {x: 0.01, y: 0.17}
+      - {x: 0.11, y: 0.16}
+      - {x: 0.11, y: 0.08}
+      - {x: 0.099999994, y: 0.089999996}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1727503672
 GameObject:
   m_ObjectHideFlags: 0

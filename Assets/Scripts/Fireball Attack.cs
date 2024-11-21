@@ -18,6 +18,7 @@ namespace DefaultNamespace
 
         public void OnTriggerEnter2D(Collider2D other)
         {
+            Debug.Log("Fireball hit: " + other.name);
             if (other.CompareTag("Enemy"))
             {
                 EnemyMelee enemyMelee = other.GetComponent<EnemyMelee>();
