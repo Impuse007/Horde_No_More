@@ -7,7 +7,7 @@ using DefaultNamespace;
 public class EnemyBoss : EnemyBase
 {
     EnemyBase enemyBase;
-    MoneyDrop moneyPrefab;
+    public MoneyDrop MoneyDrop;
 
     public int bossDamage = 10;
     public int bossHealth = 50;
@@ -35,6 +35,7 @@ public class EnemyBoss : EnemyBase
     {
         bossCurrentHealth = bossHealth;
         GameObject playerObject = GameObject.FindWithTag("Player");
+        MoneyDrop = FindObjectOfType<MoneyDrop>();
 
         if (playerObject != null)
         {
@@ -130,9 +131,14 @@ public class EnemyBoss : EnemyBase
     void Die()
     {
         OnEnemyDeath?.Invoke();
+        DropMoneyAndGiveToPlayer();
         Destroy(gameObject);
-        moneyPrefab.DropMoney(transform.position);
         playerController.playerMoney += moneyBossDrop;
+    }
+    
+    private void DropMoneyAndGiveToPlayer()
+    {
+        MoneyDrop.DropMoney(transform.position);
     }
     
     private IEnumerator FlashRed()

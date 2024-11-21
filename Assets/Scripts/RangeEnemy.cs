@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class RangeEnemy : EnemyBase
 {
     EnemyBase enemyBase;
-    MoneyDrop moneyPrefab;
+    public MoneyDrop MoneyDrop;
 
     public int rangeDamage = 10;
     public int rangeHealth = 50;
@@ -36,6 +36,7 @@ public class RangeEnemy : EnemyBase
     {
         rangeCurrentHealth = rangeHealth;
         GameObject playerObject = GameObject.FindWithTag("Player");
+        MoneyDrop = FindObjectOfType<MoneyDrop>();
 
         if (playerObject != null)
         {
@@ -143,9 +144,14 @@ public class RangeEnemy : EnemyBase
     void Die()
     {
         OnEnemyDeath?.Invoke();
-        Destroy(gameObject);
-        moneyPrefab.DropMoney(transform.position);
+        DropMoneyAndGiveToPlayer();
         playerController.playerMoney += moneyRangeDrop;
+        Destroy(gameObject);
+    }
+    
+    private void DropMoneyAndGiveToPlayer()
+    {
+        MoneyDrop.DropMoney(transform.position);
     }
 
     private IEnumerator FlashRed()

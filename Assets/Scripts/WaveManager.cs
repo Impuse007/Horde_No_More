@@ -15,6 +15,7 @@ public class WaveManager : MonoBehaviour
     public List<Wave> waves; // List of waves
     public TextMeshProUGUI persistentWaveText; // UI Text to display persistent wave number
     public TextMeshProUGUI waveText; // UI Text to display wave number
+    public TextMeshProUGUI enemiesLeft; // UI Text to display number of enemies left
     public int currentWaveIndex = 0; // Current wave index
     private bool isSpawning = false; // Flag to check if spawning is in progress
     public int enemiesAlive = 0; // Number of enemies currently alive
@@ -23,6 +24,7 @@ public class WaveManager : MonoBehaviour
     {
         waveText = GameObject.Find("UI Manager/Canvas/Gameplay/WaveText")?.GetComponent<TextMeshProUGUI>();
         persistentWaveText = GameObject.Find("UI Manager/Canvas/Gameplay/PersistentWaveText")?.GetComponent<TextMeshProUGUI>();
+        enemiesLeft = GameObject.Find("UI Manager/Canvas/Gameplay/EnemiesLeft")?.GetComponent<TextMeshProUGUI>();
 
         if (waveText == null)
         {
@@ -34,6 +36,11 @@ public class WaveManager : MonoBehaviour
         gameManager = GameObject.Find("GameManager")?.GetComponent<GameManager>();
         uiManager = GameObject.Find("GameManager/UI Manager")?.GetComponent<UIManager>();
     }
+    
+    private void Update()
+    {
+        enemiesLeft.text = "Enemies Left: " + enemiesAlive;
+    }
 
     private IEnumerator SpawnWaves()
     {
@@ -41,15 +48,15 @@ public class WaveManager : MonoBehaviour
         {
             Wave currentWave = waves[currentWaveIndex];
             isSpawning = true;
+            persistentWaveText.text = "Wave " + currentWave.waveNumber + "/30";
+            enemiesAlive = 0;
 
-            waveText.text = "Wave Incoming!";
+            WaveTextBig(); // Could be a bug with this method
             waveText.gameObject.SetActive(true);
             yield return new WaitForSeconds(1f);
             waveText.gameObject.SetActive(false);
 
-            persistentWaveText.text = "Wave " + currentWave.waveNumber + "/30";
             
-            enemiesAlive = 0;
 
             foreach (Wave.EnemySpawnInfo enemySpawnInfo in currentWave.enemySpawnInfos)
             {
@@ -173,5 +180,13 @@ public class WaveManager : MonoBehaviour
     {
         uiManager.SwitchUI(UIManager.switchUI.ResultsMenu);
         Debug.Log("You win!");
+    }
+    
+    public IEnumerator WaveTextBig()
+    {
+        waveText.text = "Wave Incoming!";
+        waveText.fontSize = 50;
+        yield return new WaitForSeconds(1f);
+        waveText.fontSize = 36;
     }
 }
