@@ -7,8 +7,8 @@ public class SFXManager : MonoBehaviour
 {
     public static SFXManager instance;
     
-    public AudioClip[] playerSFX, enemySFX, music;
-    public AudioSource playerSource, enemySource, musicSource;
+    public AudioClip[] playerSFX, enemySFX, musicSongs, environmentSFX;
+    public AudioSource playerSource, enemySource, musicSource, environmentSource;
     
     private void Awake()
     {
@@ -32,7 +32,13 @@ public class SFXManager : MonoBehaviour
     
     public void PlayMusic(int musicToPlay)
     {
-        musicSource.clip = music[musicToPlay];
+        musicSource.clip = musicSongs[musicToPlay];
         musicSource.Play();
+    }
+    
+    public void PlayEnvironmentSFX(int sfxToPlay)
+    {
+        environmentSource.clip = environmentSFX[sfxToPlay];
+        environmentSource.Play();
     }
 }

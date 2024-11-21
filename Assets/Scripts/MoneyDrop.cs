@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class MoneyDrop : MonoBehaviour
 {
+    public SFXManager sfxManager;
     public GameObject moneyPrefab;
     public RectTransform imageTransform;
     private List<GameObject> moneyList = new List<GameObject>();
     private bool isFollowingImage = false;
     public float moveSpeed = 10f;
+    
+    void Start()
+    {
+        sfxManager = FindObjectOfType<SFXManager>();
+    }
 
     void Update()
     {
@@ -30,6 +36,7 @@ public class MoneyDrop : MonoBehaviour
                     {
                         Destroy(money);
                         moneyList.RemoveAt(i);
+                        sfxManager.PlayEnvironmentSFX(0);
                     }
                 }
             }
