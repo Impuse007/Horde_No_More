@@ -34,6 +34,7 @@ public class SFXManager : MonoBehaviour
     {
         musicSource.clip = musicSongs[musicToPlay];
         musicSource.Play();
+        Debug.Log("Playing music: " + musicSongs[musicToPlay]);
     }
     
     public void PlayEnvironmentSFX(int sfxToPlay)

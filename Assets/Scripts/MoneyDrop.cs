@@ -15,7 +15,7 @@ public class MoneyDrop : MonoBehaviour
     void Start()
     {
         sfxManager = FindObjectOfType<SFXManager>();
-        moneyParticle.Stop();
+        //moneyParticle.Stop();
     }
 
     void Update()
@@ -37,14 +37,14 @@ public class MoneyDrop : MonoBehaviour
                     if (Vector3.Distance(clampedPosition, imageWorldPosition) <= 0.5f)
                     {
                         Destroy(money);
-                        moneyParticle.Play();
+                        //moneyParticle.Play();
                         moneyList.RemoveAt(i);
                         sfxManager.PlayEnvironmentSFX(0);
                     }
                 }
             }
             
-            moneyParticle.Stop();
+            //moneyParticle.Stop();
 
             if (moneyList.Count == 0)
             {

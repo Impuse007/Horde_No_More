@@ -22,7 +22,7 @@ public class SkillTree : MonoBehaviour
 
     private void Start()
     {
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = Resources.FindObjectsOfTypeAll<PlayerController>()[0];
         hoveringOverSkills = FindObjectOfType<HoveringOverSkills>();
         unlockedSkills = new List<Skill>();
     }

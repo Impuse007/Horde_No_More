@@ -51,12 +51,24 @@ public class WaveManager : MonoBehaviour
             persistentWaveText.text = "Wave " + currentWave.waveNumber + "/30";
             enemiesAlive = 0;
 
+            if (currentWaveIndex == 14)
+            {
+                SFXManager.instance.PlayMusic(2); // Play the boss music
+            }
+            else if (currentWaveIndex == 29)
+            {
+                SFXManager.instance.PlayMusic(3); // Play the final boss music
+            }
+            else if (currentWaveIndex != 14 && currentWaveIndex != 29)
+            {
+                SFXManager.instance.PlayMusic(1);
+            }
+            
             WaveTextBig(); // Could be a bug with this method
             waveText.gameObject.SetActive(true);
             yield return new WaitForSeconds(1f);
             waveText.gameObject.SetActive(false);
 
-            
 
             foreach (Wave.EnemySpawnInfo enemySpawnInfo in currentWave.enemySpawnInfos)
             {

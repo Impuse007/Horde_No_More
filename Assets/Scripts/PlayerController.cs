@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
     
     // Money Values
     [Header("Player Money Stats")]
-    public int playerMoney = 0;
+    public int playerMoney = 1000;
     public TextMeshProUGUI moneyText;
     
     [Header("Player Animations")]
@@ -221,7 +221,8 @@ public class PlayerController : MonoBehaviour
         // Attack in the direction of the mouse
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 attackDirection = (mousePosition - (Vector2)transform.position).normalized;
-
+        
+        SFXManager.instance.PlayPlayerSFX(2);
         GameObject specialAttack = Instantiate(specialAttackPrefab, specialAttackPoint.position, Quaternion.identity);
         Rigidbody2D specialAttackRb = specialAttack.GetComponent<Rigidbody2D>();
 

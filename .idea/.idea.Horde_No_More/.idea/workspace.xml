@@ -6,18 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="90da82e4-6e32-4478-b7bf-d13780ae865a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Images/Coin_Sparkle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Images/Coin_Sparkle.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/tile_0078.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/tile_0078.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Player Sounds/Fireball Expostion.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Player Sounds/Fireball Expostion.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Boss Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemies/Boss Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Programming.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Programming.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HowToPlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HowToPlay.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MoneyDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MoneyDrop.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SkillCooldownImage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SkillCooldownImage.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SFX Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SFX Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SkillTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkillTree.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpecialWaveAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpecialWaveAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

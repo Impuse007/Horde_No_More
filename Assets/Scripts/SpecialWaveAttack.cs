@@ -52,8 +52,8 @@ namespace DefaultNamespace
                     Debug.Log(damage + " damage dealt to " + other.name);
                 }
                 
-
                 hasHit = true; // Set the flag to true
+                SFXManager.instance.PlayPlayerSFX(3); // Play the enemy hit sound effect
             }
         }
     }
