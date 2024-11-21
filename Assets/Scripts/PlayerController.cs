@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     HealthManager playerManager;
     public LevelManager levelManager;
     public UIManager uiManager;
+    private Rigidbody2D rb;
     
     // Player Movement Values
     [Header("Player Main Stats")]
@@ -88,6 +89,7 @@ public class PlayerController : MonoBehaviour
     public void Awake()
     {
         playerManager = GetComponent<HealthManager>();
+        rb = GetComponent<Rigidbody2D>();
         playerHealthBar.maxValue = playerMaxHealth;
         playerHealthBar.value = playerCurrentHealth;
         playerCurrentHealth = playerMaxHealth;
@@ -157,10 +159,10 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        
-        Vector3 movement = new Vector2(horizontal, vertical);
-        transform.Translate(movement * speed * Time.deltaTime);
-        
+
+        Vector2 movement = new Vector2(horizontal, vertical) * speed;
+        rb.velocity = movement; // Use Rigidbody2D for movement
+
         float speedValue = movement.magnitude;
         playerAnimator.SetFloat("Movement", speedValue);
         playerSprite.flipX = Input.mousePosition.x < Screen.width / 2;
