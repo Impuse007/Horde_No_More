@@ -17,15 +17,24 @@ public class SkillCooldownImage : MonoBehaviour
 
     void Start()
     {
-        playerController = FindObjectOfType<PlayerController>();
         if (playerController == null)
         {
-            Debug.LogError("PlayerController not found.");
+            Debug.Log("PlayerController not found.");
         }
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     void Update()
     {
+        if (playerController == null)
+        {
+            playerController = FindObjectOfType<PlayerController>();
+            if (playerController == null)
+            {
+                return;
+            }
+        }
+        
         if (playerController != null)
         {
             float[] cooldownTimes = { playerController.nextSpecialAttackTime, playerController.nextHealingTime, playerController.nextDashTime }; // Wave Attack first, and then Healing

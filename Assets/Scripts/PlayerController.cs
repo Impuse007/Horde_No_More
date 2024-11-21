@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
     public float healingCooldown = 5.0f;
     public float nextHealingTime = 0.0f;
     public TMP_Text healingCooldownText; // Moved in another script
+    public ParticleSystem healingEffect;
     
     // Player Dash Values
     [Header("Player Dash Stats")]
@@ -251,6 +252,8 @@ public class PlayerController : MonoBehaviour
 
         playerCurrentHealth += healingAmount;
         nextHealingTime = Time.time + healingCooldown;
+        healingEffect.Play();
+        StartCoroutine(StopHealingEffectAfterDuration(healingEffect.main.duration));
     }
     
     private IEnumerator DestroyBasicAttackAfterRange(GameObject basicAttack, Vector2 startPosition, float range)
@@ -338,6 +341,12 @@ public class PlayerController : MonoBehaviour
             playerSprite.color = Color.white; // Reset to original color
             yield return new WaitForSeconds(flashDuration);
         }
+    }
+    
+    private IEnumerator StopHealingEffectAfterDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        healingEffect.Stop();
     }
     
     public void AddMoney(int money)

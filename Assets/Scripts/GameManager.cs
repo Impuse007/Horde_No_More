@@ -6,6 +6,7 @@ using DefaultNamespace;
 using Save;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -38,6 +39,21 @@ public class GameManager : MonoBehaviour
         else
         {
             LoadGame(playerController, skillTree);
+        }
+        
+        CheckLevel();
+    }
+    
+    void CheckLevel()
+    {
+        string currentLevel = SceneManager.GetActiveScene().name;
+        if (currentLevel == "Level1")
+        {
+            playerController.gameObject.SetActive(true);
+        }
+        else
+        {
+            playerController.gameObject.SetActive(false);
         }
     }
 

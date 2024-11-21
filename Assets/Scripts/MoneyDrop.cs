@@ -7,6 +7,7 @@ public class MoneyDrop : MonoBehaviour
     public SFXManager sfxManager;
     public GameObject moneyPrefab;
     public RectTransform imageTransform;
+    public ParticleSystem moneyParticle;
     private List<GameObject> moneyList = new List<GameObject>();
     private bool isFollowingImage = false;
     public float moveSpeed = 10f;
@@ -14,6 +15,7 @@ public class MoneyDrop : MonoBehaviour
     void Start()
     {
         sfxManager = FindObjectOfType<SFXManager>();
+        moneyParticle.Stop();
     }
 
     void Update()
@@ -35,11 +37,14 @@ public class MoneyDrop : MonoBehaviour
                     if (Vector3.Distance(clampedPosition, imageWorldPosition) <= 0.5f)
                     {
                         Destroy(money);
+                        moneyParticle.Play();
                         moneyList.RemoveAt(i);
                         sfxManager.PlayEnvironmentSFX(0);
                     }
                 }
             }
+            
+            moneyParticle.Stop();
 
             if (moneyList.Count == 0)
             {
