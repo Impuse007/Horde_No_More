@@ -12,6 +12,7 @@ public class SkillTree : MonoBehaviour
     public List<Skill> skills;
     public List<Skill> unlockedSkills;
     private PlayerController playerController;
+    private HoveringOverSkills hoveringOverSkills;
 
     public TMP_Text nameText;
     public TMP_Text descText;
@@ -22,6 +23,7 @@ public class SkillTree : MonoBehaviour
     private void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
+        hoveringOverSkills = FindObjectOfType<HoveringOverSkills>();
         unlockedSkills = new List<Skill>();
     }
 
@@ -45,6 +47,7 @@ public class SkillTree : MonoBehaviour
                 }
             }
             Debug.Log("Skill unlocked: " + skillName);
+            hoveringOverSkills.skillBrought = true;
             FindObjectOfType<GameManager>().SavingGame();
         }
         else
@@ -102,18 +105,6 @@ public class SkillTree : MonoBehaviour
             descText.text = skill.description;
             costText.text = "Cost: " + skill.cost;
         }
-        if (skillGameObject != null)
-        {
-            
-            Image skillImage = skillGameObject.GetComponent<Image>();   
-            if (skillImage != null)
-            {
-                Color color = skillImage.color;
-                color.a = 1.0f;
-                skillImage.color = color;
-            }
-            Debug.Log("Skill hovered: " + skillGameObject.name);
-        }
     }
 
     public void OnPointerExitSkill()
@@ -124,20 +115,6 @@ public class SkillTree : MonoBehaviour
             nameText.text = "";
             descText.text = "";
             costText.text = "";
-            
-            Image skillImage = skillGameObject.GetComponent<Image>();
-            if (skillImage != null)
-            {
-                Color color = skillImage.color;
-                color.a = 0.39f;
-                skillImage.color = color;
-            }
-            Debug.Log("Skill hover exited: " + skillGameObject.name);
         }
-    }
-
-    public GameObject GetSkillGameObject(Skill skill)
-    {
-        return GameObject.Find(skill.skillName);
     }
 }

@@ -2323,6 +2323,7 @@ GameObject:
   - component: {fileID: 160877023}
   - component: {fileID: 160877026}
   - component: {fileID: 160877027}
+  - component: {fileID: 160877028}
   m_Layer: 0
   m_Name: Wave Ugrade 3
   m_TagString: Untagged
@@ -2521,6 +2522,20 @@ MonoBehaviour:
             m_StringArgument: Wave Upgrade 3
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &160877028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160877021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &166309942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2535,6 +2550,7 @@ GameObject:
   - component: {fileID: 166309944}
   - component: {fileID: 166309947}
   - component: {fileID: 166309948}
+  - component: {fileID: 166309949}
   m_Layer: 0
   m_Name: Damage Upgrade 2
   m_TagString: Untagged
@@ -2733,6 +2749,20 @@ MonoBehaviour:
             m_StringArgument: Damage Upgrade 2
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &166309949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166309942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &172844244
 GameObject:
   m_ObjectHideFlags: 0
@@ -5473,6 +5503,7 @@ GameObject:
   - component: {fileID: 351698175}
   - component: {fileID: 351698178}
   - component: {fileID: 351698179}
+  - component: {fileID: 351698180}
   m_Layer: 0
   m_Name: Wave Ugrade 1
   m_TagString: Untagged
@@ -5671,6 +5702,20 @@ MonoBehaviour:
             m_StringArgument: Wave Upgrade 1
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &351698180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351698173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &352271697
 GameObject:
   m_ObjectHideFlags: 0
@@ -7265,6 +7310,7 @@ GameObject:
   - component: {fileID: 506113669}
   - component: {fileID: 506113672}
   - component: {fileID: 506113673}
+  - component: {fileID: 506113674}
   m_Layer: 0
   m_Name: Wave Ugrade 2
   m_TagString: Untagged
@@ -7463,6 +7509,20 @@ MonoBehaviour:
             m_StringArgument: Wave Upgrade 2
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &506113674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506113667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &513179218
 GameObject:
   m_ObjectHideFlags: 0
@@ -7927,6 +7987,7 @@ GameObject:
   - component: {fileID: 537060698}
   - component: {fileID: 537060701}
   - component: {fileID: 537060702}
+  - component: {fileID: 537060703}
   m_Layer: 0
   m_Name: Damage Upgrade 5
   m_TagString: Untagged
@@ -8125,6 +8186,20 @@ MonoBehaviour:
             m_StringArgument: Damage Upgrade 5
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &537060703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537060696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &545049427
 GameObject:
   m_ObjectHideFlags: 0
@@ -9450,6 +9525,7 @@ GameObject:
   - component: {fileID: 618611285}
   - component: {fileID: 618611288}
   - component: {fileID: 618611289}
+  - component: {fileID: 618611290}
   m_Layer: 0
   m_Name: Devastaing Wave
   m_TagString: Untagged
@@ -9648,6 +9724,20 @@ MonoBehaviour:
             m_StringArgument: Devastating Wave
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &618611290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618611283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &620920173
 GameObject:
   m_ObjectHideFlags: 0
@@ -9662,6 +9752,7 @@ GameObject:
   - component: {fileID: 620920175}
   - component: {fileID: 620920178}
   - component: {fileID: 620920179}
+  - component: {fileID: 620920180}
   m_Layer: 0
   m_Name: Dash Upgrade
   m_TagString: Untagged
@@ -9860,6 +9951,20 @@ MonoBehaviour:
             m_StringArgument: Dash Upgrade 1
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &620920180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620920173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &628195030
 GameObject:
   m_ObjectHideFlags: 0
@@ -11585,6 +11690,7 @@ GameObject:
   - component: {fileID: 749335726}
   - component: {fileID: 749335730}
   - component: {fileID: 749335731}
+  - component: {fileID: 749335732}
   m_Layer: 0
   m_Name: Health Upgrade 5
   m_TagString: Untagged
@@ -11783,6 +11889,20 @@ MonoBehaviour:
             m_StringArgument: Health Upgrade 5
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &749335732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749335725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &770890764
 GameObject:
   m_ObjectHideFlags: 0
@@ -12688,6 +12808,7 @@ GameObject:
   - component: {fileID: 862202896}
   - component: {fileID: 862202900}
   - component: {fileID: 862202901}
+  - component: {fileID: 862202902}
   m_Layer: 0
   m_Name: Damage Upgrade 4
   m_TagString: Untagged
@@ -12886,6 +13007,20 @@ MonoBehaviour:
             m_StringArgument: Damage Upgrade 4
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &862202902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862202895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &862598276
 GameObject:
   m_ObjectHideFlags: 0
@@ -14218,6 +14353,7 @@ GameObject:
   - component: {fileID: 947499941}
   - component: {fileID: 947499944}
   - component: {fileID: 947499946}
+  - component: {fileID: 947499947}
   m_Layer: 0
   m_Name: Health Upgrade 1
   m_TagString: Untagged
@@ -14416,6 +14552,20 @@ MonoBehaviour:
             m_StringArgument: Health Upgrade 1
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &947499947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947499939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &954803163
 GameObject:
   m_ObjectHideFlags: 0
@@ -15249,6 +15399,7 @@ GameObject:
   - component: {fileID: 975248793}
   - component: {fileID: 975248796}
   - component: {fileID: 975248797}
+  - component: {fileID: 975248798}
   m_Layer: 0
   m_Name: Fleet of Strength
   m_TagString: Untagged
@@ -15447,6 +15598,20 @@ MonoBehaviour:
             m_StringArgument: Fleet of Strength
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &975248798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975248791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &976436684
 GameObject:
   m_ObjectHideFlags: 0
@@ -16167,6 +16332,7 @@ GameObject:
   - component: {fileID: 1027312160}
   - component: {fileID: 1027312163}
   - component: {fileID: 1027312164}
+  - component: {fileID: 1027312165}
   m_Layer: 0
   m_Name: Healing Unlock
   m_TagString: Untagged
@@ -16365,6 +16531,20 @@ MonoBehaviour:
             m_StringArgument: Healing Unlock
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1027312165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027312158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1034807033
 GameObject:
   m_ObjectHideFlags: 0
@@ -16899,6 +17079,7 @@ GameObject:
   - component: {fileID: 1061761614}
   - component: {fileID: 1061761617}
   - component: {fileID: 1061761618}
+  - component: {fileID: 1061761619}
   m_Layer: 0
   m_Name: Wave Ugrade 4
   m_TagString: Untagged
@@ -17097,6 +17278,20 @@ MonoBehaviour:
             m_StringArgument: Shatterwake
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1061761619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061761612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1065157860
 GameObject:
   m_ObjectHideFlags: 0
@@ -18097,6 +18292,7 @@ GameObject:
   - component: {fileID: 1121757222}
   - component: {fileID: 1121757226}
   - component: {fileID: 1121757227}
+  - component: {fileID: 1121757228}
   m_Layer: 0
   m_Name: Health Upgrade 4
   m_TagString: Untagged
@@ -18295,6 +18491,20 @@ MonoBehaviour:
             m_StringArgument: Health Upgrade 4
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1121757228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121757221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1124664585
 GameObject:
   m_ObjectHideFlags: 0
@@ -19188,6 +19398,7 @@ GameObject:
   - component: {fileID: 1151962663}
   - component: {fileID: 1151962666}
   - component: {fileID: 1151962667}
+  - component: {fileID: 1151962668}
   m_Layer: 0
   m_Name: Speed Upgrade 3
   m_TagString: Untagged
@@ -19386,6 +19597,20 @@ MonoBehaviour:
             m_StringArgument: Speed 3
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1151962668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151962661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1153263952
 GameObject:
   m_ObjectHideFlags: 0
@@ -19620,6 +19845,7 @@ GameObject:
   - component: {fileID: 1193504308}
   - component: {fileID: 1193504311}
   - component: {fileID: 1193504312}
+  - component: {fileID: 1193504313}
   m_Layer: 0
   m_Name: Healing Upgrade 2
   m_TagString: Untagged
@@ -19818,6 +20044,20 @@ MonoBehaviour:
             m_StringArgument: Healing Upgrade 2
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1193504313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193504306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1193628130
 GameObject:
   m_ObjectHideFlags: 0
@@ -21186,6 +21426,7 @@ GameObject:
   - component: {fileID: 1238561735}
   - component: {fileID: 1238561738}
   - component: {fileID: 1238561739}
+  - component: {fileID: 1238561740}
   m_Layer: 0
   m_Name: Wave Unlock
   m_TagString: Untagged
@@ -21384,6 +21625,20 @@ MonoBehaviour:
             m_StringArgument: Wave Unlock
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1238561740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238561733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1240174562
 GameObject:
   m_ObjectHideFlags: 0
@@ -21706,6 +21961,7 @@ GameObject:
   - component: {fileID: 1278526634}
   - component: {fileID: 1278526638}
   - component: {fileID: 1278526639}
+  - component: {fileID: 1278526640}
   m_Layer: 0
   m_Name: Damage Upgrade 3
   m_TagString: Untagged
@@ -21904,6 +22160,20 @@ MonoBehaviour:
             m_StringArgument: Damage Upgrade 3
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1278526640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278526633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1283590777
 GameObject:
   m_ObjectHideFlags: 0
@@ -22187,7 +22457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1313301691
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22640,6 +22910,7 @@ GameObject:
   - component: {fileID: 1322243723}
   - component: {fileID: 1322243726}
   - component: {fileID: 1322243727}
+  - component: {fileID: 1322243728}
   m_Layer: 0
   m_Name: Basic Mid Upgrade
   m_TagString: Untagged
@@ -22838,6 +23109,20 @@ MonoBehaviour:
             m_StringArgument: Crushing Reach
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1322243728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322243721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1331030307
 GameObject:
   m_ObjectHideFlags: 0
@@ -23971,6 +24256,7 @@ GameObject:
   - component: {fileID: 1440784163}
   - component: {fileID: 1440784166}
   - component: {fileID: 1440784167}
+  - component: {fileID: 1440784168}
   m_Layer: 0
   m_Name: Dash Upgrade 4
   m_TagString: Untagged
@@ -24169,6 +24455,20 @@ MonoBehaviour:
             m_StringArgument: Dash Sonic
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1440784168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440784161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1450027738
 GameObject:
   m_ObjectHideFlags: 0
@@ -24317,6 +24617,7 @@ GameObject:
   - component: {fileID: 1451197523}
   - component: {fileID: 1451197526}
   - component: {fileID: 1451197528}
+  - component: {fileID: 1451197529}
   m_Layer: 0
   m_Name: Damage Upgrade 1
   m_TagString: Untagged
@@ -24515,6 +24816,20 @@ MonoBehaviour:
             m_StringArgument: Damage Upgrade 1
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1451197529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451197521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1457998573
 GameObject:
   m_ObjectHideFlags: 0
@@ -26168,7 +26483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1625078611
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26701,6 +27016,7 @@ GameObject:
   - component: {fileID: 1662027010}
   - component: {fileID: 1662027013}
   - component: {fileID: 1662027014}
+  - component: {fileID: 1662027015}
   m_Layer: 0
   m_Name: Plate Up
   m_TagString: Untagged
@@ -26899,6 +27215,20 @@ MonoBehaviour:
             m_StringArgument: Plate Up
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1662027015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662027008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1674439484
 GameObject:
   m_ObjectHideFlags: 0
@@ -27528,6 +27858,7 @@ GameObject:
   - component: {fileID: 1689059609}
   - component: {fileID: 1689059612}
   - component: {fileID: 1689059613}
+  - component: {fileID: 1689059614}
   m_Layer: 0
   m_Name: Dash Upgrade 2
   m_TagString: Untagged
@@ -27726,6 +28057,20 @@ MonoBehaviour:
             m_StringArgument: Dash Upgrade 2
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1689059614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689059607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1696333272
 GameObject:
   m_ObjectHideFlags: 0
@@ -30184,6 +30529,7 @@ GameObject:
   - component: {fileID: 1850236538}
   - component: {fileID: 1850236541}
   - component: {fileID: 1850236542}
+  - component: {fileID: 1850236543}
   m_Layer: 0
   m_Name: Dash Upgrade 3
   m_TagString: Untagged
@@ -30382,6 +30728,20 @@ MonoBehaviour:
             m_StringArgument: Dash Upgrade 3
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1850236543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850236536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1856340161
 GameObject:
   m_ObjectHideFlags: 0
@@ -30396,6 +30756,7 @@ GameObject:
   - component: {fileID: 1856340163}
   - component: {fileID: 1856340166}
   - component: {fileID: 1856340167}
+  - component: {fileID: 1856340168}
   m_Layer: 0
   m_Name: Health Upgrade 2
   m_TagString: Untagged
@@ -30594,6 +30955,20 @@ MonoBehaviour:
             m_StringArgument: Health Upgrade 2
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1856340168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856340161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1858291460
 GameObject:
   m_ObjectHideFlags: 0
@@ -30878,6 +31253,7 @@ GameObject:
   - component: {fileID: 1873449145}
   - component: {fileID: 1873449148}
   - component: {fileID: 1873449149}
+  - component: {fileID: 1873449150}
   m_Layer: 0
   m_Name: Speed Upgrade 1
   m_TagString: Untagged
@@ -31076,6 +31452,20 @@ MonoBehaviour:
             m_StringArgument: Speed 1
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1873449150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873449143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1879105573
 GameObject:
   m_ObjectHideFlags: 0
@@ -31168,6 +31558,7 @@ GameObject:
   - component: {fileID: 1899787476}
   - component: {fileID: 1899787480}
   - component: {fileID: 1899787481}
+  - component: {fileID: 1899787482}
   m_Layer: 0
   m_Name: Health Upgrade 3
   m_TagString: Untagged
@@ -31366,6 +31757,20 @@ MonoBehaviour:
             m_StringArgument: Health Upgrade 3
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1899787482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899787475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &1900475024
 GameObject:
   m_ObjectHideFlags: 0
@@ -34285,6 +34690,7 @@ GameObject:
   - component: {fileID: 2109985645}
   - component: {fileID: 2109985648}
   - component: {fileID: 2109985649}
+  - component: {fileID: 2109985650}
   m_Layer: 0
   m_Name: Speed Upgrade 2
   m_TagString: Untagged
@@ -34483,6 +34889,20 @@ MonoBehaviour:
             m_StringArgument: Speed 2
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2109985650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109985643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &2111178460
 GameObject:
   m_ObjectHideFlags: 0
@@ -35048,6 +35468,7 @@ GameObject:
   - component: {fileID: 2136621148}
   - component: {fileID: 2136621151}
   - component: {fileID: 2136621152}
+  - component: {fileID: 2136621153}
   m_Layer: 0
   m_Name: Healing Upgrade 1
   m_TagString: Untagged
@@ -35246,6 +35667,20 @@ MonoBehaviour:
             m_StringArgument: Healing Upgrade 1
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2136621153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136621146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15757f77cc8d18f4095d41778c9c3d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  skillBrought: 0
 --- !u!1 &2146233722
 GameObject:
   m_ObjectHideFlags: 0
