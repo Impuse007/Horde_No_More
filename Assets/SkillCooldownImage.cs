@@ -28,8 +28,8 @@ public class SkillCooldownImage : MonoBehaviour
     {
         if (playerController != null)
         {
-            float[] cooldownTimes = { playerController.nextSpecialAttackTime, playerController.nextHealingTime }; // Wave Attack first, and then Healing
-            float[] cooldownDurations = { playerController.specialAttackCooldown, playerController.healingCooldown }; // Wave Attack first, and then Healing
+            float[] cooldownTimes = { playerController.nextSpecialAttackTime, playerController.nextHealingTime, playerController.nextDashTime }; // Wave Attack first, and then Healing
+            float[] cooldownDurations = { playerController.specialAttackCooldown, playerController.healingCooldown, playerController.dashCooldown }; // Wave Attack first, and then Healing
 
             for (int i = 0; i < cooldownImages.Length; i++)
             {

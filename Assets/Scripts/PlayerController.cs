@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown = 3.0f;
     public float nextDashTime = 0.0f;
     private float dashTime;
-    private float dashCooldownTime; // Going to move this to the skill cooldown script for the cooldown
+    private float dashCooldownTime;
     private bool isDashing;
     public TextMeshProUGUI dashCooldownText;
     
@@ -104,14 +104,10 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMoves();
         
-        if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTime <= 0)
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time >= nextDashTime)
         {
             StartCoroutine(Dash());
-        }
-        
-        if (dashCooldownTime > 0)
-        {
-            dashCooldownTime -= Time.deltaTime;
+            nextDashTime = Time.time + dashCooldown;
         }
         
         if (Time.time >= nextAttackTime)
@@ -146,7 +142,7 @@ public class PlayerController : MonoBehaviour
         playerHealthBar.maxValue = playerMaxHealth;
         playerHealthBar.value = (int)playerCurrentHealth;
         moneyText.text = "Money: " + playerMoney;
-        dashCooldownText.text = "Dash Cooldown: " + Mathf.Max(0, dashCooldownTime).ToString("F1");
+        //dashCooldownText.text = "Dash Cooldown: " + Mathf.Max(0, dashCooldownTime).ToString("F1");
         // Don't need this anymore or the text in the values up top
         //healingCooldownText.text = "Healing Cooldown: " + Mathf.Max(0, nextHealingTime - Time.time).ToString("F1"); 
         //specialAttackCooldownText.text = "Special Attack Cooldown: " + Mathf.Max(0, nextSpecialAttackTime - Time.time).ToString("F1");

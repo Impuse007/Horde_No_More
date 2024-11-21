@@ -17,7 +17,7 @@ namespace DefaultNamespace
         {
             killsText.text = "Kills: " + gameManager.kills;
             //playerMoneyText.text = "Money: " + gameManager.playerController.playerMoney;
-            timeText.text = "Time: " + gameManager.timeInGame;
+            timeText.text = "Time: " + gameManager.timeInGame.ToString("F2"); // 2 decimal places
         }
     }
 }
