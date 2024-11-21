@@ -12344,7 +12344,7 @@ Transform:
   m_GameObject: {fileID: 918076348}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.999985, y: -0, z: 0}
+  m_LocalPosition: {x: -814, y: 23, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 0.97247833}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14294,7 +14294,7 @@ GameObject:
   - component: {fileID: 1000138393}
   - component: {fileID: 1000138395}
   - component: {fileID: 1000138394}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CoinGatherEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14964,7 +14964,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    gravitySource: 0
+    gravitySource: 1
     maxNumParticles: 347
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
@@ -19348,8 +19348,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: -1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
