@@ -8274,7 +8274,7 @@ MonoBehaviour:
   persistentWaveText: {fileID: 0}
   waveText: {fileID: 0}
   enemiesLeft: {fileID: 0}
-  currentWaveIndex: 14
+  currentWaveIndex: 0
   enemiesAlive: 0
 --- !u!4 &927701820
 Transform:

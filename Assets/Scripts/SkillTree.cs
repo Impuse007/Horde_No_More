@@ -6,13 +6,12 @@ using UnityEngine.UI;
 
 public class SkillTree : MonoBehaviour
 {
-    public static SkillTree skillTree;
+   public static SkillTree skillTree;
     public void Awake() => skillTree = this;
 
     public List<Skill> skills;
     public List<Skill> unlockedSkills;
     private PlayerController playerController;
-    private HoveringOverSkills hoveringOverSkills;
 
     public TMP_Text nameText;
     public TMP_Text descText;
@@ -22,9 +21,24 @@ public class SkillTree : MonoBehaviour
 
     private void Start()
     {
-        playerController = Resources.FindObjectsOfTypeAll<PlayerController>()[0];
-        hoveringOverSkills = FindObjectOfType<HoveringOverSkills>();
+        playerController = FindObjectOfType<PlayerController>();
         unlockedSkills = new List<Skill>();
+
+        // Set the alpha for the skill image to 0.5
+        foreach (Skill skill in skills)
+        {
+            GameObject skillGameObject = EventSystem.current.currentSelectedGameObject;
+            if (skillGameObject != null)
+            {
+                Image skillImage = skillGameObject.GetComponent<Image>();
+                if (skillImage != null)
+                {
+                    Color color = skillImage.color;
+                    color.a = 0.5f;
+                    skillImage.color = color;
+                }
+            }
+        }
     }
 
     public void UnlockSkill(string skillName) // You can buy the skill again
@@ -47,7 +61,6 @@ public class SkillTree : MonoBehaviour
                 }
             }
             Debug.Log("Skill unlocked: " + skillName);
-            hoveringOverSkills.skillBrought = true;
             FindObjectOfType<GameManager>().SavingGame();
         }
         else
@@ -105,6 +118,18 @@ public class SkillTree : MonoBehaviour
             descText.text = skill.description;
             costText.text = "Cost: " + skill.cost;
         }
+        if (skillGameObject != null)
+        {
+            
+            Image skillImage = skillGameObject.GetComponent<Image>();
+            if (skillImage != null)
+            {
+                Color color = skillImage.color;
+                color.a = 1f;
+                skillImage.color = color;
+            }
+            Debug.Log("Skill hovered: " + skillGameObject.name);
+        }
     }
 
     public void OnPointerExitSkill()
@@ -115,6 +140,16 @@ public class SkillTree : MonoBehaviour
             nameText.text = "";
             descText.text = "";
             costText.text = "";
+            
+            // Reset the skill GameObject's alpha
+            Image skillImage = skillGameObject.GetComponent<Image>();
+            if (skillImage != null)
+            {
+                Color color = skillImage.color;
+                color.a = 0.5f; // Make it semi-transparent
+                skillImage.color = color;
+            }
+            Debug.Log("Skill hover exited: " + skillGameObject.name);
         }
     }
 }

@@ -7,6 +7,7 @@ using Save;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class GameManager : MonoBehaviour
     Skill unSkill;
     public Results_Screen resultsScreen;
     public SFXManager SfxManager;
+    
+    public Button loadGameButton;
+    public ColorBlock colorBlock;
     
     public int playerScore;
     public int highScore;
@@ -34,14 +38,24 @@ public class GameManager : MonoBehaviour
         if (!File.Exists(Save.SaveSystem._savePath))
         {
             NewGame();
+            loadGameButton.interactable = false;
             Debug.Log("New Save File Created");
         }
         else
         {
+            SetButtonAlphaValue(255);  
+            loadGameButton.interactable = true;
             LoadGame(playerController, skillTree);
         }
         
         CheckLevel();
+    }
+    
+    void SetButtonAlphaValue(float alphaValue)
+    {
+        Color color = loadGameButton.GetComponent<Image>().color;
+        color.a = alphaValue / 255f; // Convert alpha to the range of 0 to 1
+        loadGameButton.GetComponent<Image>().color = color;
     }
     
     void CheckLevel()
@@ -55,14 +69,14 @@ public class GameManager : MonoBehaviour
         {
             SfxManager.PlayMusic(1); // Play the gameplay music
         }
-        if (currentLevel == "Level1")
-        {
-            playerController.gameObject.SetActive(true);
-        }
-        else
-        {
-            playerController.gameObject.SetActive(false);
-        }
+        //if (currentLevel == "Level1")
+        //{
+        //    playerController.gameObject.SetActive(true);
+        //}
+        //else
+        //{
+        //    playerController.gameObject.SetActive(false);
+        //}
     }
 
     public void Update()
@@ -158,6 +172,7 @@ public class GameManager : MonoBehaviour
         }
         SavingGame(); 
         ResetResults();
+        
     }
 
     public void PlayerWon()
