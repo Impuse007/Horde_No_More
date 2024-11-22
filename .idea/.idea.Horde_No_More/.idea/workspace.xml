@@ -6,9 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="90da82e4-6e32-4478-b7bf-d13780ae865a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Buttons/Animated_Cursor_1 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Buttons/Animated_Cursor_1 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Buttons/Animated_Cursor_2 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Buttons/Animated_Cursor_2 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Buttons/Animated_Cursor_3 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Buttons/Animated_Cursor_3 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Buttons/Animated_Cursor_4 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Buttons/Animated_Cursor_4 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Buttons/Spacebar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Buttons/Spacebar.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Buttons/Updated_Cursor_Sprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Buttons/Updated_Cursor_Sprite.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Buttons/tile_0077.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Buttons/tile_0077.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Buttons/tile_0085.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Buttons/tile_0085.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Buttons/tile_0086.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Buttons/tile_0086.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Buttons/tile_0120.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Buttons/tile_0120.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Buttons/tile_0121.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Buttons/tile_0121.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Buttons/tile_0122.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Buttons/tile_0122.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Videos/Screen_Texture.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Videos/Screen_Texture.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SkillTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkillTree.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +193,7 @@
       <workItem from="1732119333724" duration="2075000" />
       <workItem from="1732155202969" duration="4907000" />
       <workItem from="1732198827401" duration="12983000" />
+      <workItem from="1732243348043" duration="357000" />
     </task>
     <servers />
   </component>
