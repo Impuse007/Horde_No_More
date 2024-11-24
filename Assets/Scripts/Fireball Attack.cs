@@ -7,6 +7,7 @@ namespace DefaultNamespace
     public class Fireball_Attack : MonoBehaviour
     {
         PlayerController playerController;
+        public ParticleSystem fireball;
         public int damage;
         private bool hasHit = false;
         
@@ -43,6 +44,8 @@ namespace DefaultNamespace
 
                 hasHit = true; // Set the flag to true
                 SFXManager.instance.PlayPlayerSFX(1); // Play the enemy hit sound effect
+                ParticleSystem instantiatedFireball = Instantiate(fireball, transform.position, Quaternion.identity);
+                instantiatedFireball.Play();
                 Destroy(gameObject); // Destroy the fireball after hitting the enemy
             }
         }

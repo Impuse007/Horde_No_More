@@ -161,4 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcb605b7e094fbdbca69446c3a3bbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireball: {fileID: 4884006320379633056, guid: 34699688ca0646e45ac7c598aa1b1577, type: 3}
   damage: 0

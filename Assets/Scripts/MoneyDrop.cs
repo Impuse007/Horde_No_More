@@ -37,15 +37,13 @@ public class MoneyDrop : MonoBehaviour
                     if (Vector3.Distance(clampedPosition, imageWorldPosition) <= 0.5f)
                     {
                         Destroy(money);
-                        //moneyParticle.Play();
+                        StartCoroutine(PlayMoneyParticle());
                         moneyList.RemoveAt(i);
                         sfxManager.PlayEnvironmentSFX(0);
                     }
                 }
             }
             
-            //moneyParticle.Stop();
-
             if (moneyList.Count == 0)
             {
                 isFollowingImage = false;
@@ -66,5 +64,12 @@ public class MoneyDrop : MonoBehaviour
         GameObject money = Instantiate(moneyPrefab, dropPosition, Quaternion.identity);
         moneyList.Add(money);
         isFollowingImage = true;
+    }
+    
+    private IEnumerator PlayMoneyParticle()
+    {
+        moneyParticle.Play();
+        yield return new WaitForSeconds(0.5f);
+        moneyParticle.Stop();
     }
 }

@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
     private float dashTime;
     private float dashCooldownTime;
     private bool isDashing;
+    public ParticleSystem dashEffect;
     public TextMeshProUGUI dashCooldownText;
     
     // Player Flash Values
@@ -111,6 +112,7 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Dash());
             nextDashTime = Time.time + dashCooldown;
+            //StartCoroutine(PlayDashEffect());
         }
         
         if (Time.time >= nextAttackTime)
@@ -181,12 +183,16 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         dashCooldownTime = dashCooldown;
         float startTime = Time.time;
+        
+        dashEffect.Play();
 
         while (Time.time < startTime + dashDuration)
         {
             transform.Translate(movementDirection * dashSpeed * Time.deltaTime, Space.World);
             yield return null;
         }
+        
+        dashEffect.Stop();
 
         isDashing = false;
     }
@@ -353,5 +359,12 @@ public class PlayerController : MonoBehaviour
     public void AddMoney(int money)
     {
         playerMoney += money;
+    }
+    
+    private IEnumerator PlayDashEffect()
+    {
+        dashEffect.Play();
+        yield return new WaitForSeconds(0.5f);
+        dashEffect.Stop();
     }
 }
