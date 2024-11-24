@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2881d8f119bb91b40a347d015f5dc571
+guid: 9c6635440d3613540b40af47dd94f6e1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_0
+      name: Alt_Enemy_Attack_Animation-export_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72ef02669c34e8943aa4be0c07d2b0d9
-      internalID: -1842284443
+      spriteID: 4ca8fa95422b2c34d9494e63c0f18de9
+      internalID: -2083491291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_1
+      name: Alt_Enemy_Attack_Animation-export_1
       rect:
         serializedVersion: 2
         x: 40
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1751d14355488f5449e9bb821af0fe49
-      internalID: 2105568141
+      spriteID: e3fbec9cb7867c943ad17c2ce195a373
+      internalID: -23739956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_2
+      name: Alt_Enemy_Attack_Animation-export_2
       rect:
         serializedVersion: 2
         x: 80
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a26e5be332e4c54585c92cb5472ae83
-      internalID: -1559977483
+      spriteID: c2ac4b63dfceb514ea210df659b465fd
+      internalID: -1989625710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_3
+      name: Alt_Enemy_Attack_Animation-export_3
       rect:
         serializedVersion: 2
         x: 120
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab2ba325e2bba114f851b15b53d27450
-      internalID: -1252544142
+      spriteID: 78c46d30380af0845b5f17d1b65255d0
+      internalID: 1167995906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_4
+      name: Alt_Enemy_Attack_Animation-export_4
       rect:
         serializedVersion: 2
         x: 160
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fe6cb726c74ced409518c218d5cc15d
-      internalID: 509927408
+      spriteID: 00d0e1e56a542b34a8115098c21308f7
+      internalID: -421925704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_5
+      name: Alt_Enemy_Attack_Animation-export_5
       rect:
         serializedVersion: 2
         x: 200
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14bc68fd77e04d540b14228772ae4185
-      internalID: 1063726845
+      spriteID: b1998cfb6c94a71459e9776171777398
+      internalID: 777869319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_6
+      name: Alt_Enemy_Attack_Animation-export_6
       rect:
         serializedVersion: 2
         x: 240
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d627ea870ba9f574681ad976de1d12a1
-      internalID: -2070375830
+      spriteID: 0c2070a2315e70b438043b5d07d42484
+      internalID: 233850196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_7
+      name: Alt_Enemy_Attack_Animation-export_7
       rect:
         serializedVersion: 2
         x: 280
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cec67ec2fba44eb40a64b41d17d6d1b1
-      internalID: 2055592810
+      spriteID: b11cab749d3d7a544929fc065e298514
+      internalID: -1296434953
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_8
+      name: Alt_Enemy_Attack_Animation-export_8
       rect:
         serializedVersion: 2
         x: 320
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d02bc147527253e428b78f1f411628cd
-      internalID: 390966162
+      spriteID: 91ecab2c4e97ab943a6b45d6b496fb92
+      internalID: 1358053245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_9
+      name: Alt_Enemy_Attack_Animation-export_9
       rect:
         serializedVersion: 2
         x: 360
@@ -300,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eed0884aebb681743aabdc823a4941c5
-      internalID: -314206964
+      spriteID: 9020c2c25067e574cbea469cca2841ea
+      internalID: -1039823184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_10
+      name: Alt_Enemy_Attack_Animation-export_10
       rect:
         serializedVersion: 2
         x: 400
@@ -321,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa5264af35e02d94e8361f5b1d073853
-      internalID: 1521057734
+      spriteID: 903f78663738a4544a233090b4120443
+      internalID: -1802773207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_11
+      name: Alt_Enemy_Attack_Animation-export_11
       rect:
         serializedVersion: 2
         x: 440
@@ -342,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4210b1dcd5999484c8fb2031b4a2ff43
-      internalID: -1164532114
+      spriteID: ea29caa00b7f6d8459d63a2cbffbd773
+      internalID: 863749892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_12
+      name: Alt_Enemy_Attack_Animation-export_12
       rect:
         serializedVersion: 2
         x: 480
@@ -363,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dcac847e79069e4aadb5d95f6538eac
-      internalID: 1017307408
+      spriteID: 0a3a64e0f60a71a469ac8ed6972a3304
+      internalID: 1558288872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_13
+      name: Alt_Enemy_Attack_Animation-export_13
       rect:
         serializedVersion: 2
         x: 520
@@ -384,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58ae79ac574281945aee48ba8ac972f3
-      internalID: -1211404507
+      spriteID: 65b9e4e40fad0d145a81b8649059a55b
+      internalID: 1419637854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_14
+      name: Alt_Enemy_Attack_Animation-export_14
       rect:
         serializedVersion: 2
         x: 560
@@ -405,14 +405,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c94f9a728692b7419431d6972835535
-      internalID: 84103477
+      spriteID: 656a4cc510aea174aa770a2b5063030d
+      internalID: -73641184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_15
+      name: Alt_Enemy_Attack_Animation-export_15
       rect:
         serializedVersion: 2
         x: 600
@@ -426,14 +426,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2b2ba75a6ede4a439d36527b9955c16
-      internalID: -522990222
+      spriteID: c05c20dfec673a44eb6770cf8b5400bd
+      internalID: 881362492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_16
+      name: Alt_Enemy_Attack_Animation-export_16
       rect:
         serializedVersion: 2
         x: 640
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddd78f8682208ca4487b4707d62500ce
-      internalID: -597409176
+      spriteID: 22bcff076c7aaab47904343e8cb3c9b9
+      internalID: 1890561111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_17
+      name: Alt_Enemy_Attack_Animation-export_17
       rect:
         serializedVersion: 2
         x: 680
@@ -468,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 981d441962e5b8f49bf928f0ef53aa57
-      internalID: -1078045624
+      spriteID: a29088a892f847647bb25f2be92c4286
+      internalID: 786699462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_18
+      name: Alt_Enemy_Attack_Animation-export_18
       rect:
         serializedVersion: 2
         x: 720
@@ -489,14 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d26dae3ffa32f24d85c55a896d22c7d
-      internalID: -291552632
+      spriteID: 12973a261ea2cce4cbcd16420ea0e223
+      internalID: -454957184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_19
+      name: Alt_Enemy_Attack_Animation-export_19
       rect:
         serializedVersion: 2
         x: 760
@@ -510,14 +510,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d841f20345e321489d81f4d73116da5
-      internalID: -1238541862
+      spriteID: 6279a75312a1b1f4384171725778d9ae
+      internalID: 1559093749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_Attack_Animation-Sheet_20
+      name: Alt_Enemy_Attack_Animation-export_20
       rect:
         serializedVersion: 2
         x: 800
@@ -531,8 +531,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8df6bbd3f47f4a44a9d5b5e454e5a528
-      internalID: -1832583208
+      spriteID: d993e2d02854afb45992d1c30c31fd21
+      internalID: -1747000990
       vertices: []
       indices: 
       edges: []
@@ -548,27 +548,27 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enemy_Attack_Animation-Sheet_0: -1842284443
-      Enemy_Attack_Animation-Sheet_1: 2105568141
-      Enemy_Attack_Animation-Sheet_10: 1521057734
-      Enemy_Attack_Animation-Sheet_11: -1164532114
-      Enemy_Attack_Animation-Sheet_12: 1017307408
-      Enemy_Attack_Animation-Sheet_13: -1211404507
-      Enemy_Attack_Animation-Sheet_14: 84103477
-      Enemy_Attack_Animation-Sheet_15: -522990222
-      Enemy_Attack_Animation-Sheet_16: -597409176
-      Enemy_Attack_Animation-Sheet_17: -1078045624
-      Enemy_Attack_Animation-Sheet_18: -291552632
-      Enemy_Attack_Animation-Sheet_19: -1238541862
-      Enemy_Attack_Animation-Sheet_2: -1559977483
-      Enemy_Attack_Animation-Sheet_20: -1832583208
-      Enemy_Attack_Animation-Sheet_3: -1252544142
-      Enemy_Attack_Animation-Sheet_4: 509927408
-      Enemy_Attack_Animation-Sheet_5: 1063726845
-      Enemy_Attack_Animation-Sheet_6: -2070375830
-      Enemy_Attack_Animation-Sheet_7: 2055592810
-      Enemy_Attack_Animation-Sheet_8: 390966162
-      Enemy_Attack_Animation-Sheet_9: -314206964
+      Alt_Enemy_Attack_Animation-export_0: -2083491291
+      Alt_Enemy_Attack_Animation-export_1: -23739956
+      Alt_Enemy_Attack_Animation-export_10: -1802773207
+      Alt_Enemy_Attack_Animation-export_11: 863749892
+      Alt_Enemy_Attack_Animation-export_12: 1558288872
+      Alt_Enemy_Attack_Animation-export_13: 1419637854
+      Alt_Enemy_Attack_Animation-export_14: -73641184
+      Alt_Enemy_Attack_Animation-export_15: 881362492
+      Alt_Enemy_Attack_Animation-export_16: 1890561111
+      Alt_Enemy_Attack_Animation-export_17: 786699462
+      Alt_Enemy_Attack_Animation-export_18: -454957184
+      Alt_Enemy_Attack_Animation-export_19: 1559093749
+      Alt_Enemy_Attack_Animation-export_2: -1989625710
+      Alt_Enemy_Attack_Animation-export_20: -1747000990
+      Alt_Enemy_Attack_Animation-export_3: 1167995906
+      Alt_Enemy_Attack_Animation-export_4: -421925704
+      Alt_Enemy_Attack_Animation-export_5: 777869319
+      Alt_Enemy_Attack_Animation-export_6: 233850196
+      Alt_Enemy_Attack_Animation-export_7: -1296434953
+      Alt_Enemy_Attack_Animation-export_8: 1358053245
+      Alt_Enemy_Attack_Animation-export_9: -1039823184
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -102,8 +102,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 42
-        height: 42
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: Enemy_Movement_Sheet-export_1
       rect:
         serializedVersion: 2
-        x: 42
+        x: 40
         y: 0
-        width: 42
-        height: 42
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: Enemy_Movement_Sheet-export_2
       rect:
         serializedVersion: 2
-        x: 84
+        x: 80
         y: 0
-        width: 42
-        height: 42
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: Enemy_Movement_Sheet-export_3
       rect:
         serializedVersion: 2
-        x: 126
+        x: 120
         y: 0
-        width: 42
-        height: 42
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
