@@ -92,7 +92,7 @@ public class EnemyMelee : EnemyBase
         }
 
         // Move towards player and stop at a certain distance
-        int maxDistance = 5;
+        int maxDistance = 3;
         Vector3 direction = (player.transform.position - transform.position).normalized;
         Vector3 targetPosition = player.transform.position - direction;
         Vector3 newPosition = Vector3.MoveTowards(transform.position, targetPosition, maxDistance * Time.fixedDeltaTime);

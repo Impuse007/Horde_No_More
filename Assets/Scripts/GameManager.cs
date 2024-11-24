@@ -149,20 +149,20 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         playerController.playerMoney = 0;
-        playerController.playerMaxHealth = 75;
-        playerController.speed = 5;
+        playerController.playerMaxHealth = 40;
+        playerController.speed = 3;
         playerController.isHealingUnlocked = false;
         playerController.isSpecialAttackUnlocked = false;
         playerController.dashSpeed = 15.0f;
-        playerController.dashCooldown = 3.0f;
+        playerController.dashCooldown = 5.0f;
         playerController.healingAmount = 20;
         playerController.healingCooldown = 15.0f;
-        playerController.specialAttackDamage = 15;
+        playerController.specialAttackDamage = 10;
         playerController.specialAttackRange = 10.0f;
         playerController.specialAttackCooldown = 5.0f;
-        playerController.playerDamage = 20;
-        playerController.basicAttackRange = 3.0f; // Might be used for fut
-        playerController.basicAttackCooldown = 2.0f;
+        playerController.playerDamage = 5;
+        playerController.basicAttackRange = 4.0f; 
+        playerController.basicAttackCooldown = 3.5f;
         skillTree.unlockedSkills = new List<Skill>();
         foreach (var skill in skillTree.skills)
         {

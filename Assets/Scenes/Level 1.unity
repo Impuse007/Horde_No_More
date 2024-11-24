@@ -7283,9 +7283,41 @@ MonoBehaviour:
     waveDelay: 0
     enemySpawnInfos:
     - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
+      spawnCount: 15
+    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      spawnCount: 0
+    spawnPoints:
+    - {fileID: 546973407}
+    - {fileID: 1612632253}
+    - {fileID: 2145412341}
+    - {fileID: 621496468}
+    - {fileID: 2039588179}
+    - {fileID: 1085929285}
+    - {fileID: 1602193903}
+    - {fileID: 240110438}
+    - {fileID: 2073171402}
+    - {fileID: 1941359827}
+    - {fileID: 1476486035}
+    - {fileID: 1918038193}
+    moneyDrop: 1
+    enemyDamage: 5
+    enemyHealth: 10
+    enemySpeed: 3
+    rangeDamage: 0
+    rangeHealth: 0
+    rangeSpeed: 0
+    rangeMoneyDrop: 0
+    bossDamage: 0
+    bossHealth: 0
+    bossSpeed: 0
+    bossMoneyDrop: 0
+  - waveNumber: 2
+    waveDelay: 0
+    enemySpawnInfos:
+    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
       spawnCount: 20
     - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
-      spawnCount: 5
+      spawnCount: 0
     spawnPoints:
     - {fileID: 546973407}
     - {fileID: 1612632253}
@@ -7300,45 +7332,13 @@ MonoBehaviour:
     - {fileID: 1476486035}
     - {fileID: 1918038193}
     moneyDrop: 2
-    enemyDamage: 5
-    enemyHealth: 20
-    enemySpeed: 3
-    rangeDamage: 3
-    rangeHealth: 5
-    rangeSpeed: 3
-    rangeMoneyDrop: 2
-    bossDamage: 0
-    bossHealth: 0
-    bossSpeed: 0
-    bossMoneyDrop: 0
-  - waveNumber: 2
-    waveDelay: 0
-    enemySpawnInfos:
-    - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-      spawnCount: 25
-    - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
-      spawnCount: 8
-    spawnPoints:
-    - {fileID: 546973407}
-    - {fileID: 1612632253}
-    - {fileID: 2145412341}
-    - {fileID: 621496468}
-    - {fileID: 2039588179}
-    - {fileID: 1085929285}
-    - {fileID: 1602193903}
-    - {fileID: 240110438}
-    - {fileID: 2073171402}
-    - {fileID: 1941359827}
-    - {fileID: 1476486035}
-    - {fileID: 1918038193}
-    moneyDrop: 3
     enemyDamage: 8
-    enemyHealth: 25
+    enemyHealth: 15
     enemySpeed: 3
-    rangeDamage: 4
-    rangeHealth: 10
-    rangeSpeed: 3
-    rangeMoneyDrop: 2
+    rangeDamage: 0
+    rangeHealth: 0
+    rangeSpeed: 0
+    rangeMoneyDrop: 0
     bossDamage: 0
     bossHealth: 0
     bossSpeed: 0
@@ -7347,9 +7347,9 @@ MonoBehaviour:
     waveDelay: 0
     enemySpawnInfos:
     - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-      spawnCount: 30
+      spawnCount: 25
     - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
-      spawnCount: 8
+      spawnCount: 0
     spawnPoints:
     - {fileID: 546973407}
     - {fileID: 1612632253}
@@ -7365,7 +7365,7 @@ MonoBehaviour:
     - {fileID: 1918038193}
     moneyDrop: 4
     enemyDamage: 12
-    enemyHealth: 30
+    enemyHealth: 20
     enemySpeed: 4
     rangeDamage: 6
     rangeHealth: 15
@@ -7381,7 +7381,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
       spawnCount: 30
     - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
-      spawnCount: 12
+      spawnCount: 0
     spawnPoints:
     - {fileID: 546973407}
     - {fileID: 1612632253}
@@ -7397,7 +7397,7 @@ MonoBehaviour:
     - {fileID: 1918038193}
     moneyDrop: 5
     enemyDamage: 12
-    enemyHealth: 40
+    enemyHealth: 25
     enemySpeed: 4
     rangeDamage: 8
     rangeHealth: 20
@@ -7413,7 +7413,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
       spawnCount: 35
     - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
-      spawnCount: 12
+      spawnCount: 0
     spawnPoints:
     - {fileID: 546973407}
     - {fileID: 1612632253}
@@ -7428,8 +7428,8 @@ MonoBehaviour:
     - {fileID: 1476486035}
     - {fileID: 1918038193}
     moneyDrop: 6
-    enemyDamage: 16
-    enemyHealth: 50
+    enemyDamage: 12
+    enemyHealth: 30
     enemySpeed: 4
     rangeDamage: 12
     rangeHealth: 30
@@ -7443,9 +7443,9 @@ MonoBehaviour:
     waveDelay: 0
     enemySpawnInfos:
     - enemyPrefab: {fileID: 2088145556392030737, guid: a5b3bd38896b41c47b97970e8771f677, type: 3}
-      spawnCount: 35
+      spawnCount: 25
     - enemyPrefab: {fileID: 3807887970881953072, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
-      spawnCount: 12
+      spawnCount: 5
     spawnPoints:
     - {fileID: 546973407}
     - {fileID: 1612632253}
@@ -7460,12 +7460,12 @@ MonoBehaviour:
     - {fileID: 1476486035}
     - {fileID: 1918038193}
     moneyDrop: 8
-    enemyDamage: 16
-    enemyHealth: 65
+    enemyDamage: 15
+    enemyHealth: 40
     enemySpeed: 4
-    rangeDamage: 12
-    rangeHealth: 35
-    rangeSpeed: 4
+    rangeDamage: 15
+    rangeHealth: 20
+    rangeSpeed: 5
     rangeMoneyDrop: 10
     bossDamage: 0
     bossHealth: 0
@@ -10744,7 +10744,7 @@ Transform:
   m_GameObject: {fileID: 1641310884}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.78, y: -7.54, z: -2.4586346}
+  m_LocalPosition: {x: 6.28, y: -6.54, z: -2.4586346}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
