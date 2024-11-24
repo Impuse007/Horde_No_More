@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -47,7 +48,15 @@ namespace DefaultNamespace
                 ParticleSystem instantiatedFireball = Instantiate(fireball, transform.position, Quaternion.identity);
                 instantiatedFireball.Play();
                 Destroy(gameObject); // Destroy the fireball after hitting the enemy
+                StopCoroutine(StopParticleAfterSeconds(instantiatedFireball, 1f));
+                
             }
+        }
+        
+        private IEnumerator StopParticleAfterSeconds(ParticleSystem particle, float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            particle.Stop();
         }
     }
 }

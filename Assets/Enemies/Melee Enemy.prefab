@@ -130,7 +130,7 @@ MonoBehaviour:
   enemyCurrentHealth: 0
   enemyDamage: 10
   speed: 5
-  attackRange: 1.1
+  attackRange: 1.2
   attackCooldown: 1
   nextAttackTime: 0
   moneyDrop: 10

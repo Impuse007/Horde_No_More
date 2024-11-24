@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public LevelManager levelManager;
     public UIManager uiManager;
     private Rigidbody2D rb;
+    public GameObject arrowCursor;
     
     // Player Movement Values
     [Header("Player Main Stats")]
@@ -107,6 +108,7 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
         PlayerMoves();
+        CursorArrow();
         
         if (Input.GetKeyDown(KeyCode.Space) && Time.time >= nextDashTime)
         {
@@ -366,5 +368,15 @@ public class PlayerController : MonoBehaviour
         dashEffect.Play();
         yield return new WaitForSeconds(0.5f);
         dashEffect.Stop();
+    }
+    
+    private void CursorArrow()
+    {
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
+        arrowCursor.transform.position = transform.position + (Vector3)direction;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        arrowCursor.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90)); // Adjust the angle to make the arrow point upwards
     }
 }

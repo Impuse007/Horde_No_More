@@ -22,7 +22,13 @@ public class MoneyDrop : MonoBehaviour
     {
         if (isFollowingImage && moneyList.Count > 0)
         {
-            Vector3 imageWorldPosition = Camera.main.ScreenToWorldPoint(imageTransform.position);
+            Camera mainCamera = Camera.main;
+            if (mainCamera == null)
+            {
+                return;
+            }
+
+            Vector3 imageWorldPosition = mainCamera.ScreenToWorldPoint(imageTransform.position);
             imageWorldPosition.z = 0;
 
             for (int i = moneyList.Count - 1; i >= 0; i--)
@@ -43,7 +49,7 @@ public class MoneyDrop : MonoBehaviour
                     }
                 }
             }
-            
+
             if (moneyList.Count == 0)
             {
                 isFollowingImage = false;
