@@ -16,6 +16,11 @@ public class SFXManager : MonoBehaviour
         {
             instance = this;
         }
+        
+        playerSource.volume = PlayerPrefs.GetFloat("Volume", 1f);
+        enemySource.volume = PlayerPrefs.GetFloat("Volume", 1f);
+        musicSource.volume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        environmentSource.volume = PlayerPrefs.GetFloat("Volume", 1f);
     }
     
     public void PlayPlayerSFX(int sfxToPlay)
