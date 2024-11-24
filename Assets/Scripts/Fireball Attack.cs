@@ -6,14 +6,14 @@ namespace DefaultNamespace
 {
     public class Fireball_Attack : MonoBehaviour
     {
-        PlayerController playerController;
+        public PlayerController playerController;
         public ParticleSystem fireball;
         public int damage;
         private bool hasHit = false;
         
         public void Start()
         {
-            playerController = Object.FindObjectOfType(typeof(PlayerController)) as PlayerController;
+            playerController = FindObjectOfType<PlayerController>();
             damage = playerController.playerDamage;
         }
 

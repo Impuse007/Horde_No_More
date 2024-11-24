@@ -5705,7 +5705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Options is a  WIP
+  m_text: Options
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6ec87681575fa040bb51057e3838776, type: 2}
   m_sharedMaterial: {fileID: -3845571855765110547, guid: f6ec87681575fa040bb51057e3838776, type: 2}
@@ -5732,14 +5732,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 71.15
+  m_fontSize: 120
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontSizeMax: 120
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8841,6 +8841,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 606820389}
+  - component: {fileID: 606820390}
   m_Layer: 0
   m_Name: Options
   m_TagString: Untagged
@@ -8874,6 +8875,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &606820390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606820388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012b2685c8db5f6449f5f6b0aff85b3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 1105851147}
+  musicSlider: {fileID: 1475673597}
 --- !u!1 &614832256
 GameObject:
   m_ObjectHideFlags: 0
@@ -39171,6 +39186,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 301666271}
     m_Modifications:
     - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
       propertyPath: moneyText
       value: 
       objectReference: {fileID: 808123389}
@@ -39187,9 +39206,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1537517070}
     - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
+      propertyPath: dashCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
+      propertyPath: playerDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
+      propertyPath: nextAttackTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
       propertyPath: playerHealthBar
       value: 
       objectReference: {fileID: 1716032429}
+    - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
+      propertyPath: playerMaxHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
+      propertyPath: basicAttackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
+      propertyPath: basicAttackCooldown
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
+      propertyPath: specialAttackDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2374092546083314130, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0005
