@@ -6374,7 +6374,7 @@ RectTransform:
   m_Father: {fileID: 686233194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -28908,7 +28908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2439782557075182410, guid: 9c5abf5648b27ff48ac0682b0516e026, type: 3}
       propertyPath: m_Name
-      value: CoinGatherEffect (1)
+      value: CoinGatherEffect
       objectReference: {fileID: 0}
     - target: {fileID: 2439782557075182410, guid: 9c5abf5648b27ff48ac0682b0516e026, type: 3}
       propertyPath: m_IsActive
@@ -30027,7 +30027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1623520275
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36107,8 +36107,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6082a8e07581be24d9a574f4e522b857, type: 3}
   enemySFX: []
   musicSongs:
-  - {fileID: 8300000, guid: ed9c4331cd48f3241ada6cac722690cf, type: 3}
   - {fileID: 8300000, guid: 7d13b8af8af5a294f8f9f595bc648b53, type: 3}
+  - {fileID: 8300000, guid: ed9c4331cd48f3241ada6cac722690cf, type: 3}
   - {fileID: 8300000, guid: 5d65ea821154ef540957b3f04b0dda05, type: 3}
   - {fileID: 8300000, guid: d33fead596fd930408c1f6e14ed853d9, type: 3}
   environmentSFX:

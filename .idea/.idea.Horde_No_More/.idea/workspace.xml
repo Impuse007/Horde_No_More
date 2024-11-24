@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="90da82e4-6e32-4478-b7bf-d13780ae865a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Particles/CoinGatherEffect.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Particles/CoinGatherEffect.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Programming.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Programming.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fireball Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fireball Attack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MoneyDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MoneyDrop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +181,7 @@
       <workItem from="1732155202969" duration="4907000" />
       <workItem from="1732198827401" duration="12983000" />
       <workItem from="1732243348043" duration="357000" />
-      <workItem from="1732463983383" duration="4750000" />
+      <workItem from="1732463983383" duration="5498000" />
     </task>
     <servers />
   </component>

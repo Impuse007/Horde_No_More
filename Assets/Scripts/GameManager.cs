@@ -61,14 +61,17 @@ public class GameManager : MonoBehaviour
     void CheckLevel()
     {
         string currentLevel = SceneManager.GetActiveScene().name;
-        if (currentLevel == "MainMenu")
+        if (currentLevel == "Main Menu")
         {
             SfxManager.PlayMusic(0); // Play the main menu music
+            Debug.Log("Main Menu Music");
         }
         else
         {
             SfxManager.PlayMusic(1); // Play the gameplay music
+            Debug.Log("Gameplay Music");
         }
+        Debug.Log("Current Level: " + currentLevel);
         //if (currentLevel == "Level1")
         //{
         //    playerController.gameObject.SetActive(true);
