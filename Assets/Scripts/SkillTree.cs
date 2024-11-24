@@ -54,6 +54,11 @@ public class SkillTree : MonoBehaviour
             if (skillGameObject != null)
             {
                 skillGameObject.SetActive(true);
+                HoveringOverSkills hoveringOverSkills = skillGameObject.GetComponent<HoveringOverSkills>();
+                if (hoveringOverSkills != null)
+                {
+                    hoveringOverSkills.skillBrought = true;
+                }
                 Image skillImage = skillGameObject.GetComponent<Image>();
                 if (skillImage != null)
                 {
@@ -69,20 +74,20 @@ public class SkillTree : MonoBehaviour
         }
     }
 
-    public void SetSelectedSkill(string skillName)
-    {
-        currentSkill = skills.Find(s => s.skillName == skillName);
-        if (currentSkill != null)
-        {
-            nameText.text = currentSkill.skillName;
-            descText.text = currentSkill.description;
-            costText.text = "Cost: " + currentSkill.cost;
-        }
-        else
-        {
-            Debug.LogWarning("Skill not found: " + skillName);
-        }
-    }
+    //public void SetSelectedSkill(string skillName)
+    //{
+    //    currentSkill = skills.Find(s => s.skillName == skillName);
+    //    if (currentSkill != null)
+    //    {
+    //        nameText.text = currentSkill.skillName;
+    //        descText.text = currentSkill.description;
+    //        costText.text = "Cost: " + currentSkill.cost;
+    //    }
+    //    else
+    //    {
+    //        Debug.LogWarning("Skill not found: " + skillName);
+    //    }
+    //}
 
     public void UnlockSelectedSkill()
     {
@@ -118,18 +123,18 @@ public class SkillTree : MonoBehaviour
             descText.text = skill.description;
             costText.text = "Cost: " + skill.cost;
         }
-        if (skillGameObject != null)
-        {
-            
-            Image skillImage = skillGameObject.GetComponent<Image>();
-            if (skillImage != null)
-            {
-                Color color = skillImage.color;
-                color.a = 1f;
-                skillImage.color = color;
-            }
-            Debug.Log("Skill hovered: " + skillGameObject.name);
-        }
+        //if (skillGameObject != null)
+        //{
+        //    
+        //    Image skillImage = skillGameObject.GetComponent<Image>();
+        //    if (skillImage != null)
+        //    {
+        //        Color color = skillImage.color;
+        //        color.a = 1f;
+        //        skillImage.color = color;
+        //    }
+        //    Debug.Log("Skill hovered: " + skillGameObject.name);
+        //}
     }
 
     public void OnPointerExitSkill()
@@ -140,16 +145,20 @@ public class SkillTree : MonoBehaviour
             nameText.text = "";
             descText.text = "";
             costText.text = "";
-            
-            // Reset the skill GameObject's alpha
-            Image skillImage = skillGameObject.GetComponent<Image>();
-            if (skillImage != null)
-            {
-                Color color = skillImage.color;
-                color.a = 0.5f; // Make it semi-transparent
-                skillImage.color = color;
-            }
-            Debug.Log("Skill hover exited: " + skillGameObject.name);
+
+            // Reset the skill GameObject's alpha to 0.5 but keep it green if the skill is bought
+            //Image skillImage = skillGameObject.GetComponent<Image>();
+            //if (skillImage != null)
+            //{
+            //    Color color = skillImage.color;
+            //    if (unlockedSkills.Contains(skills.Find(s => s.skillName == skillGameObject.name)))
+            //    {
+            //        color = Color.green;
+            //    }
+            //    color.a = 0.5f; // Make it semi-transparent
+            //    skillImage.color = color;
+            //}
+            //Debug.Log("Skill hover exited: " + skillGameObject.name);
         }
     }
 }

@@ -22,17 +22,21 @@ public class HoveringOverSkills : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (image != null && !skillBrought)
+        if (image != null)
         {
-            image.color = hoverColor;
+            Color color = skillBrought ? Color.green : hoverColor;
+            color.a = 1f; // Fully opaque
+            image.color = color;
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (image != null && !skillBrought)
+        if (image != null)
         {
-            image.color = originalColor;
+            Color color = skillBrought ? Color.green : originalColor;
+            color.a = 0.5f; // Semi-transparent
+            image.color = color;
         }
     }
 }
