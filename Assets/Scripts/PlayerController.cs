@@ -201,6 +201,11 @@ public class PlayerController : MonoBehaviour
 
     public void BasicAttack() // Using Mouse0 to attack 
     {
+        if (SceneManager.GetActiveScene().name == "Main Menu")
+        {
+            return;
+        }
+        
         SFXManager.instance.PlayPlayerSFX(0);
         // Attack in the direction of the mouse
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -214,6 +219,11 @@ public class PlayerController : MonoBehaviour
     
     public void SpecialAttack() // Using Mouse1 to attack
     {
+        if (SceneManager.GetActiveScene().name == "Main Menu")
+        {
+            return;
+        }
+        
         if (!isSpecialAttackUnlocked)
         {
             Debug.Log("Special Attack is not unlocked yet.");
@@ -247,6 +257,11 @@ public class PlayerController : MonoBehaviour
     
     private void Heal()
     {
+        if (SceneManager.GetActiveScene().name == "Main Menu")
+        {
+            return;
+        }
+        
         if (!isHealingUnlocked)
         {
             Debug.Log("Healing is not unlocked yet.");

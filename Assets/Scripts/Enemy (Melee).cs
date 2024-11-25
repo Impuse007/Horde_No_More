@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyMelee : EnemyBase
 {
+    private static readonly int Death = Animator.StringToHash("Death");
     private PlayerController playerController;
     public SpriteRenderer SpriteTransform;
     private bool isAttacking = false;
@@ -34,6 +35,11 @@ public class EnemyMelee : EnemyBase
     
     void FixedUpdate()
     {
+        if (isDead)
+        {
+            return;
+        }
+        
         if (!isAttacking)
         {
             EnemyMeleeMovement();
@@ -48,6 +54,11 @@ public class EnemyMelee : EnemyBase
 
     public void EnemyMeleeAttack()
     {
+        if (isDead)
+        {
+            return;
+        }
+        
         if (player == null || playerController == null)
         {
             Debug.LogWarning("Player or PlayerController is not assigned.");
@@ -83,6 +94,10 @@ public class EnemyMelee : EnemyBase
 
     public void EnemyMeleeMovement()
     {
+        if (isDead)
+        {
+            return;
+        }
         animator.ResetTrigger("Attack");
         
         if (player == null)
@@ -111,6 +126,11 @@ public class EnemyMelee : EnemyBase
 
     public void TakeDamage(int damage)
     {
+        if (isDead)
+        {
+            return;
+        }
+        
         enemyCurrentHealth -= damage;
         StartCoroutine(FlashRed());
 
@@ -126,7 +146,7 @@ public class EnemyMelee : EnemyBase
         OnEnemyDeath?.Invoke();
         DropMoneyAndGiveToPlayer();
         playerController.playerMoney += moneyDrop;
-        GameObject.Destroy(gameObject);
+        StartCoroutine(DeadAnimation());
     }
     
     private void DropMoneyAndGiveToPlayer()
@@ -140,5 +160,15 @@ public class EnemyMelee : EnemyBase
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         spriteRenderer.color = Color.white;
+    }
+    
+    private IEnumerator DeadAnimation()
+    {
+        animator.ResetTrigger("Attack");
+        animator.SetTrigger(Death);
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        rb.simulated = false;
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        Destroy(gameObject);
     }
 }
