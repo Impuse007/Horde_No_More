@@ -89,8 +89,7 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(currentWave.waveDelay);
             SFXManager.instance.PlayWaveSFX(0); // Play the wave complete sound effect
             currentWaveIndex++;
-            
-
+            gameManager.AddWave();
             if (currentWaveIndex >= waves.Count)
             {
                 WinGame();

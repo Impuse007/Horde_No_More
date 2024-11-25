@@ -6,9 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="90da82e4-6e32-4478-b7bf-d13780ae865a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/Enemy_Movement_Animation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Animations/Enemy_Movement_Animation.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/Melee Enemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Animations/Melee Enemy.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/Range Enemy 1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Animations/Range Enemy 1.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemies/Enemy_Movement_Sheet-export.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemies/Enemy_Movement_Sheet-export.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HoveringOverSkills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HoveringOverSkills.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RangeEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RangeEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Results Screen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Results Screen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +91,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Downloads/Horde No More Build Beta\Horde_No_More.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/Downloads/Horde No More Beta\Horde_No_More.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\noahv\Downloads\Horde No More Alpha 0.1" />
       <option name="PASS_PARENT_ENVS" value="1" />

@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
         }
         
         CheckLevel();
+        Debug.Log(Save.SaveSystem._savePath);
     }
     
     void SetButtonAlphaValue(float alphaValue)
