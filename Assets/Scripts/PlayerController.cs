@@ -262,6 +262,7 @@ public class PlayerController : MonoBehaviour
         playerCurrentHealth += healingAmount;
         nextHealingTime = Time.time + healingCooldown;
         healingEffect.Play();
+        SFXManager.instance.PlayPlayerSFX(4);
         StartCoroutine(StopHealingEffectAfterDuration(healingEffect.main.duration));
     }
     
@@ -307,6 +308,7 @@ public class PlayerController : MonoBehaviour
         if (isInvincible) return; // If the player is invincible, do not take damage
 
         playerCurrentHealth -= damage;
+        SFXManager.instance.PlayEnemySFX(0);
 
         if (playerCurrentHealth <= 0)
         {
@@ -329,6 +331,7 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         uiManager.SwitchUI(UIManager.switchUI.GameOver);
+        SFXManager.instance.PlayPlayerSFX(5);
         playerSprite.enabled = false;
         Time.timeScale = 0;
         FindObjectOfType<GameManager>().SavingGame();

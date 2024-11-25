@@ -36225,7 +36225,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: aad33bdc8c6674246beeb0878fa68733, type: 3}
   - {fileID: 8300000, guid: 3b2c68d1d28bf95438d0f32b6f3450cf, type: 3}
   - {fileID: 8300000, guid: 6082a8e07581be24d9a574f4e522b857, type: 3}
-  enemySFX: []
+  - {fileID: 8300000, guid: d0855f400964ecc419201e1e218173eb, type: 3}
+  - {fileID: 8300000, guid: fcc8586699d35c54b86d1763f011a8a7, type: 3}
+  enemySFX:
+  - {fileID: 8300000, guid: 1d8d852a11398bc4ca88ca7ca4c5a2fb, type: 3}
   musicSongs:
   - {fileID: 8300000, guid: 7d13b8af8af5a294f8f9f595bc648b53, type: 3}
   - {fileID: 8300000, guid: ed9c4331cd48f3241ada6cac722690cf, type: 3}
