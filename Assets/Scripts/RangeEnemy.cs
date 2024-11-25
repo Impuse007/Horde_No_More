@@ -26,6 +26,7 @@ public class RangeEnemy : EnemyBase
     private float nextShootTime;
     private bool isShooting = false;
 
+    public Animator animator;
     private PlayerController playerController;
     private Rigidbody2D rb;
 
@@ -93,6 +94,7 @@ public class RangeEnemy : EnemyBase
 
     void MoveTowardsPlayer()
     {
+        animator.SetTrigger("Movement");
         Vector2 direction = ((Vector2)player.position - (Vector2)transform.position).normalized;
         Vector2 targetPosition = (Vector2)player.position - direction;
         float distanceToTarget = Vector2.Distance(rb.position, targetPosition);
@@ -108,6 +110,7 @@ public class RangeEnemy : EnemyBase
 
     IEnumerator ShootArrow()
     {
+        animator.ResetTrigger("Movement");
         isShooting = true;
 
         Vector2 direction = (player.position - shootPoint.position).normalized;

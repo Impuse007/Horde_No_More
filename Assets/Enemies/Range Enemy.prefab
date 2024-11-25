@@ -85,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7637241618524450712}
   - component: {fileID: 1530266086001417149}
+  - component: {fileID: 8010372822781586956}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -159,6 +160,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8010372822781586956
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128500277278978661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d46f0a59ddc32c42aae3414fd15762b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2872380332407878398
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +425,7 @@ MonoBehaviour:
   shootPoint: {fileID: 3407721462118261786}
   spriteTransform: {fileID: 7637241618524450712}
   healthBar: {fileID: 1091113251590225456}
+  animator: {fileID: 8010372822781586956}
 --- !u!1 &4466643366633873906
 GameObject:
   m_ObjectHideFlags: 0
