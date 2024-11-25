@@ -46,15 +46,15 @@ namespace DefaultNamespace
                 hasHit = true; // Set the flag to true
                 SFXManager.instance.PlayPlayerSFX(1); // Play the enemy hit sound effect
                 ParticleSystem instantiatedFireball = Instantiate(fireball, transform.position, Quaternion.identity);
-                instantiatedFireball.Play();
-                Destroy(gameObject); // Destroy the fireball after hitting the enemy
                 StopCoroutine(StopParticleAfterSeconds(instantiatedFireball, 1f));
+                Destroy(gameObject); // Destroy the fireball after hitting the enemy
                 
             }
         }
         
         private IEnumerator StopParticleAfterSeconds(ParticleSystem particle, float seconds)
         {
+            particle.Play();
             yield return new WaitForSeconds(seconds);
             particle.Stop();
         }
