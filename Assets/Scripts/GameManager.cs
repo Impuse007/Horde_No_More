@@ -6,6 +6,8 @@ using DefaultNamespace;
 using Save;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +18,9 @@ public class GameManager : MonoBehaviour
     Skill unSkill;
     public Results_Screen resultsScreen;
     public SFXManager SfxManager;
+    
+    public Button loadGameButton;
+    public ColorBlock colorBlock;
     
     public int playerScore;
     public int highScore;
@@ -33,12 +38,49 @@ public class GameManager : MonoBehaviour
         if (!File.Exists(Save.SaveSystem._savePath))
         {
             NewGame();
+            loadGameButton.interactable = false;
             Debug.Log("New Save File Created");
         }
         else
         {
+            SetButtonAlphaValue(255);  
+            loadGameButton.interactable = true;
             LoadGame(playerController, skillTree);
         }
+        
+        CheckLevel();
+        Debug.Log(Save.SaveSystem._savePath);
+    }
+    
+    void SetButtonAlphaValue(float alphaValue)
+    {
+        Color color = loadGameButton.GetComponent<Image>().color;
+        color.a = alphaValue / 255f; // Convert alpha to the range of 0 to 1
+        loadGameButton.GetComponent<Image>().color = color;
+    }
+    
+    void CheckLevel()
+    {
+        string currentLevel = SceneManager.GetActiveScene().name;
+        if (currentLevel == "Main Menu")
+        {
+            SfxManager.PlayMusic(0); // Play the main menu music
+            Debug.Log("Main Menu Music");
+        }
+        else
+        {
+            SfxManager.PlayMusic(1); // Play the gameplay music
+            Debug.Log("Gameplay Music");
+        }
+        Debug.Log("Current Level: " + currentLevel);
+        //if (currentLevel == "Level1")
+        //{
+        //    playerController.gameObject.SetActive(true);
+        //}
+        //else
+        //{
+        //    playerController.gameObject.SetActive(false);
+        //}
     }
 
     public void Update()
@@ -108,33 +150,36 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         playerController.playerMoney = 0;
-        playerController.playerMaxHealth = 75;
-        playerController.speed = 5;
+        playerController.playerMaxHealth = 40;
+        playerController.speed = 3;
         playerController.isHealingUnlocked = false;
         playerController.isSpecialAttackUnlocked = false;
         playerController.dashSpeed = 15.0f;
-        playerController.dashCooldown = 3.0f;
+        playerController.dashCooldown = 5.0f;
         playerController.healingAmount = 20;
         playerController.healingCooldown = 15.0f;
-        playerController.specialAttackDamage = 15;
+        playerController.specialAttackDamage = 10;
         playerController.specialAttackRange = 10.0f;
         playerController.specialAttackCooldown = 5.0f;
-        playerController.playerDamage = 20;
-        playerController.basicAttackRange = 3.0f; // Might be used for fut
-        playerController.basicAttackCooldown = 2.0f;
+        playerController.playerDamage = 5;
+        playerController.basicAttackRange = 4.0f; 
+        playerController.basicAttackCooldown = 3.5f;
+        waveNumber = 0;
+        kills = 0;
+        moneyEarned = 0;
+        timeInGame = 0;
         skillTree.unlockedSkills = new List<Skill>();
         foreach (var skill in skillTree.skills)
         {
             skill.isUnlocked = false;
-            //if (skill.skillPrefab != null)
-            //{
-            //    skill.skillPrefab.SetActive(false);
-            //}
+            if (skill.skillPrefab != null)
+            {
+                skill.skillPrefab.SetActive(false);
+            }
             skill.UpdateSkillStatusText();
         }
         SavingGame(); 
         ResetResults();
-        SfxManager.PlayGamePlayMusic();
     }
 
     public void PlayerWon()

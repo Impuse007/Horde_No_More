@@ -113,12 +113,12 @@ TextureImporter:
       name: New_Idle_Wizard-Sheet_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 5
-        width: 37
-        height: 32
+        x: 0
+        y: 0
+        width: 48
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: New_Idle_Wizard-Sheet_1
       rect:
         serializedVersion: 2
-        x: 45
-        y: 4
-        width: 37
-        height: 33
+        x: 48
+        y: 0
+        width: 48
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: New_Idle_Wizard-Sheet_2
       rect:
         serializedVersion: 2
-        x: 86
-        y: 5
-        width: 37
-        height: 32
+        x: 96
+        y: 0
+        width: 48
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: New_Idle_Wizard-Sheet_3
       rect:
         serializedVersion: 2
-        x: 127
-        y: 4
-        width: 37
-        height: 33
+        x: 144
+        y: 0
+        width: 48
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3354790551954757604}
   - component: {fileID: 7497682295138938852}
   - component: {fileID: 7658602702387797646}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7637241618524450712}
   - component: {fileID: 1530266086001417149}
-  m_Layer: 6
+  - component: {fileID: 8010372822781586956}
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,6 +160,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8010372822781586956
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128500277278978661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52e3f60c325b0aa4eb1f278db94d7cf6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2872380332407878398
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +192,7 @@ GameObject:
   - component: {fileID: 1045633608544459036}
   - component: {fileID: 6407362002594195114}
   - component: {fileID: 3989439852432814566}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6699617372943628350}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +304,7 @@ GameObject:
   - component: {fileID: 6438407606361399858}
   - component: {fileID: 6205099911781113327}
   - component: {fileID: 4053447770516967723}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Range Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -314,7 +336,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3807887970881953072}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -325,13 +347,13 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &6205099911781113327
 CapsuleCollider2D:
@@ -345,10 +367,10 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 72
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -391,6 +413,7 @@ MonoBehaviour:
   moneyDrop: 0
   player: {fileID: 0}
   enemy: {fileID: 0}
+  MoneyDrop: {fileID: 0}
   rangeDamage: 10
   rangeHealth: 50
   rangeCurrentHealth: 0
@@ -402,6 +425,7 @@ MonoBehaviour:
   shootPoint: {fileID: 3407721462118261786}
   spriteTransform: {fileID: 7637241618524450712}
   healthBar: {fileID: 1091113251590225456}
+  animator: {fileID: 8010372822781586956}
 --- !u!1 &4466643366633873906
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +438,7 @@ GameObject:
   - component: {fileID: 1809319797751202469}
   - component: {fileID: 4237435204544368098}
   - component: {fileID: 6571091889354623851}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5566162663507379244}
   - component: {fileID: 1091113251590225456}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

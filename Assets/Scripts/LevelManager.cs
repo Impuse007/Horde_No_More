@@ -13,13 +13,16 @@ public class LevelManager : MonoBehaviour
     {
         Application.LoadLevel(levelName);
         Player.SetActive(true);
+        gameManager.waveNumber = 0;
+        gameManager.kills = 0;
+        gameManager.moneyEarned = 0;
+        gameManager.timeInGame = 0;
         Player.transform.position = new Vector3(0, 0, 0);
         playerController.playerCurrentHealth = playerController.playerMaxHealth;
         playerController.isInvincible = false;
         UpdateHealthBar();
         gameManager.ResetResults();
         Time.timeScale = 1;
-        sfxManager.PlayGamePlayMusic();
     }
     
     public void UpdateHealthBar()
@@ -32,7 +35,6 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
         SaveSystem.SaveGame(playerController, playerController.skillTree);
         Player.SetActive(false);
-        sfxManager.PlayMainMenuMusic();
     }
     
     public void QuitGame()

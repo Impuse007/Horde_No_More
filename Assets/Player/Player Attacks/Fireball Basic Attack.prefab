@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7702567945314762989}
   - component: {fileID: -2836775823656831018}
   - component: {fileID: -5329096667389997867}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Fireball Basic Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 192
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -161,4 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcb605b7e094fbdbca69446c3a3bbcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireball: {fileID: 4884006320379633056, guid: 34699688ca0646e45ac7c598aa1b1577, type: 3}
   damage: 0

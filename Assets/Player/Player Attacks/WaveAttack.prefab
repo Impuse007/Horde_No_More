@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2277311261300126164}
   - component: {fileID: 9031889658827427143}
   - component: {fileID: 2560111791941982782}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: WaveAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 9037776894968560888}
   - component: {fileID: 2955627680919130070}
   - component: {fileID: 8404889203929263134}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

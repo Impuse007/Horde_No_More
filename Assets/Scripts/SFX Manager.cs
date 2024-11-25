@@ -1,29 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class SFXManager : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public AudioClip mainMenuMusic;
-    public AudioClip gamePlayMusic;
+    public static SFXManager instance;
     
-    public void Start()
+    public AudioClip[] playerSFX, enemySFX, musicSongs, environmentSFX, waveSFX;
+    public AudioSource playerSource, enemySource, musicSource, environmentSource, waveSource;
+    
+    private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = mainMenuMusic;
-        audioSource.Play();
+        if (instance == null)
+        {
+            instance = this;
+        }
+        
+        playerSource.volume = PlayerPrefs.GetFloat("Volume", 1f);
+        enemySource.volume = PlayerPrefs.GetFloat("Volume", 1f);
+        musicSource.volume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        environmentSource.volume = PlayerPrefs.GetFloat("Volume", 1f);
+        waveSource.volume = PlayerPrefs.GetFloat("Volume", 1f);
     }
     
-    public void PlayGamePlayMusic()
+    public void PlayPlayerSFX(int sfxToPlay)
     {
-        audioSource.clip = gamePlayMusic;
-        audioSource.Play();
+        playerSource.clip = playerSFX[sfxToPlay];
+        playerSource.Play();
     }
     
-    public void PlayMainMenuMusic()
+    public void PlayEnemySFX(int sfxToPlay)
     {
-        audioSource.clip = mainMenuMusic;
-        audioSource.Play();
+        enemySource.clip = enemySFX[sfxToPlay];
+        enemySource.Play();
+    }
+    
+    public void PlayMusic(int musicToPlay)
+    {
+        musicSource.clip = musicSongs[musicToPlay];
+        musicSource.Play();
+        Debug.Log("Playing music: " + musicSongs[musicToPlay]);
+    }
+    
+    public void PlayEnvironmentSFX(int sfxToPlay)
+    {
+        environmentSource.clip = environmentSFX[sfxToPlay];
+        environmentSource.Play();
+    }
+    
+    public void PlayWaveSFX(int sfxToPlay)
+    {
+        waveSource.clip = waveSFX[sfxToPlay];
+        waveSource.Play();
     }
 }

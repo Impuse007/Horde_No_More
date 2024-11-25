@@ -102,7 +102,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -121,9 +121,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 40
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -142,9 +142,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 80
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -163,9 +163,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 120
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -184,9 +184,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_4
       rect:
         serializedVersion: 2
-        x: 192
+        x: 160
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -205,9 +205,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_5
       rect:
         serializedVersion: 2
-        x: 240
+        x: 200
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,9 +226,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_6
       rect:
         serializedVersion: 2
-        x: 288
+        x: 240
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -247,9 +247,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_7
       rect:
         serializedVersion: 2
-        x: 336
+        x: 280
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -268,9 +268,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_8
       rect:
         serializedVersion: 2
-        x: 384
+        x: 320
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -289,9 +289,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_9
       rect:
         serializedVersion: 2
-        x: 432
+        x: 360
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -310,9 +310,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_10
       rect:
         serializedVersion: 2
-        x: 480
+        x: 400
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -331,9 +331,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_11
       rect:
         serializedVersion: 2
-        x: 528
+        x: 440
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -352,9 +352,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_12
       rect:
         serializedVersion: 2
-        x: 576
+        x: 480
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -373,9 +373,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_13
       rect:
         serializedVersion: 2
-        x: 624
+        x: 520
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -394,9 +394,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_14
       rect:
         serializedVersion: 2
-        x: 672
+        x: 560
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -415,9 +415,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_15
       rect:
         serializedVersion: 2
-        x: 720
+        x: 600
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -436,9 +436,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_16
       rect:
         serializedVersion: 2
-        x: 768
+        x: 640
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -457,9 +457,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_17
       rect:
         serializedVersion: 2
-        x: 816
+        x: 680
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -478,9 +478,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_18
       rect:
         serializedVersion: 2
-        x: 864
+        x: 720
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -499,9 +499,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_19
       rect:
         serializedVersion: 2
-        x: 912
+        x: 760
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -520,9 +520,9 @@ TextureImporter:
       name: Enemy_Attack_Animation-Sheet_20
       rect:
         serializedVersion: 2
-        x: 960
+        x: 800
         y: 0
-        width: 48
+        width: 40
         height: 40
       alignment: 0
       pivot: {x: 0, y: 0}

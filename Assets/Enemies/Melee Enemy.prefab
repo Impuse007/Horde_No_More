@@ -130,14 +130,17 @@ MonoBehaviour:
   enemyCurrentHealth: 0
   enemyDamage: 10
   speed: 5
-  attackRange: 1
+  attackRange: 1.2
   attackCooldown: 1
   nextAttackTime: 0
   moneyDrop: 10
   player: {fileID: 0}
   enemy: {fileID: 2088145556392030737}
   SpriteTransform: {fileID: 1420533207450281160}
+  healthBar: {fileID: 8595441358114314677}
   animator: {fileID: 4329374039869930093}
+  MoneyDrop: {fileID: 0}
+  waveManager: {fileID: 0}
 --- !u!61 &7054903492436199458
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -150,10 +153,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 136
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -206,9 +209,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 1
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &6107768438435587626
 MonoBehaviour:
@@ -235,10 +238,10 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 136
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -255,8 +258,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19065872, y: 0}
-  m_Size: {x: 0.950844, y: 1.875}
+  m_Offset: {x: -0.12794656, y: 0}
+  m_Size: {x: 0.55934036, y: 1.875}
   m_Direction: 0
 --- !u!1 &2727523538738027109
 GameObject:

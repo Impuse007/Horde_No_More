@@ -17,32 +17,11 @@ public class HowToPlay : MonoBehaviour
     {
         howToPlayPanel.SetActive(true);
         controlsPanel.SetActive(true);
-        gameplayPanel.SetActive(false);
-        abilitiesPanel.SetActive(false);
+        //gameplayPanel.SetActive(false);
+        //abilitiesPanel.SetActive(false);
         mainMenuButton.SetActive(true);
         mainMenuPanel.SetActive(false);
         playButton.SetActive(false);
-    }
-    
-    public void ControlsButton()
-    {
-        controlsPanel.SetActive(true);
-        gameplayPanel.SetActive(false);
-        abilitiesPanel.SetActive(false);
-    }
-    
-    public void GameplayButton()
-    {
-        controlsPanel.SetActive(false);
-        gameplayPanel.SetActive(true);
-        abilitiesPanel.SetActive(false);
-    }
-    
-    public void AbilitiesButton()
-    {
-        controlsPanel.SetActive(false);
-        gameplayPanel.SetActive(false);
-        abilitiesPanel.SetActive(true);
     }
     
     public void MainMenuButton()

@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     HealthManager playerManager;
     public LevelManager levelManager;
     public UIManager uiManager;
+    private Rigidbody2D rb;
+    public GameObject arrowCursor;
     
     // Player Movement Values
     [Header("Player Main Stats")]
@@ -42,7 +44,7 @@ public class PlayerController : MonoBehaviour
     public float specialAttackCooldown = 5.0f;
     public float nextSpecialAttackTime = 0.0f;
     public float specialAttackSpeed = 10.0f;
-    public TMP_Text specialAttackCooldownText;
+    public TMP_Text specialAttackCooldownText; // Moved in another script
     public LayerMask enemyLayersSpecial;
     
     [Header("Player Healing Stats")]
@@ -50,7 +52,8 @@ public class PlayerController : MonoBehaviour
     public int healingAmount = 20;
     public float healingCooldown = 5.0f;
     public float nextHealingTime = 0.0f;
-    public TMP_Text healingCooldownText;
+    public TMP_Text healingCooldownText; // Moved in another script
+    public ParticleSystem healingEffect;
     
     // Player Dash Values
     [Header("Player Dash Stats")]
@@ -59,8 +62,9 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown = 3.0f;
     public float nextDashTime = 0.0f;
     private float dashTime;
-    private float dashCooldownTime; // Sets the cooldown time for the dash when the game is starting
+    private float dashCooldownTime;
     private bool isDashing;
+    public ParticleSystem dashEffect;
     public TextMeshProUGUI dashCooldownText;
     
     // Player Flash Values
@@ -73,7 +77,7 @@ public class PlayerController : MonoBehaviour
     
     // Money Values
     [Header("Player Money Stats")]
-    public int playerMoney = 0;
+    public int playerMoney = 1000;
     public TextMeshProUGUI moneyText;
     
     [Header("Player Animations")]
@@ -88,6 +92,7 @@ public class PlayerController : MonoBehaviour
     public void Awake()
     {
         playerManager = GetComponent<HealthManager>();
+        rb = GetComponent<Rigidbody2D>();
         playerHealthBar.maxValue = playerMaxHealth;
         playerHealthBar.value = playerCurrentHealth;
         playerCurrentHealth = playerMaxHealth;
@@ -103,15 +108,13 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
         PlayerMoves();
+        CursorArrow();
         
-        if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTime <= 0)
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time >= nextDashTime)
         {
             StartCoroutine(Dash());
-        }
-        
-        if (dashCooldownTime > 0)
-        {
-            dashCooldownTime -= Time.deltaTime;
+            nextDashTime = Time.time + dashCooldown;
+            //StartCoroutine(PlayDashEffect());
         }
         
         if (Time.time >= nextAttackTime)
@@ -146,9 +149,10 @@ public class PlayerController : MonoBehaviour
         playerHealthBar.maxValue = playerMaxHealth;
         playerHealthBar.value = (int)playerCurrentHealth;
         moneyText.text = "Money: " + playerMoney;
-        dashCooldownText.text = "Dash Cooldown: " + Mathf.Max(0, dashCooldownTime).ToString("F1");
-        healingCooldownText.text = "Healing Cooldown: " + Mathf.Max(0, nextHealingTime - Time.time).ToString("F1");
-        specialAttackCooldownText.text = "Special Attack Cooldown: " + Mathf.Max(0, nextSpecialAttackTime - Time.time).ToString("F1");
+        //dashCooldownText.text = "Dash Cooldown: " + Mathf.Max(0, dashCooldownTime).ToString("F1");
+        // Don't need this anymore or the text in the values up top
+        //healingCooldownText.text = "Healing Cooldown: " + Mathf.Max(0, nextHealingTime - Time.time).ToString("F1"); 
+        //specialAttackCooldownText.text = "Special Attack Cooldown: " + Mathf.Max(0, nextSpecialAttackTime - Time.time).ToString("F1");
     }
 
     public void LateUpdate()
@@ -160,36 +164,50 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        
-        Vector3 movement = new Vector2(horizontal, vertical);
-        transform.Translate(movement * speed * Time.deltaTime);
-        
+
+        Vector2 movement = new Vector2(horizontal, vertical) * speed;
+        rb.velocity = movement; // Use Rigidbody2D for movement
+
         float speedValue = movement.magnitude;
         playerAnimator.SetFloat("Movement", speedValue);
-        playerSprite.flipX = Input.mousePosition.x < Screen.width / 2;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        playerSprite.flipX = mousePosition.x < transform.position.x;
     }
     
-    private IEnumerator Dash() // Bugged as the Player can double dash when pressing space bar quickly enough.
-    { 
-        Vector2 mousePosition = Input.mousePosition;
-        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector2 dashDirection = (worldPosition - (Vector2)transform.position).normalized;
+    private IEnumerator Dash() // Changed based off feedback to instead of cursor the dash works with the Player direction
+    {
+        Vector2 movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
+        if (movementDirection == Vector2.zero)
+        {
+            yield break; // if there is no movement from the Player
+        }
+
+        SFXManager.instance.PlayPlayerSFX(6);
         isDashing = true;
-        dashCooldownTime = dashCooldown; // Set the cooldown time immediately after starting the dash
+        dashCooldownTime = dashCooldown;
         float startTime = Time.time;
+        
+        dashEffect.Play();
 
         while (Time.time < startTime + dashDuration)
         {
-            transform.Translate(dashDirection * dashSpeed * Time.deltaTime, Space.World);
+            transform.Translate(movementDirection * dashSpeed * Time.deltaTime, Space.World);
             yield return null;
         }
-
+        
+        dashEffect.Stop();
         isDashing = false;
     }
 
     public void BasicAttack() // Using Mouse0 to attack 
     {
+        if (SceneManager.GetActiveScene().name == "Main Menu")
+        {
+            return;
+        }
+        
+        SFXManager.instance.PlayPlayerSFX(0);
         // Attack in the direction of the mouse
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 attackDirection = (mousePosition - (Vector2)transform.position).normalized;
@@ -202,6 +220,11 @@ public class PlayerController : MonoBehaviour
     
     public void SpecialAttack() // Using Mouse1 to attack
     {
+        if (SceneManager.GetActiveScene().name == "Main Menu")
+        {
+            return;
+        }
+        
         if (!isSpecialAttackUnlocked)
         {
             Debug.Log("Special Attack is not unlocked yet.");
@@ -217,7 +240,8 @@ public class PlayerController : MonoBehaviour
         // Attack in the direction of the mouse
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 attackDirection = (mousePosition - (Vector2)transform.position).normalized;
-
+        
+        SFXManager.instance.PlayPlayerSFX(2);
         GameObject specialAttack = Instantiate(specialAttackPrefab, specialAttackPoint.position, Quaternion.identity);
         Rigidbody2D specialAttackRb = specialAttack.GetComponent<Rigidbody2D>();
 
@@ -234,6 +258,11 @@ public class PlayerController : MonoBehaviour
     
     private void Heal()
     {
+        if (SceneManager.GetActiveScene().name == "Main Menu")
+        {
+            return;
+        }
+        
         if (!isHealingUnlocked)
         {
             Debug.Log("Healing is not unlocked yet.");
@@ -248,6 +277,9 @@ public class PlayerController : MonoBehaviour
 
         playerCurrentHealth += healingAmount;
         nextHealingTime = Time.time + healingCooldown;
+        healingEffect.Play();
+        SFXManager.instance.PlayPlayerSFX(4);
+        StartCoroutine(StopHealingEffectAfterDuration(healingEffect.main.duration));
     }
     
     private IEnumerator DestroyBasicAttackAfterRange(GameObject basicAttack, Vector2 startPosition, float range)
@@ -292,6 +324,7 @@ public class PlayerController : MonoBehaviour
         if (isInvincible) return; // If the player is invincible, do not take damage
 
         playerCurrentHealth -= damage;
+        SFXManager.instance.PlayEnemySFX(0);
 
         if (playerCurrentHealth <= 0)
         {
@@ -314,6 +347,7 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         uiManager.SwitchUI(UIManager.switchUI.GameOver);
+        SFXManager.instance.PlayPlayerSFX(5);
         playerSprite.enabled = false;
         Time.timeScale = 0;
         FindObjectOfType<GameManager>().SavingGame();
@@ -337,8 +371,31 @@ public class PlayerController : MonoBehaviour
         }
     }
     
+    private IEnumerator StopHealingEffectAfterDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        healingEffect.Stop();
+    }
+    
     public void AddMoney(int money)
     {
         playerMoney += money;
+    }
+    
+    private IEnumerator PlayDashEffect()
+    {
+        dashEffect.Play();
+        yield return new WaitForSeconds(0.5f);
+        dashEffect.Stop();
+    }
+    
+    private void CursorArrow()
+    {
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
+        arrowCursor.transform.position = transform.position + (Vector3)direction;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        arrowCursor.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90)); // Adjust the angle to make the arrow point upwards
     }
 }

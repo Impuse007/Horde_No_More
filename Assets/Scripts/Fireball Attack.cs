@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -6,18 +7,20 @@ namespace DefaultNamespace
 {
     public class Fireball_Attack : MonoBehaviour
     {
-        PlayerController playerController;
+        public PlayerController playerController;
+        public ParticleSystem fireball;
         public int damage;
         private bool hasHit = false;
         
         public void Start()
         {
-            playerController = Object.FindObjectOfType(typeof(PlayerController)) as PlayerController;
+            playerController = FindObjectOfType<PlayerController>();
             damage = playerController.playerDamage;
         }
 
         public void OnTriggerEnter2D(Collider2D other)
         {
+            Debug.Log("Fireball hit: " + other.name);
             if (other.CompareTag("Enemy"))
             {
                 EnemyMelee enemyMelee = other.GetComponent<EnemyMelee>();
@@ -41,8 +44,19 @@ namespace DefaultNamespace
                 }
 
                 hasHit = true; // Set the flag to true
+                SFXManager.instance.PlayPlayerSFX(1); // Play the enemy hit sound effect
+                ParticleSystem instantiatedFireball = Instantiate(fireball, transform.position, Quaternion.identity);
+                StopCoroutine(StopParticleAfterSeconds(instantiatedFireball, 1f));
                 Destroy(gameObject); // Destroy the fireball after hitting the enemy
+                
             }
+        }
+        
+        private IEnumerator StopParticleAfterSeconds(ParticleSystem particle, float seconds)
+        {
+            particle.Play();
+            yield return new WaitForSeconds(seconds);
+            particle.Stop();
         }
     }
 }

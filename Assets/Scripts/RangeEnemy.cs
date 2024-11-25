@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class RangeEnemy : EnemyBase
 {
+    private static readonly int Death = Animator.StringToHash("Death");
     EnemyBase enemyBase;
+    public MoneyDrop MoneyDrop;
 
     public int rangeDamage = 10;
     public int rangeHealth = 50;
@@ -25,6 +27,7 @@ public class RangeEnemy : EnemyBase
     private float nextShootTime;
     private bool isShooting = false;
 
+    public Animator animator;
     private PlayerController playerController;
     private Rigidbody2D rb;
 
@@ -35,6 +38,7 @@ public class RangeEnemy : EnemyBase
     {
         rangeCurrentHealth = rangeHealth;
         GameObject playerObject = GameObject.FindWithTag("Player");
+        MoneyDrop = FindObjectOfType<MoneyDrop>();
 
         if (playerObject != null)
         {
@@ -65,6 +69,10 @@ public class RangeEnemy : EnemyBase
         {
             MoveTowardsPlayer();
         }
+        else if (distanceToPlayer == stopDistance)
+        {
+            MoveTowardsPlayer();
+        }
         else
         {
             if (Time.time >= nextShootTime)
@@ -87,20 +95,25 @@ public class RangeEnemy : EnemyBase
 
     void MoveTowardsPlayer()
     {
+        animator.SetTrigger("Movement");
+        animator.ResetTrigger("Attack");
         Vector2 direction = ((Vector2)player.position - (Vector2)transform.position).normalized;
         Vector2 targetPosition = (Vector2)player.position - direction;
         float distanceToTarget = Vector2.Distance(rb.position, targetPosition);
 
         // Only move if the distance to the target is greater than a small threshold
-        if (distanceToTarget > stopDistance + 0.5f) // Adjust the threshold as needed
+        if (distanceToTarget > stopDistance + 0.5f && Vector2.Distance(transform.position, player.position) > stopDistance)
         {
             Vector2 newPosition = Vector2.MoveTowards(rb.position, targetPosition, moveSpeed * Time.fixedDeltaTime);
             rb.MovePosition(newPosition);
+            rb.velocity = Vector2.zero;
         }
     }
 
     IEnumerator ShootArrow()
     {
+        animator.ResetTrigger("Movement");
+        animator.SetTrigger("Attack");
         isShooting = true;
 
         Vector2 direction = (player.position - shootPoint.position).normalized;
@@ -142,8 +155,14 @@ public class RangeEnemy : EnemyBase
     void Die()
     {
         OnEnemyDeath?.Invoke();
-        Destroy(gameObject);
+        DropMoneyAndGiveToPlayer();
         playerController.playerMoney += moneyRangeDrop;
+        StartCoroutine(DeadAnimation());
+    }
+    
+    private void DropMoneyAndGiveToPlayer()
+    {
+        MoneyDrop.DropMoney(transform.position);
     }
 
     private IEnumerator FlashRed()
@@ -152,5 +171,16 @@ public class RangeEnemy : EnemyBase
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         spriteRenderer.color = Color.white;
+    }
+    
+    private IEnumerator DeadAnimation()
+    {
+        animator.ResetTrigger("Movement");
+        animator.SetTrigger(Death);
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        rb.simulated = false;
+        healthBar.gameObject.SetActive(false);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        Destroy(gameObject);
     }
 }

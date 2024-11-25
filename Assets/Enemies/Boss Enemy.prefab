@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6851518559522530633}
   - component: {fileID: 4383263961956159729}
   - component: {fileID: 7319496028009340749}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 3135166179793314682}
   - component: {fileID: 6409911610973147473}
   - component: {fileID: 6160442340756935341}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Boss Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -161,6 +161,7 @@ MonoBehaviour:
   moneyDrop: 0
   player: {fileID: 0}
   enemy: {fileID: 0}
+  MoneyDrop: {fileID: 0}
   bossDamage: 10
   bossHealth: 50
   bossCurrentHealth: 0
@@ -243,7 +244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1524524545719459507}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6566966630111176259}
   - component: {fileID: 6584606608293196537}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +366,7 @@ GameObject:
   - component: {fileID: 3510748479902053062}
   - component: {fileID: 6892428653124858278}
   - component: {fileID: 5804976826744006847}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +441,7 @@ GameObject:
   - component: {fileID: 3967764973131662772}
   - component: {fileID: 5924468957099493217}
   - component: {fileID: 2536293066521765228}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6151775355864048365}
   - component: {fileID: 4187683332837781184}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
