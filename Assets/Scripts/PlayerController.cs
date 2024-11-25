@@ -170,7 +170,8 @@ public class PlayerController : MonoBehaviour
 
         float speedValue = movement.magnitude;
         playerAnimator.SetFloat("Movement", speedValue);
-        playerSprite.flipX = Input.mousePosition.x < Screen.width / 2;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        playerSprite.flipX = mousePosition.x < transform.position.x;
     }
     
     private IEnumerator Dash() // Changed based off feedback to instead of cursor the dash works with the Player direction

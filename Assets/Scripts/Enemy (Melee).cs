@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMelee : EnemyBase
 {
@@ -9,6 +10,7 @@ public class EnemyMelee : EnemyBase
     private bool isAttacking = false;
     private bool isDead = false;
     private Rigidbody2D rb;
+    public Slider healthBar;
 
     public Animator animator;
     public MoneyDrop MoneyDrop;
@@ -168,6 +170,7 @@ public class EnemyMelee : EnemyBase
         animator.SetTrigger(Death);
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         rb.simulated = false;
+        healthBar.gameObject.SetActive(false);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         Destroy(gameObject);
     }

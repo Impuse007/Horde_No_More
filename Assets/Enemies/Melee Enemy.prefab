@@ -137,6 +137,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemy: {fileID: 2088145556392030737}
   SpriteTransform: {fileID: 1420533207450281160}
+  healthBar: {fileID: 8595441358114314677}
   animator: {fileID: 4329374039869930093}
   MoneyDrop: {fileID: 0}
   waveManager: {fileID: 0}
