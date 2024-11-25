@@ -7,8 +7,8 @@ public class SFXManager : MonoBehaviour
 {
     public static SFXManager instance;
     
-    public AudioClip[] playerSFX, enemySFX, musicSongs, environmentSFX;
-    public AudioSource playerSource, enemySource, musicSource, environmentSource;
+    public AudioClip[] playerSFX, enemySFX, musicSongs, environmentSFX, waveSFX;
+    public AudioSource playerSource, enemySource, musicSource, environmentSource, waveSource;
     
     private void Awake()
     {
@@ -21,6 +21,7 @@ public class SFXManager : MonoBehaviour
         enemySource.volume = PlayerPrefs.GetFloat("Volume", 1f);
         musicSource.volume = PlayerPrefs.GetFloat("MusicVolume", 1f);
         environmentSource.volume = PlayerPrefs.GetFloat("Volume", 1f);
+        waveSource.volume = PlayerPrefs.GetFloat("Volume", 1f);
     }
     
     public void PlayPlayerSFX(int sfxToPlay)
@@ -46,5 +47,11 @@ public class SFXManager : MonoBehaviour
     {
         environmentSource.clip = environmentSFX[sfxToPlay];
         environmentSource.Play();
+    }
+    
+    public void PlayWaveSFX(int sfxToPlay)
+    {
+        waveSource.clip = waveSFX[sfxToPlay];
+        waveSource.Play();
     }
 }

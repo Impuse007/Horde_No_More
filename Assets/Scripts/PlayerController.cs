@@ -182,6 +182,7 @@ public class PlayerController : MonoBehaviour
             yield break; // if there is no movement from the Player
         }
 
+        SFXManager.instance.PlayPlayerSFX(6);
         isDashing = true;
         dashCooldownTime = dashCooldown;
         float startTime = Time.time;
@@ -195,7 +196,6 @@ public class PlayerController : MonoBehaviour
         }
         
         dashEffect.Stop();
-
         isDashing = false;
     }
 

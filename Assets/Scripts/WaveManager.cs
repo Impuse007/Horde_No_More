@@ -87,8 +87,9 @@ public class WaveManager : MonoBehaviour
             }
 
             yield return new WaitForSeconds(currentWave.waveDelay);
-
+            SFXManager.instance.PlayWaveSFX(0); // Play the wave complete sound effect
             currentWaveIndex++;
+            
 
             if (currentWaveIndex >= waves.Count)
             {
