@@ -13,6 +13,10 @@ public class LevelManager : MonoBehaviour
     {
         Application.LoadLevel(levelName);
         Player.SetActive(true);
+        gameManager.waveNumber = 0;
+        gameManager.kills = 0;
+        gameManager.moneyEarned = 0;
+        gameManager.timeInGame = 0;
         Player.transform.position = new Vector3(0, 0, 0);
         playerController.playerCurrentHealth = playerController.playerMaxHealth;
         playerController.isInvincible = false;

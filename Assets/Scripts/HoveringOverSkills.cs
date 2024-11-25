@@ -22,6 +22,7 @@ public class HoveringOverSkills : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        SFXManager.instance.PlayEnvironmentSFX(1); // Play the hover sound effect
         if (image != null)
         {
             Color color = skillBrought ? Color.green : hoverColor;

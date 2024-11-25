@@ -163,6 +163,10 @@ public class GameManager : MonoBehaviour
         playerController.playerDamage = 5;
         playerController.basicAttackRange = 4.0f; 
         playerController.basicAttackCooldown = 3.5f;
+        waveNumber = 0;
+        kills = 0;
+        moneyEarned = 0;
+        timeInGame = 0;
         skillTree.unlockedSkills = new List<Skill>();
         foreach (var skill in skillTree.skills)
         {
@@ -175,7 +179,6 @@ public class GameManager : MonoBehaviour
         }
         SavingGame(); 
         ResetResults();
-        
     }
 
     public void PlayerWon()

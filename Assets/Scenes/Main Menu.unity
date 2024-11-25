@@ -863,7 +863,7 @@ MonoBehaviour:
     skillStatusText: {fileID: 1369399138}
   - skillName: Damage Upgrade 2
     description: Increases Player Damage by 15
-    cost: 300
+    cost: 250
     isUnlocked: 0
     healthIncrease: 0
     speedIncrease: 0
@@ -36710,6 +36710,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d33fead596fd930408c1f6e14ed853d9, type: 3}
   environmentSFX:
   - {fileID: 8300000, guid: df40ff9e3a71eed43a0f9fb2ac593da1, type: 3}
+  - {fileID: 8300000, guid: ff1d9e0ce2bc19b4d86f6f2eaf99e59d, type: 3}
   waveSFX:
   - {fileID: 8300000, guid: c2623c30bd432b043a56f94b7edec4c8, type: 3}
   playerSource: {fileID: 1817422600}
