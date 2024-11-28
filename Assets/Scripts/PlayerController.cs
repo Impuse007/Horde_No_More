@@ -349,6 +349,7 @@ public class PlayerController : MonoBehaviour
         uiManager.SwitchUI(UIManager.switchUI.GameOver);
         SFXManager.instance.PlayPlayerSFX(5);
         playerSprite.enabled = false;
+        arrowCursor.SetActive(false);
         Time.timeScale = 0;
         FindObjectOfType<GameManager>().SavingGame();
     }
