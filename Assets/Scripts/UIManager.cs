@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -118,6 +119,7 @@ public class UIManager : MonoBehaviour
                 break;
             case switchUI.ResultsMenu:
                 resultsMenuUI.SetActive(true);
+                ResultScreenTween();
                 ShowWinText(); 
                 Time.timeScale = 0;
                 break;
@@ -150,6 +152,7 @@ public class UIManager : MonoBehaviour
                 if (Time.timeScale == 1)
                 {
                     Time.timeScale = 0;
+                    playerController.playerSprite.flipX = false;
                     SwitchUI(switchUI.GamePause);
                 }
                 else
@@ -194,5 +197,24 @@ public class UIManager : MonoBehaviour
     {
         mainMenuUI.SetActive(true);
         optionsMenuUI.SetActive(false);
+    }
+
+    public void ResultScreenTween()
+    {
+        resultsMenuUI.transform.localScale = Vector3.zero;
+        CanvasGroup canvasGroup = resultsMenuUI.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+        {
+            canvasGroup = resultsMenuUI.AddComponent<CanvasGroup>();
+        }
+
+        canvasGroup.alpha = 0;
+
+        // Set the background color to black
+        resultsMenuUI.GetComponent<Image>().color = Color.black;
+
+        // Animate the scale and alpha
+        LeanTween.scale(resultsMenuUI, new Vector3(1, 1, 1), 1f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.alphaCanvas(canvasGroup, 1, 1f).setEase(LeanTweenType.easeInOutQuad);
     }
 }

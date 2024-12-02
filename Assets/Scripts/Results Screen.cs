@@ -28,7 +28,7 @@ namespace DefaultNamespace
                 waveManager = FindObjectOfType<WaveManager>();
             }
             killsText.text = "Kills: " + gameManager.kills;
-            wavesCompletedText.text = "Waves Completed: " + gameManager.waveNumber + 1 + "/30"; 
+            wavesCompletedText.text = "Wave: " + gameManager.waveNumber + 1 + "/30"; 
             timeText.text = "Time: " + gameManager.timeInGame.ToString("F2"); // 2 decimal places
         }
     }
