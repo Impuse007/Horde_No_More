@@ -9,11 +9,14 @@ namespace DefaultNamespace
     {
         public GameManager gameManager;
         public WaveManager waveManager;
+        public UIManager uiManager;
         PlayerController playerController;
         
         public TMP_Text killsText;
         public TMP_Text wavesCompletedText;
         public TMP_Text timeText;
+        
+        public GameObject resultsScreenBackground;
         
         public void Start()
         {
@@ -27,9 +30,35 @@ namespace DefaultNamespace
             {
                 waveManager = FindObjectOfType<WaveManager>();
             }
+            
             killsText.text = "Kills: " + gameManager.kills;
             wavesCompletedText.text = "Wave: " + gameManager.waveNumber + 1 + "/30"; 
             timeText.text = "Time: " + gameManager.timeInGame.ToString("F2"); // 2 decimal places
+        }
+
+        public void ResultScreenTween()
+        {
+            RectTransform rectTransform = GetComponent<RectTransform>();
+            Vector3 originalScale = rectTransform.localScale;
+            Vector3 smallScale = originalScale * 0.5f; // 0.5x smaller than the original scale
+            
+            LeanTween.scale(rectTransform, smallScale, 1f)
+                .setEase(LeanTweenType.easeOutElastic)
+                .setOnComplete(() =>
+                {
+                    LeanTween.scale(rectTransform, originalScale, 1f)
+                        .setEase(LeanTweenType.easeOutElastic);
+                });
+            
+            LeanTween.alpha(resultsScreenBackground, 0.5f, 1f)
+                .setEase(LeanTweenType.easeOutElastic)
+                .setOnComplete(() =>
+                {
+                    LeanTween.alpha(resultsScreenBackground, 1f, 1f)
+                        .setEase(LeanTweenType.easeOutElastic);
+                });
+            
+            Debug.Log("Results Screen Tween");
         }
     }
 }

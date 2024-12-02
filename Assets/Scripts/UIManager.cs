@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +13,7 @@ public class UIManager : MonoBehaviour
     public LevelManager levelManager;
     public PlayerController playerController; // For the Player Die method // Might not be needed
     public WaveManager waveManager;
+    public Results_Screen resultsScreen;
     
     public TMP_Text playerMoneyText;
     
@@ -36,7 +38,7 @@ public class UIManager : MonoBehaviour
         UpgradeMenu,
         ControlsMenu,
         ResultsMenu,
-        optionsMenu
+        OptionsMenu
     }
     
     [Header("UI Elements")]
@@ -104,7 +106,7 @@ public class UIManager : MonoBehaviour
             case switchUI.GamePause:
                 gamePauseUI.SetActive(true);
                 break;
-            case switchUI.optionsMenu:
+            case switchUI.OptionsMenu:
                 optionsMenuUI.SetActive(true);
                 break;
             case switchUI.GamePlay:
@@ -119,8 +121,7 @@ public class UIManager : MonoBehaviour
                 break;
             case switchUI.ResultsMenu:
                 resultsMenuUI.SetActive(true);
-                ResultScreenTween();
-                ShowWinText(); 
+                ShowWinText();
                 Time.timeScale = 0;
                 break;
                 
@@ -178,7 +179,7 @@ public class UIManager : MonoBehaviour
     
     public void OptionsMenu()
     {
-        SwitchUI(switchUI.optionsMenu);
+        SwitchUI(switchUI.OptionsMenu);
     }
     
     public void ShowWinText()
@@ -197,24 +198,5 @@ public class UIManager : MonoBehaviour
     {
         mainMenuUI.SetActive(true);
         optionsMenuUI.SetActive(false);
-    }
-
-    public void ResultScreenTween()
-    {
-        resultsMenuUI.transform.localScale = Vector3.zero;
-        CanvasGroup canvasGroup = resultsMenuUI.GetComponent<CanvasGroup>();
-        if (canvasGroup == null)
-        {
-            canvasGroup = resultsMenuUI.AddComponent<CanvasGroup>();
-        }
-
-        canvasGroup.alpha = 0;
-
-        // Set the background color to black
-        resultsMenuUI.GetComponent<Image>().color = Color.black;
-
-        // Animate the scale and alpha
-        LeanTween.scale(resultsMenuUI, new Vector3(1, 1, 1), 1f).setEase(LeanTweenType.easeOutElastic);
-        LeanTween.alphaCanvas(canvasGroup, 1, 1f).setEase(LeanTweenType.easeInOutQuad);
     }
 }
