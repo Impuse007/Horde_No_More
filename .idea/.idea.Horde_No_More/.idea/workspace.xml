@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90da82e4-6e32-4478-b7bf-d13780ae865a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/Alt_Ranged_Enemy_Still.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Animations/Alt_Ranged_Enemy_Still.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TitleScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TitleScreen.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +192,7 @@
       <workItem from="1733109318587" duration="4000" />
       <workItem from="1733109334845" duration="1567000" />
       <workItem from="1733143484353" duration="195000" />
+      <workItem from="1733181925270" duration="312000" />
     </task>
     <servers />
   </component>
