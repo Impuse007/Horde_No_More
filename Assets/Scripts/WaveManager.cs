@@ -16,7 +16,6 @@ public class WaveManager : MonoBehaviour
     
     // Lighting
     public Light2D directionalLight;
-    public Color wavechangeColor;
     public Color originalColor;
     
     public List<Wave> waves; // List of waves
@@ -39,12 +38,6 @@ public class WaveManager : MonoBehaviour
             return;
         }
         StartCoroutine(SpawnWaves());
-        
-        if (directionalLight != null)
-        {
-            originalColor = directionalLight.color;
-            originalColor = new Color(1f, 1f, 1f, 1f);
-        }
 
         gameManager = GameObject.Find("GameManager")?.GetComponent<GameManager>();
         uiManager = GameObject.Find("GameManager/UI Manager")?.GetComponent<UIManager>();
@@ -52,7 +45,9 @@ public class WaveManager : MonoBehaviour
         // Ensure the light color is set to the original color at the start
         if (directionalLight != null)
         {
+            originalColor = directionalLight.color;
             directionalLight.color = originalColor;
+            Debug.Log("Light Found");
         }
     }
     
@@ -83,14 +78,13 @@ public class WaveManager : MonoBehaviour
                 SFXManager.instance.PlayMusic(1);
             }
 
-            
             if (currentWaveIndex == 15)
             {
-                directionalLight.color = wavechangeColor;
+                directionalLight.color = new Color(0.47f, 0.47f, 0.47f, 1f);
             }
             else if (currentWaveIndex < 15)
             {
-                directionalLight.color = originalColor;
+                directionalLight.color = new Color(1f, 1f, 1f, 1f);
             }
             
             WaveTextBig(); // Could be a bug with this method

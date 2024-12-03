@@ -173,5 +173,6 @@ public class EnemyMelee : EnemyBase
         healthBar.gameObject.SetActive(false);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         Destroy(gameObject);
+        Debug.Log("Enemy has been destroyed.");
     }
 }
