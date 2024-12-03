@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DefaultNamespace;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
@@ -12,6 +13,12 @@ public class WaveManager : MonoBehaviour
     UIManager uiManager;
     GameManager gameManager;
     Results_Screen resultsScreen;
+    
+    // Lighting
+    public Light2D directionalLight;
+    public Color wavechangeColor;
+    public Color originalColor;
+    
     public List<Wave> waves; // List of waves
     public TextMeshProUGUI persistentWaveText; // UI Text to display persistent wave number
     public TextMeshProUGUI waveText; // UI Text to display wave number
@@ -33,8 +40,20 @@ public class WaveManager : MonoBehaviour
         }
         StartCoroutine(SpawnWaves());
         
+        if (directionalLight != null)
+        {
+            originalColor = directionalLight.color;
+            originalColor = new Color(1f, 1f, 1f, 1f);
+        }
+
         gameManager = GameObject.Find("GameManager")?.GetComponent<GameManager>();
         uiManager = GameObject.Find("GameManager/UI Manager")?.GetComponent<UIManager>();
+
+        // Ensure the light color is set to the original color at the start
+        if (directionalLight != null)
+        {
+            directionalLight.color = originalColor;
+        }
     }
     
     private void Update()
@@ -62,6 +81,16 @@ public class WaveManager : MonoBehaviour
             else if (currentWaveIndex != 14 && currentWaveIndex != 29)
             {
                 SFXManager.instance.PlayMusic(1);
+            }
+
+            
+            if (currentWaveIndex == 15)
+            {
+                directionalLight.color = wavechangeColor;
+            }
+            else if (currentWaveIndex < 15)
+            {
+                directionalLight.color = originalColor;
             }
             
             WaveTextBig(); // Could be a bug with this method
@@ -191,6 +220,7 @@ public class WaveManager : MonoBehaviour
     public void WinGame()
     {
         uiManager.SwitchUI(UIManager.switchUI.ResultsMenu);
+        resultsScreen.ResultScreenTween();
         Debug.Log("You win!");
     }
     

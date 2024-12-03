@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using TMPro;
 using UnityEditor;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     HealthManager playerManager;
     public LevelManager levelManager;
     public UIManager uiManager;
+    public Results_Screen resultsScreen;
     private Rigidbody2D rb;
     public GameObject arrowCursor;
     

@@ -101,6 +101,7 @@ public class UIManager : MonoBehaviour
                 break;
             case switchUI.GameOver:
                 gameOverUI.SetActive(true);
+                resultsScreen.ResultScreenTween();
                 ShowLoseText();
                 break;
             case switchUI.GamePause:
@@ -121,6 +122,7 @@ public class UIManager : MonoBehaviour
                 break;
             case switchUI.ResultsMenu:
                 resultsMenuUI.SetActive(true);
+                resultsScreen.ResultScreenTween();
                 ShowWinText();
                 Time.timeScale = 0;
                 break;
