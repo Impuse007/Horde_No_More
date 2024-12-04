@@ -6,24 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="90da82e4-6e32-4478-b7bf-d13780ae865a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/CoinCollecting.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SFX/CoinCollecting.mp3.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Dashing.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SFX/Dashing.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Healing.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SFX/Healing.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/HoveringButtons.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SFX/HoveringButtons.mp3.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Player Death.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SFX/Player Death.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/Player Hurt.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SFX/Player Hurt.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/WinWave.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SFX/WinWave.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/pickupCoin (1).wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SFX/pickupCoin (1).wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/pickupCoin_Adjusted.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SFX/pickupCoin_Adjusted.mp3.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/GameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save/GameData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Save/SaveSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Save/SaveSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SkillCooldownImage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkillCooldownImage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SkillTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkillTree.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TitleScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TitleScreen.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,6 +194,7 @@
       <workItem from="1733143484353" duration="195000" />
       <workItem from="1733181925270" duration="4265000" />
       <workItem from="1733266178170" duration="7587000" />
+      <workItem from="1733320459900" duration="2555000" />
     </task>
     <servers />
   </component>
