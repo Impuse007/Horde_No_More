@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
@@ -8,12 +9,13 @@ namespace Save
     {
         public static string _savePath = Application.persistentDataPath + "/gamedata.save";
 
-        public static void SaveGame(PlayerController player, SkillTree skillTree)
+        public static void SaveGame(PlayerController player, SkillTree skillTree, List<string> unlockedSkillNames)
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(_savePath, FileMode.Create);
 
             GameData data = new GameData(player, skillTree);
+            data.unlockedSkills = unlockedSkillNames;
             formatter.Serialize(stream, data);
             stream.Close();
         }

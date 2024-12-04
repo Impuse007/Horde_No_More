@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Collections;
 
 public class SkillTree : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class SkillTree : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text descText;
     public TMP_Text costText;
+    public TMP_Text notEnoughMoneyText;
 
     private Skill currentSkill;
 
@@ -65,11 +67,13 @@ public class SkillTree : MonoBehaviour
                     skillImage.color = Color.green;
                 }
             }
+            SFXManager.instance.PlayEnvironmentSFX(2);
             Debug.Log("Skill unlocked: " + skillName);
             FindObjectOfType<GameManager>().SavingGame();
         }
         else
         {
+            StartCoroutine(DisableNotEnoughMoneyText());
             Debug.LogWarning("Skill not found, already unlocked, or not enough money: " + skillName);
         }
     }
@@ -119,5 +123,12 @@ public class SkillTree : MonoBehaviour
             descText.text = "";
             costText.text = "";
         }
+    }
+    
+    private IEnumerator DisableNotEnoughMoneyText()
+    {
+        notEnoughMoneyText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        notEnoughMoneyText.gameObject.SetActive(false);
     }
 }

@@ -37,16 +37,27 @@ public class SkillCooldownImage : MonoBehaviour
         
         if (playerController != null)
         {
-            float[] cooldownTimes = { playerController.nextSpecialAttackTime, playerController.nextHealingTime, playerController.nextDashTime }; // Wave Attack first, and then Healing
-            float[] cooldownDurations = { playerController.specialAttackCooldown, playerController.healingCooldown, playerController.dashCooldown }; // Wave Attack first, and then Healing
+            float[] cooldownTimes = { playerController.nextSpecialAttackTime, playerController.nextHealingTime, playerController.nextDashTime };
+            float[] cooldownDurations = { playerController.specialAttackCooldown, playerController.healingCooldown, playerController.dashCooldown };
+            bool[] skillUnlocked = { playerController.isSpecialAttackUnlocked, playerController.isHealingUnlocked, playerController.isDashUnlocked };
 
             for (int i = 0; i < cooldownImages.Length; i++)
             {
-                float cooldownTime = cooldownTimes[i] - Time.time; // Cooldown time remaining for the current skill
-                float cooldownDuration = cooldownDurations[i]; // Cooldown duration for the current skill
-                cooldownTime = Mathf.Clamp(cooldownTime, 0, cooldownDuration); // Clamp the cooldown time to be between 0 and the cooldown duration
-                cooldownTexts[i].text = Mathf.Ceil(cooldownTime).ToString(); // Display the cooldown time as an integer
-                cooldownImages[i].fillAmount = Mathf.Clamp01(cooldownTime / cooldownDuration); // Update the fill amount of the cooldown image
+                if (skillUnlocked[i])
+                {
+                    float cooldownTime = cooldownTimes[i] - Time.time;
+                    float cooldownDuration = cooldownDurations[i];
+                    cooldownTime = Mathf.Clamp(cooldownTime, 0, cooldownDuration);
+                    cooldownTexts[i].text = Mathf.Ceil(cooldownTime).ToString();
+                    cooldownImages[i].fillAmount = Mathf.Clamp01(cooldownTime / cooldownDuration);
+                    cooldownImages[i].gameObject.SetActive(true);
+                    cooldownTexts[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    cooldownImages[i].gameObject.SetActive(false);
+                    cooldownTexts[i].gameObject.SetActive(false);
+                }
             }
         }
     }

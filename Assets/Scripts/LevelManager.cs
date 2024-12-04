@@ -1,6 +1,7 @@
 using Save;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
@@ -33,7 +34,12 @@ public class LevelManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
-        SaveSystem.SaveGame(playerController, playerController.skillTree);
+        List<string> unlockedSkillNames = new List<string>();
+        foreach (var skill in playerController.skillTree.unlockedSkills)
+        {
+            unlockedSkillNames.Add(skill.skillName);
+        }
+        SaveSystem.SaveGame(playerController, playerController.skillTree, unlockedSkillNames);
         Player.SetActive(false);
     }
     

@@ -49,7 +49,7 @@ namespace DentedPixel.LTExamples
             Vector3 originalScale = mainmenuSelection.transform.localScale;
             Vector3 smallScale = originalScale * 0.1f; // 0.5x smaller than the original scale
             
-            LeanTween.scale(mainmenuSelection.gameObject, smallScale, 1f) // 1 second
+            LeanTween.scale(mainmenuSelection.gameObject, smallScale, 0.2f) // 0.2 seconds
                 .setEase(LeanTweenType.easeOutElastic) // Ease out elastic
                 .setOnComplete(() =>
                 {

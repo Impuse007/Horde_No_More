@@ -116,7 +116,13 @@ public class GameManager : MonoBehaviour
     
     public void SavingGame()
     {
-        Save.SaveSystem.SaveGame(playerController, skillTree);
+        List<string> unlockedSkillNames = new List<string>();
+        foreach (var skill in skillTree.unlockedSkills)
+        {
+            unlockedSkillNames.Add(skill.skillName);
+        }
+
+        Save.SaveSystem.SaveGame(playerController, skillTree, unlockedSkillNames);
     }
     
     public static void LoadGame(PlayerController player, SkillTree skillTree)
@@ -135,6 +141,7 @@ public class GameManager : MonoBehaviour
                 {
                     skill.Unlock(player);
                     skillTree.unlockedSkills.Add(skill);
+                    Debug.Log("Skill Unlocked: " + skill.skillName);
 
                     // Instantiate the upgrade prefab if it exists
                     if (skill.skillPrefab != null)
@@ -145,6 +152,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        Debug.Log("Game Loaded" + skillTree.unlockedSkills.Count);
     }
     
     public void NewGame()
