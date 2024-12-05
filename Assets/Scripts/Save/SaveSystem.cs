@@ -7,17 +7,16 @@ namespace Save
 {
     public static class SaveSystem
     {
-        public static string _savePath = Application.persistentDataPath + "/gamedata.save";
+        public static string _savePath = Path.Combine(Application.persistentDataPath, "gamedata.save");
 
-        public static void SaveGame(PlayerController player, SkillTree skillTree, List<string> unlockedSkillNames)
+        public static void SaveGame(SkillTree skillTree)
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(_savePath, FileMode.Create);
-
-            GameData data = new GameData(player, skillTree);
-            data.unlockedSkills = unlockedSkillNames;
-            formatter.Serialize(stream, data);
-            stream.Close();
+            using (FileStream stream = new FileStream(_savePath, FileMode.Create))
+            {
+                GameData data = new GameData(skillTree);
+                formatter.Serialize(stream, data);
+            }
         }
 
         public static GameData LoadGame()
@@ -25,11 +24,10 @@ namespace Save
             if (File.Exists(_savePath))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
-                FileStream stream = new FileStream(_savePath, FileMode.Open);
-
-                GameData data = formatter.Deserialize(stream) as GameData;
-                stream.Close();
-                return data;
+                using (FileStream stream = new FileStream(_savePath, FileMode.Open))
+                {
+                    return formatter.Deserialize(stream) as GameData;
+                }
             }
             else
             {

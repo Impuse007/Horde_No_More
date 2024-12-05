@@ -755,7 +755,7 @@ MonoBehaviour:
     description: Increases the Player Health by 35
     cost: 100
     isUnlocked: 0
-    healthIncrease: 35
+    healthIncrease: 25
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
@@ -775,9 +775,9 @@ MonoBehaviour:
     skillStatusText: {fileID: 1722808076}
   - skillName: Health Upgrade 3
     description: Increases the Player Health by 45
-    cost: 300
+    cost: 500
     isUnlocked: 0
-    healthIncrease: 45
+    healthIncrease: 30
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
@@ -799,7 +799,7 @@ MonoBehaviour:
     description: Increases the Player Health by 50
     cost: 900
     isUnlocked: 0
-    healthIncrease: 50
+    healthIncrease: 35
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
@@ -821,7 +821,7 @@ MonoBehaviour:
     description: Increases the Player Health by 50
     cost: 2000
     isUnlocked: 0
-    healthIncrease: 50
+    healthIncrease: 40
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
@@ -39979,6 +39979,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
+      propertyPath: healingCooldown
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
       propertyPath: playerHealthBar
       value: 
       objectReference: {fileID: 1716032429}
@@ -39996,6 +40000,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
       propertyPath: specialAttackDamage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
+      propertyPath: specialAttackCooldown
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2374092546083314130, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}

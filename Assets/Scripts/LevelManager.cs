@@ -34,17 +34,13 @@ public class LevelManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
-        List<string> unlockedSkillNames = new List<string>();
-        foreach (var skill in playerController.skillTree.unlockedSkills)
-        {
-            unlockedSkillNames.Add(skill.skillName);
-        }
-        SaveSystem.SaveGame(playerController, playerController.skillTree, unlockedSkillNames);
+        SaveSystem.SaveGame(playerController.skillTree);
         Player.SetActive(false);
     }
     
     public void QuitGame()
     {
+        gameManager.SavingGame();
         Application.Quit();
     }
 }

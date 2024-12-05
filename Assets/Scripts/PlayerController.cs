@@ -116,7 +116,6 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Dash());
             nextDashTime = Time.time + dashCooldown;
-            //StartCoroutine(PlayDashEffect());
         }
         
         if (Time.time >= nextAttackTime)
@@ -378,18 +377,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         healingEffect.Stop();
-    }
-    
-    public void AddMoney(int money)
-    {
-        playerMoney += money;
-    }
-    
-    private IEnumerator PlayDashEffect()
-    {
-        dashEffect.Play();
-        yield return new WaitForSeconds(0.5f);
-        dashEffect.Stop();
     }
     
     private void CursorArrow()

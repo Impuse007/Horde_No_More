@@ -45,11 +45,10 @@ public class GameManager : MonoBehaviour
         {
             SetButtonAlphaValue(255);  
             loadGameButton.interactable = true;
-            LoadGame(playerController, skillTree);
+            LoadGame(playerController,skillTree);
         }
         
-        CheckLevel();
-        Debug.Log(Save.SaveSystem._savePath);
+        CheckLevel(); // Check the current level and play the appropriate music 
     }
     
     void SetButtonAlphaValue(float alphaValue)
@@ -116,34 +115,23 @@ public class GameManager : MonoBehaviour
     
     public void SavingGame()
     {
-        List<string> unlockedSkillNames = new List<string>();
-        foreach (var skill in skillTree.unlockedSkills)
-        {
-            unlockedSkillNames.Add(skill.skillName);
-        }
-
-        Save.SaveSystem.SaveGame(playerController, skillTree, unlockedSkillNames);
+        SaveSystem.SaveGame(skillTree);
     }
-    
+
     public static void LoadGame(PlayerController player, SkillTree skillTree)
     {
         GameData data = SaveSystem.LoadGame();
         if (data != null)
         {
-            player.playerMoney = data.playerMoney;
-            player.playerMaxHealth = data.playerMaxHealth;
-            player.playerCurrentHealth = data.playerCurrentHealth;
-
             foreach (string skillName in data.unlockedSkills)
             {
                 Skill skill = skillTree.skills.Find(s => s.skillName == skillName);
                 if (skill != null)
                 {
-                    skill.Unlock(player);
+                    skill.Unlock(player); // Ensure player is not null
                     skillTree.unlockedSkills.Add(skill);
                     Debug.Log("Skill Unlocked: " + skill.skillName);
 
-                    // Instantiate the upgrade prefab if it exists
                     if (skill.skillPrefab != null)
                     {
                         GameObject upgradeInstance = Instantiate(skill.skillPrefab);
@@ -158,20 +146,21 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         playerController.playerMoney = 0;
-        playerController.playerMaxHealth = 40;
+        playerController.playerMaxHealth = 25;
         playerController.speed = 3;
         playerController.isHealingUnlocked = false;
         playerController.isSpecialAttackUnlocked = false;
         playerController.dashSpeed = 15.0f;
         playerController.dashCooldown = 5.0f;
         playerController.healingAmount = 20;
-        playerController.healingCooldown = 15.0f;
-        playerController.specialAttackDamage = 10;
+        playerController.healingCooldown = 20.0f;
+        playerController.specialAttackDamage = 15;
         playerController.specialAttackRange = 10.0f;
-        playerController.specialAttackCooldown = 5.0f;
+        playerController.specialAttackCooldown = 10.0f;
         playerController.playerDamage = 5;
         playerController.basicAttackRange = 4.0f; 
         playerController.basicAttackCooldown = 3.5f;
+        playerController.basicAttackSpeed = 10.0f;
         waveNumber = 0;
         kills = 0;
         moneyEarned = 0;
