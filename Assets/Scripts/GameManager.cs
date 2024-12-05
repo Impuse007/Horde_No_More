@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using DefaultNamespace;
 using Save;
 using Unity.VisualScripting;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
             SetButtonAlphaValue(255);  
             loadGameButton.interactable = true;
             LoadGame(playerController,skillTree);
+            Debug.Log(skillTree.unlockedSkills.Count + skillTree.skills.Count);
         }
         
         CheckLevel(); // Check the current level and play the appropriate music 
@@ -123,19 +125,26 @@ public class GameManager : MonoBehaviour
         GameData data = SaveSystem.LoadGame();
         if (data != null)
         {
+            // Create a set of currently unlocked skills for quick lookup
+            HashSet<string> currentUnlockedSkills = new HashSet<string>(skillTree.unlockedSkills.Select(s => s.skillName));
+
             foreach (string skillName in data.unlockedSkills)
             {
-                Skill skill = skillTree.skills.Find(s => s.skillName == skillName);
-                if (skill != null)
+                // Only add and unlock the skill if it is not already unlocked
+                if (!currentUnlockedSkills.Contains(skillName))
                 {
-                    skill.Unlock(player); // Ensure player is not null
-                    skillTree.unlockedSkills.Add(skill);
-                    Debug.Log("Skill Unlocked: " + skill.skillName);
-
-                    if (skill.skillPrefab != null)
+                    Skill skill = skillTree.skills.Find(s => s.skillName == skillName);
+                    if (skill != null)
                     {
-                        GameObject upgradeInstance = Instantiate(skill.skillPrefab);
-                        upgradeInstance.SetActive(true);
+                        skill.Unlock(player); // Ensure player is not null
+                        skillTree.unlockedSkills.Add(skill);
+                        Debug.Log("Skill Unlocked: " + skill.skillName);
+
+                        if (skill.skillPrefab != null)
+                        {
+                            GameObject upgradeInstance = Instantiate(skill.skillPrefab);
+                            upgradeInstance.SetActive(true);
+                        }
                     }
                 }
             }

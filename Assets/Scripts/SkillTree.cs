@@ -24,7 +24,7 @@ public class SkillTree : MonoBehaviour
     private void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
-        unlockedSkills = new List<Skill>();
+        //unlockedSkills = new List<Skill>();
 
         // Set the alpha for the skill image to 0.5
         foreach (Skill skill in skills)
@@ -41,6 +41,8 @@ public class SkillTree : MonoBehaviour
                 }
             }
         }
+        
+        Debug.Log("SkillTree started" + unlockedSkills.Count);
     }
 
     public void UnlockSkill(string skillName) // You can buy the skill again

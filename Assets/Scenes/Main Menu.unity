@@ -752,7 +752,7 @@ MonoBehaviour:
     skillPrefab: {fileID: 1856340161}
     skillStatusText: {fileID: 1829083035}
   - skillName: Health Upgrade 2
-    description: Increases the Player Health by 35
+    description: Increases the Player Health by 25
     cost: 100
     isUnlocked: 0
     healthIncrease: 25
@@ -774,7 +774,7 @@ MonoBehaviour:
     skillPrefab: {fileID: 1899787475}
     skillStatusText: {fileID: 1722808076}
   - skillName: Health Upgrade 3
-    description: Increases the Player Health by 45
+    description: Increases the Player Health by 30
     cost: 500
     isUnlocked: 0
     healthIncrease: 30
@@ -796,7 +796,7 @@ MonoBehaviour:
     skillPrefab: {fileID: 1121757221}
     skillStatusText: {fileID: 1298193810}
   - skillName: Health Upgrade 4
-    description: Increases the Player Health by 50
+    description: Increases the Player Health by 35
     cost: 900
     isUnlocked: 0
     healthIncrease: 35
@@ -818,10 +818,10 @@ MonoBehaviour:
     skillPrefab: {fileID: 749335725}
     skillStatusText: {fileID: 695369806}
   - skillName: Health Upgrade 5
-    description: Increases the Player Health by 50
+    description: Increases the Player Health by 35
     cost: 2000
     isUnlocked: 0
-    healthIncrease: 40
+    healthIncrease: 35
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
@@ -884,14 +884,14 @@ MonoBehaviour:
     skillPrefab: {fileID: 1322243721}
     skillStatusText: {fileID: 1719688909}
   - skillName: Damage Upgrade 3
-    description: Increases Player Damage by 25
+    description: Increases Player Damage by 30
     cost: 450
     isUnlocked: 0
     healthIncrease: 0
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
-    weaponBasicDamageIncrease: 25
+    weaponBasicDamageIncrease: 30
     weaponBasicSpeedIncrease: 0
     weaponBasicRangeIncrease: 0
     weaponSpecialDamageIncrease: 0
@@ -906,8 +906,30 @@ MonoBehaviour:
     skillPrefab: {fileID: 862202895}
     skillStatusText: {fileID: 33647257}
   - skillName: Damage Upgrade 4
-    description: Increases Player Damage by 35
+    description: Increases Player Damage by 30
     cost: 900
+    isUnlocked: 0
+    healthIncrease: 0
+    speedIncrease: 0
+    dashIncreaseSpeed: 0
+    dashDecreaseCooldown: 0
+    weaponBasicDamageIncrease: 30
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
+    weaponSpecialDamageIncrease: 0
+    weaponSpecialSpeedIncrease: 0
+    weaponSpecialRangeIncrease: 0
+    weaponSpecialCooldownDecrease: 0
+    playerHealingIncrease: 0
+    playerHealingCooldownDecrease: 0
+    playerEarningIncrease: 0
+    unlockSpecialAbility: 0
+    unlockHealingAbility: 0
+    skillPrefab: {fileID: 537060696}
+    skillStatusText: {fileID: 1346900641}
+  - skillName: Damage Upgrade 5
+    description: Increases Player Damage by 35
+    cost: 2000
     isUnlocked: 0
     healthIncrease: 0
     speedIncrease: 0
@@ -925,32 +947,10 @@ MonoBehaviour:
     playerEarningIncrease: 0
     unlockSpecialAbility: 0
     unlockHealingAbility: 0
-    skillPrefab: {fileID: 537060696}
-    skillStatusText: {fileID: 1346900641}
-  - skillName: Damage Upgrade 5
-    description: Increases Player Damage by 45
-    cost: 2000
-    isUnlocked: 0
-    healthIncrease: 0
-    speedIncrease: 0
-    dashIncreaseSpeed: 0
-    dashDecreaseCooldown: 0
-    weaponBasicDamageIncrease: 45
-    weaponBasicSpeedIncrease: 0
-    weaponBasicRangeIncrease: 0
-    weaponSpecialDamageIncrease: 0
-    weaponSpecialSpeedIncrease: 0
-    weaponSpecialRangeIncrease: 0
-    weaponSpecialCooldownDecrease: 0
-    playerHealingIncrease: 0
-    playerHealingCooldownDecrease: 0
-    playerEarningIncrease: 0
-    unlockSpecialAbility: 0
-    unlockHealingAbility: 0
     skillPrefab: {fileID: 0}
     skillStatusText: {fileID: 1197934877}
   - skillName: Crushing Reach
-    description: Basic Attack increases by 10, Speed and Range also gets massive
+    description: Basic Attack increases by 25, Speed and Range also gets massive
       boost
     cost: 700
     isUnlocked: 0
@@ -958,7 +958,7 @@ MonoBehaviour:
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
-    weaponBasicDamageIncrease: 10
+    weaponBasicDamageIncrease: 25
     weaponBasicSpeedIncrease: 3
     weaponBasicRangeIncrease: 3
     weaponSpecialDamageIncrease: 0
@@ -1130,10 +1130,10 @@ MonoBehaviour:
     skillPrefab: {fileID: 2136621146}
     skillStatusText: {fileID: 601154431}
   - skillName: Fleet of Strength
-    description: Health increased by 100 & Healing increaed by 35
+    description: Health increased by 40 & Healing increaed by 25
     cost: 2000
     isUnlocked: 0
-    healthIncrease: 100
+    healthIncrease: 40
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
@@ -1144,7 +1144,7 @@ MonoBehaviour:
     weaponSpecialSpeedIncrease: 0
     weaponSpecialRangeIncrease: 0
     weaponSpecialCooldownDecrease: 0
-    playerHealingIncrease: 35
+    playerHealingIncrease: 25
     playerHealingCooldownDecrease: 0
     playerEarningIncrease: 0
     unlockSpecialAbility: 0
@@ -26504,7 +26504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1313301691
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39995,8 +39995,12 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
+      propertyPath: basicAttackSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
       propertyPath: basicAttackCooldown
-      value: 3.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 2172320131221785864, guid: da448eff3b00f9a4b84b0f2aa22b0740, type: 3}
       propertyPath: specialAttackDamage
