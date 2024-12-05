@@ -753,7 +753,7 @@ MonoBehaviour:
     skillStatusText: {fileID: 1829083035}
   - skillName: Health Upgrade 2
     description: Increases the Player Health by 25
-    cost: 100
+    cost: 300
     isUnlocked: 0
     healthIncrease: 25
     speedIncrease: 0
@@ -775,7 +775,7 @@ MonoBehaviour:
     skillStatusText: {fileID: 1722808076}
   - skillName: Health Upgrade 3
     description: Increases the Player Health by 30
-    cost: 500
+    cost: 800
     isUnlocked: 0
     healthIncrease: 30
     speedIncrease: 0
@@ -797,7 +797,7 @@ MonoBehaviour:
     skillStatusText: {fileID: 1298193810}
   - skillName: Health Upgrade 4
     description: Increases the Player Health by 35
-    cost: 900
+    cost: 1400
     isUnlocked: 0
     healthIncrease: 35
     speedIncrease: 0
@@ -819,7 +819,7 @@ MonoBehaviour:
     skillStatusText: {fileID: 695369806}
   - skillName: Health Upgrade 5
     description: Increases the Player Health by 35
-    cost: 2000
+    cost: 4000
     isUnlocked: 0
     healthIncrease: 35
     speedIncrease: 0
@@ -885,7 +885,7 @@ MonoBehaviour:
     skillStatusText: {fileID: 1719688909}
   - skillName: Damage Upgrade 3
     description: Increases Player Damage by 30
-    cost: 450
+    cost: 700
     isUnlocked: 0
     healthIncrease: 0
     speedIncrease: 0
@@ -907,7 +907,7 @@ MonoBehaviour:
     skillStatusText: {fileID: 33647257}
   - skillName: Damage Upgrade 4
     description: Increases Player Damage by 30
-    cost: 900
+    cost: 1500
     isUnlocked: 0
     healthIncrease: 0
     speedIncrease: 0
@@ -929,7 +929,7 @@ MonoBehaviour:
     skillStatusText: {fileID: 1346900641}
   - skillName: Damage Upgrade 5
     description: Increases Player Damage by 35
-    cost: 2000
+    cost: 4000
     isUnlocked: 0
     healthIncrease: 0
     speedIncrease: 0
@@ -952,7 +952,7 @@ MonoBehaviour:
   - skillName: Crushing Reach
     description: Basic Attack increases by 25, Speed and Range also gets massive
       boost
-    cost: 700
+    cost: 1000
     isUnlocked: 0
     healthIncrease: 0
     speedIncrease: 0
@@ -997,7 +997,7 @@ MonoBehaviour:
     skillStatusText: {fileID: 1042570138}
   - skillName: Wave Upgrade 1
     description: Wave damage increases by 5
-    cost: 450
+    cost: 300
     isUnlocked: 0
     healthIncrease: 0
     speedIncrease: 0
