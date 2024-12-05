@@ -82,6 +82,7 @@ public class EnemyMelee : EnemyBase
 
     private IEnumerator PerformAttack()
     {
+        animator.ResetTrigger("Movement");
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length / 2);
 
         if (player != null && playerController != null)
@@ -114,6 +115,7 @@ public class EnemyMelee : EnemyBase
         Vector3 targetPosition = player.transform.position - direction;
         Vector3 newPosition = Vector3.MoveTowards(transform.position, targetPosition, maxDistance * Time.fixedDeltaTime);
         rb.MovePosition(newPosition);
+        animator.SetTrigger("Movement");
         
         if (direction.x > 0) // Flip sprite based on direction
         {

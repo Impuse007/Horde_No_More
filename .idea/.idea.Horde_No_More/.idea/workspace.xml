@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90da82e4-6e32-4478-b7bf-d13780ae865a" name="Changes" comment="" />
+    <list default="true" id="90da82e4-6e32-4478-b7bf-d13780ae865a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horde_No_More/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/Enemy_Attack_Anim.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Animations/Enemy_Attack_Anim.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/Melee Enemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Animations/Melee Enemy.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy (Melee).cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy (Melee).cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,6 +199,7 @@
       <workItem from="1733266178170" duration="7587000" />
       <workItem from="1733320459900" duration="3122000" />
       <workItem from="1733347887760" duration="9244000" />
+      <workItem from="1733441720522" duration="1038000" />
     </task>
     <servers />
   </component>
