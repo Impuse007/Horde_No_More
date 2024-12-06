@@ -214,7 +214,6 @@ public class WaveManager : MonoBehaviour
     public void WinGame()
     {
         uiManager.SwitchUI(UIManager.switchUI.ResultsMenu);
-        resultsScreen.ResultScreenTween();
         Debug.Log("You win!");
     }
     
