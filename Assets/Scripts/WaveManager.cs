@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DefaultNamespace;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
@@ -12,6 +13,11 @@ public class WaveManager : MonoBehaviour
     UIManager uiManager;
     GameManager gameManager;
     Results_Screen resultsScreen;
+    
+    // Lighting
+    public Light2D directionalLight;
+    public Color originalColor;
+    
     public List<Wave> waves; // List of waves
     public TextMeshProUGUI persistentWaveText; // UI Text to display persistent wave number
     public TextMeshProUGUI waveText; // UI Text to display wave number
@@ -32,9 +38,17 @@ public class WaveManager : MonoBehaviour
             return;
         }
         StartCoroutine(SpawnWaves());
-        
+
         gameManager = GameObject.Find("GameManager")?.GetComponent<GameManager>();
         uiManager = GameObject.Find("GameManager/UI Manager")?.GetComponent<UIManager>();
+
+        // Ensure the light color is set to the original color at the start
+        if (directionalLight != null)
+        {
+            originalColor = directionalLight.color;
+            directionalLight.color = originalColor;
+            Debug.Log("Light Found");
+        }
     }
     
     private void Update()
@@ -49,6 +63,7 @@ public class WaveManager : MonoBehaviour
             Wave currentWave = waves[currentWaveIndex];
             isSpawning = true;
             persistentWaveText.text = "Wave " + currentWave.waveNumber + "/30";
+            //gameManager.AddWave(); // Add wave to the wave counter, but crashes the game
             enemiesAlive = 0;
 
             if (currentWaveIndex == 14)
@@ -62,6 +77,15 @@ public class WaveManager : MonoBehaviour
             else if (currentWaveIndex != 14 && currentWaveIndex != 29)
             {
                 SFXManager.instance.PlayMusic(1);
+            }
+
+            if (currentWaveIndex == 15)
+            {
+                directionalLight.color = new Color(0.47f, 0.47f, 0.47f, 1f);
+            }
+            else if (currentWaveIndex < 15)
+            {
+                directionalLight.color = new Color(1f, 1f, 1f, 1f);
             }
             
             WaveTextBig(); // Could be a bug with this method
@@ -89,7 +113,6 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(currentWave.waveDelay);
             SFXManager.instance.PlayWaveSFX(0); // Play the wave complete sound effect
             currentWaveIndex++;
-            gameManager.AddWave();
             if (currentWaveIndex >= waves.Count)
             {
                 WinGame();

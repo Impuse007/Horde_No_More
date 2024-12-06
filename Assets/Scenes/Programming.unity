@@ -6066,6 +6066,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Range Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8614115559624986088, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 695.9831
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614115559624986088, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 421.81827
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4754869970165091473, guid: 8ce90ddf3c6f26544a5eb6eb74c63732, type: 3}

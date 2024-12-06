@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class UIManager : MonoBehaviour
     public LevelManager levelManager;
     public PlayerController playerController; // For the Player Die method // Might not be needed
     public WaveManager waveManager;
+    public Results_Screen resultsScreen;
     
     public TMP_Text playerMoneyText;
     
@@ -35,7 +38,7 @@ public class UIManager : MonoBehaviour
         UpgradeMenu,
         ControlsMenu,
         ResultsMenu,
-        optionsMenu
+        OptionsMenu
     }
     
     [Header("UI Elements")]
@@ -62,7 +65,7 @@ public class UIManager : MonoBehaviour
         playerDamageText.text = "Damage: " + playerController.playerDamage;
         playerHealthText.text = "Health: " + playerController.playerMaxHealth;
         playerSpeedText.text = "Speed: " + playerController.speed;
-        playerSpecialAttackText.text = "Special Attack: " + playerController.specialAttackDamage;
+        playerSpecialAttackText.text = "Wave Damage: " + playerController.specialAttackDamage;
         playerHealingText.text = "Healing: " + playerController.healingAmount;
         playerDashSpeedText.text = "Dash Speed: " + playerController.dashSpeed;
     }
@@ -98,17 +101,19 @@ public class UIManager : MonoBehaviour
                 break;
             case switchUI.GameOver:
                 gameOverUI.SetActive(true);
+                resultsScreen.ResultScreenTween();
                 ShowLoseText();
                 break;
             case switchUI.GamePause:
                 gamePauseUI.SetActive(true);
                 break;
-            case switchUI.optionsMenu:
+            case switchUI.OptionsMenu:
                 optionsMenuUI.SetActive(true);
                 break;
             case switchUI.GamePlay:
                 gamePlayUI.SetActive(true);
                 playerController.playerSprite.enabled = true; // Might not need this look up in playerController on top of this script
+                playerController.arrowCursor.SetActive(true); // Might not need this look up in playerController on top of this script
                 break;
             case switchUI.UpgradeMenu:
                 upgradeMenuUI.SetActive(true);
@@ -118,7 +123,8 @@ public class UIManager : MonoBehaviour
                 break;
             case switchUI.ResultsMenu:
                 resultsMenuUI.SetActive(true);
-                ShowWinText(); 
+                resultsScreen.ResultScreenTween();
+                ShowWinText();
                 Time.timeScale = 0;
                 break;
                 
@@ -132,10 +138,12 @@ public class UIManager : MonoBehaviour
         if (sceneName == "Main Menu")
         {
             SwitchUI(switchUI.MainMenu);
+            SFXManager.instance.PlayMusic(0);
         }
         else if (sceneName == "Level 1")
         {
             SwitchUI(switchUI.GamePlay);
+            SFXManager.instance.PlayMusic(1);
         }
         
         Debug.Log("UI Activated based on scene: " + sceneName);
@@ -150,6 +158,7 @@ public class UIManager : MonoBehaviour
                 if (Time.timeScale == 1)
                 {
                     Time.timeScale = 0;
+                    playerController.playerSprite.flipX = false;
                     SwitchUI(switchUI.GamePause);
                 }
                 else
@@ -175,7 +184,7 @@ public class UIManager : MonoBehaviour
     
     public void OptionsMenu()
     {
-        SwitchUI(switchUI.optionsMenu);
+        SwitchUI(switchUI.OptionsMenu);
     }
     
     public void ShowWinText()

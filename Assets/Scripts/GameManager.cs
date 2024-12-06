@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using DefaultNamespace;
 using Save;
 using Unity.VisualScripting;
@@ -45,11 +46,9 @@ public class GameManager : MonoBehaviour
         {
             SetButtonAlphaValue(255);  
             loadGameButton.interactable = true;
-            LoadGame(playerController, skillTree);
+            LoadGame(playerController,skillTree);
+            Debug.Log(skillTree.unlockedSkills.Count + skillTree.skills.Count);
         }
-        
-        CheckLevel();
-        Debug.Log(Save.SaveSystem._savePath);
     }
     
     void SetButtonAlphaValue(float alphaValue)
@@ -57,30 +56,6 @@ public class GameManager : MonoBehaviour
         Color color = loadGameButton.GetComponent<Image>().color;
         color.a = alphaValue / 255f; // Convert alpha to the range of 0 to 1
         loadGameButton.GetComponent<Image>().color = color;
-    }
-    
-    void CheckLevel()
-    {
-        string currentLevel = SceneManager.GetActiveScene().name;
-        if (currentLevel == "Main Menu")
-        {
-            SfxManager.PlayMusic(0); // Play the main menu music
-            Debug.Log("Main Menu Music");
-        }
-        else
-        {
-            SfxManager.PlayMusic(1); // Play the gameplay music
-            Debug.Log("Gameplay Music");
-        }
-        Debug.Log("Current Level: " + currentLevel);
-        //if (currentLevel == "Level1")
-        //{
-        //    playerController.gameObject.SetActive(true);
-        //}
-        //else
-        //{
-        //    playerController.gameObject.SetActive(false);
-        //}
     }
 
     public void Update()
@@ -116,54 +91,60 @@ public class GameManager : MonoBehaviour
     
     public void SavingGame()
     {
-        Save.SaveSystem.SaveGame(playerController, skillTree);
+        SaveSystem.SaveGame(skillTree , playerController);
     }
-    
+
     public static void LoadGame(PlayerController player, SkillTree skillTree)
     {
         GameData data = SaveSystem.LoadGame();
         if (data != null)
         {
-            player.playerMoney = data.playerMoney;
-            player.playerMaxHealth = data.playerMaxHealth;
-            player.playerCurrentHealth = data.playerCurrentHealth;
+            // Create a set of currently unlocked skills for quick lookup
+            HashSet<string> currentUnlockedSkills = new HashSet<string>(skillTree.unlockedSkills.Select(s => s.skillName));
 
             foreach (string skillName in data.unlockedSkills)
             {
-                Skill skill = skillTree.skills.Find(s => s.skillName == skillName);
-                if (skill != null)
+                // Only add and unlock the skill if it is not already unlocked
+                if (!currentUnlockedSkills.Contains(skillName))
                 {
-                    skill.Unlock(player);
-                    skillTree.unlockedSkills.Add(skill);
-
-                    // Instantiate the upgrade prefab if it exists
-                    if (skill.skillPrefab != null)
+                    Skill skill = skillTree.skills.Find(s => s.skillName == skillName);
+                    if (skill != null)
                     {
-                        GameObject upgradeInstance = Instantiate(skill.skillPrefab);
-                        upgradeInstance.SetActive(true);
+                        skill.Unlock(player); // Ensure player is not null
+                        skillTree.unlockedSkills.Add(skill);
+                        Debug.Log("Skill Unlocked: " + skill.skillName);
+
+                        if (skill.skillPrefab != null)
+                        {
+                            GameObject upgradeInstance = Instantiate(skill.skillPrefab);
+                            upgradeInstance.SetActive(true);
+                        }
                     }
                 }
+                player.playerMoney = data.moneyFromPlayer;
             }
         }
+        Debug.Log("Game Loaded" + skillTree.unlockedSkills.Count);
     }
     
     public void NewGame()
     {
         playerController.playerMoney = 0;
-        playerController.playerMaxHealth = 40;
+        playerController.playerMaxHealth = 25;
         playerController.speed = 3;
         playerController.isHealingUnlocked = false;
         playerController.isSpecialAttackUnlocked = false;
         playerController.dashSpeed = 15.0f;
-        playerController.dashCooldown = 5.0f;
+        playerController.dashCooldown = 8.0f;
         playerController.healingAmount = 20;
-        playerController.healingCooldown = 15.0f;
-        playerController.specialAttackDamage = 10;
+        playerController.healingCooldown = 20.0f;
+        playerController.specialAttackDamage = 15;
         playerController.specialAttackRange = 10.0f;
-        playerController.specialAttackCooldown = 5.0f;
+        playerController.specialAttackCooldown = 10.0f;
         playerController.playerDamage = 5;
         playerController.basicAttackRange = 4.0f; 
-        playerController.basicAttackCooldown = 3.5f;
+        playerController.basicAttackCooldown = 2.5f;
+        playerController.basicAttackSpeed = 6.0f;
         waveNumber = 0;
         kills = 0;
         moneyEarned = 0;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using TMPro;
 using UnityEditor;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     HealthManager playerManager;
     public LevelManager levelManager;
     public UIManager uiManager;
+    public Results_Screen resultsScreen;
     private Rigidbody2D rb;
     public GameObject arrowCursor;
     
@@ -114,12 +116,11 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Dash());
             nextDashTime = Time.time + dashCooldown;
-            //StartCoroutine(PlayDashEffect());
         }
         
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Mouse0))
             {
                 BasicAttack();
                 nextAttackTime = Time.time + 1f / basicAttackCooldown;
@@ -148,11 +149,7 @@ public class PlayerController : MonoBehaviour
         
         playerHealthBar.maxValue = playerMaxHealth;
         playerHealthBar.value = (int)playerCurrentHealth;
-        moneyText.text = "Money: " + playerMoney;
-        //dashCooldownText.text = "Dash Cooldown: " + Mathf.Max(0, dashCooldownTime).ToString("F1");
-        // Don't need this anymore or the text in the values up top
-        //healingCooldownText.text = "Healing Cooldown: " + Mathf.Max(0, nextHealingTime - Time.time).ToString("F1"); 
-        //specialAttackCooldownText.text = "Special Attack Cooldown: " + Mathf.Max(0, nextSpecialAttackTime - Time.time).ToString("F1");
+        moneyText.text = ": " + playerMoney;
     }
 
     public void LateUpdate()
@@ -165,7 +162,7 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector2 movement = new Vector2(horizontal, vertical) * speed;
+        Vector2 movement = new Vector2(horizontal, vertical).normalized * speed;
         rb.velocity = movement; // Use Rigidbody2D for movement
 
         float speedValue = movement.magnitude;
@@ -349,6 +346,7 @@ public class PlayerController : MonoBehaviour
         uiManager.SwitchUI(UIManager.switchUI.GameOver);
         SFXManager.instance.PlayPlayerSFX(5);
         playerSprite.enabled = false;
+        arrowCursor.SetActive(false);
         Time.timeScale = 0;
         FindObjectOfType<GameManager>().SavingGame();
     }
@@ -375,18 +373,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         healingEffect.Stop();
-    }
-    
-    public void AddMoney(int money)
-    {
-        playerMoney += money;
-    }
-    
-    private IEnumerator PlayDashEffect()
-    {
-        dashEffect.Play();
-        yield return new WaitForSeconds(0.5f);
-        dashEffect.Stop();
     }
     
     private void CursorArrow()

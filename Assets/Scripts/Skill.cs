@@ -17,6 +17,7 @@ public class Skill
     public int weaponBasicDamageIncrease;
     public int weaponBasicSpeedIncrease;
     public int weaponBasicRangeIncrease;
+    public int weaponBasicCooldownDecrease;
     public int weaponSpecialDamageIncrease;
     public int weaponSpecialSpeedIncrease;
     public int weaponSpecialRangeIncrease;
@@ -41,7 +42,7 @@ public class Skill
         UpdateSkillStatusText();
     }
     
-    public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncreaseSpeed, int weaponBasicDamageIncrease, int weaponBasicRangeIncrease, int weaponBasicSpeedIncrease, bool unlockSpecialAbility, int weaponSpecialDamageIncrease, int weaponSpecialSpeedIncrease, int weaponSpecialCooldownDecrease, bool unlockHealingAbility, int playerHealingIncrease, int playerHealingCooldownDecrease, int playerEarningIncrease, int dashDecreaseCooldown)
+    public Skill(string name, string desc, int cost, int healthIncrease, int speedIncrease, int dashIncreaseSpeed, int weaponBasicDamageIncrease, int weaponBasicRangeIncrease, int weaponBasicSpeedIncrease, bool unlockSpecialAbility, int weaponSpecialDamageIncrease, int weaponSpecialSpeedIncrease, int weaponSpecialCooldownDecrease, bool unlockHealingAbility, int playerHealingIncrease, int playerHealingCooldownDecrease, int playerEarningIncrease, int dashDecreaseCooldown, int weaponBasicCooldownDecrease)
     {
         this.skillName = name;
         this.description = desc;
@@ -54,6 +55,7 @@ public class Skill
         this.weaponBasicDamageIncrease = weaponBasicDamageIncrease;
         this.weaponBasicRangeIncrease = weaponBasicRangeIncrease;
         this.weaponBasicSpeedIncrease = weaponBasicSpeedIncrease;
+        this.weaponBasicCooldownDecrease = weaponBasicCooldownDecrease;
         this.unlockSpecialAbility = unlockSpecialAbility;
         this.weaponSpecialDamageIncrease = weaponSpecialDamageIncrease;
         this.weaponSpecialSpeedIncrease = weaponSpecialSpeedIncrease;
@@ -74,6 +76,7 @@ public class Skill
         playerController.playerDamage += weaponBasicDamageIncrease;
         playerController.basicAttackSpeed += weaponBasicSpeedIncrease;
         playerController.basicAttackRange += weaponBasicRangeIncrease;
+        playerController.basicAttackCooldown += weaponBasicCooldownDecrease;
         playerController.specialAttackDamage += weaponSpecialDamageIncrease;
         playerController.specialAttackSpeed += weaponSpecialSpeedIncrease;
         playerController.specialAttackCooldown -= weaponSpecialCooldownDecrease;

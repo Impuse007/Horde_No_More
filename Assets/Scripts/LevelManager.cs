@@ -1,6 +1,7 @@
 using Save;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
@@ -33,12 +34,13 @@ public class LevelManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
-        SaveSystem.SaveGame(playerController, playerController.skillTree);
+        gameManager.SavingGame();
         Player.SetActive(false);
     }
     
     public void QuitGame()
     {
+        gameManager.SavingGame();
         Application.Quit();
     }
 }
