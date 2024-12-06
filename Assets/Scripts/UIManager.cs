@@ -65,7 +65,7 @@ public class UIManager : MonoBehaviour
         playerDamageText.text = "Damage: " + playerController.playerDamage;
         playerHealthText.text = "Health: " + playerController.playerMaxHealth;
         playerSpeedText.text = "Speed: " + playerController.speed;
-        playerSpecialAttackText.text = "Special Attack: " + playerController.specialAttackDamage;
+        playerSpecialAttackText.text = "Wave Damage: " + playerController.specialAttackDamage;
         playerHealingText.text = "Healing: " + playerController.healingAmount;
         playerDashSpeedText.text = "Dash Speed: " + playerController.dashSpeed;
     }
