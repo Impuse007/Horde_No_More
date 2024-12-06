@@ -45,38 +45,45 @@ public class SkillTree : MonoBehaviour
         Debug.Log("SkillTree started" + unlockedSkills.Count);
     }
 
-    public void UnlockSkill(string skillName) // You can buy the skill again
+    public void UnlockSkill(string skillName)
     {
         Skill skill = skills.Find(s => s.skillName == skillName);
-        if (skill != null && !skill.isUnlocked && playerController.playerMoney >= skill.cost)
+        if (skill != null && !skill.isUnlocked)
         {
-            playerController.playerMoney -= skill.cost;
-            skill.Unlock(playerController);
-            unlockedSkills.Add(skill);
-            skill.UpdateSkillStatusText();
-            GameObject skillGameObject = EventSystem.current.currentSelectedGameObject;
-            if (skillGameObject != null)
+            if (playerController.playerMoney >= skill.cost)
             {
-                skillGameObject.SetActive(true);
-                HoveringOverSkills hoveringOverSkills = skillGameObject.GetComponent<HoveringOverSkills>();
-                if (hoveringOverSkills != null)
+                playerController.playerMoney -= skill.cost;
+                skill.Unlock(playerController);
+                unlockedSkills.Add(skill);
+                skill.UpdateSkillStatusText();
+                GameObject skillGameObject = EventSystem.current.currentSelectedGameObject;
+                if (skillGameObject != null)
                 {
-                    hoveringOverSkills.skillBrought = true;
+                    skillGameObject.SetActive(true);
+                    HoveringOverSkills hoveringOverSkills = skillGameObject.GetComponent<HoveringOverSkills>();
+                    if (hoveringOverSkills != null)
+                    {
+                        hoveringOverSkills.skillBrought = true;
+                    }
+                    Image skillImage = skillGameObject.GetComponent<Image>();
+                    if (skillImage != null)
+                    {
+                        skillImage.color = Color.green;
+                    }
                 }
-                Image skillImage = skillGameObject.GetComponent<Image>();
-                if (skillImage != null)
-                {
-                    skillImage.color = Color.green;
-                }
+                SFXManager.instance.PlayEnvironmentSFX(2);
+                Debug.Log("Skill unlocked: " + skillName);
+                FindObjectOfType<GameManager>().SavingGame();
             }
-            SFXManager.instance.PlayEnvironmentSFX(2);
-            Debug.Log("Skill unlocked: " + skillName);
-            FindObjectOfType<GameManager>().SavingGame();
+            else
+            {
+                StartCoroutine(DisableNotEnoughMoneyText());
+                Debug.LogWarning("Not enough money to unlock skill: " + skillName);
+            }
         }
         else
         {
-            StartCoroutine(DisableNotEnoughMoneyText());
-            Debug.LogWarning("Skill not found, already unlocked, or not enough money: " + skillName);
+            Debug.LogWarning("Skill not found or already unlocked: " + skillName);
         }
     }
 
@@ -130,7 +137,7 @@ public class SkillTree : MonoBehaviour
     private IEnumerator DisableNotEnoughMoneyText()
     {
         notEnoughMoneyText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
         notEnoughMoneyText.gameObject.SetActive(false);
     }
 }

@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
     
     public void SavingGame()
     {
-        SaveSystem.SaveGame(skillTree);
+        SaveSystem.SaveGame(skillTree , playerController);
     }
 
     public static void LoadGame(PlayerController player, SkillTree skillTree)
@@ -147,6 +147,7 @@ public class GameManager : MonoBehaviour
                         }
                     }
                 }
+                player.playerMoney = data.moneyFromPlayer;
             }
         }
         Debug.Log("Game Loaded" + skillTree.unlockedSkills.Count);
@@ -160,7 +161,7 @@ public class GameManager : MonoBehaviour
         playerController.isHealingUnlocked = false;
         playerController.isSpecialAttackUnlocked = false;
         playerController.dashSpeed = 15.0f;
-        playerController.dashCooldown = 5.0f;
+        playerController.dashCooldown = 8.0f;
         playerController.healingAmount = 20;
         playerController.healingCooldown = 20.0f;
         playerController.specialAttackDamage = 15;
@@ -168,8 +169,8 @@ public class GameManager : MonoBehaviour
         playerController.specialAttackCooldown = 10.0f;
         playerController.playerDamage = 5;
         playerController.basicAttackRange = 4.0f; 
-        playerController.basicAttackCooldown = 3.5f;
-        playerController.basicAttackSpeed = 10.0f;
+        playerController.basicAttackCooldown = 2.5f;
+        playerController.basicAttackSpeed = 6.0f;
         waveNumber = 0;
         kills = 0;
         moneyEarned = 0;

@@ -149,11 +149,7 @@ public class PlayerController : MonoBehaviour
         
         playerHealthBar.maxValue = playerMaxHealth;
         playerHealthBar.value = (int)playerCurrentHealth;
-        moneyText.text = "Money: " + playerMoney;
-        //dashCooldownText.text = "Dash Cooldown: " + Mathf.Max(0, dashCooldownTime).ToString("F1");
-        // Don't need this anymore or the text in the values up top
-        //healingCooldownText.text = "Healing Cooldown: " + Mathf.Max(0, nextHealingTime - Time.time).ToString("F1"); 
-        //specialAttackCooldownText.text = "Special Attack Cooldown: " + Mathf.Max(0, nextSpecialAttackTime - Time.time).ToString("F1");
+        moneyText.text = ": " + playerMoney;
     }
 
     public void LateUpdate()

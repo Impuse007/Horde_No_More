@@ -9,12 +9,12 @@ namespace Save
     {
         public static string _savePath = Path.Combine(Application.persistentDataPath, "gamedata.save");
 
-        public static void SaveGame(SkillTree skillTree)
+        public static void SaveGame(SkillTree skillTree, PlayerController playerController)
         {
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream stream = new FileStream(_savePath, FileMode.Create))
             {
-                GameData data = new GameData(skillTree);
+                GameData data = new GameData(skillTree, playerController);
                 formatter.Serialize(stream, data);
             }
         }
