@@ -31,13 +31,13 @@ public class SkillCooldownImage : MonoBehaviour
     void Update()
     {
         if (playerController == null)
+    {
+        playerController = FindObjectOfType<PlayerController>();
+        if (playerController == null)
         {
-            playerController = FindObjectOfType<PlayerController>();
-            if (playerController == null)
-            {
-                return;
-            }
+            return;
         }
+    }
 
         if (playerController != null)
         {
@@ -67,6 +67,10 @@ public class SkillCooldownImage : MonoBehaviour
                     cooldownImages[i].fillAmount = Mathf.Clamp01(cooldownTime / cooldownDuration);
                     cooldownImages[i].gameObject.SetActive(true);
                     cooldownTexts[i].gameObject.SetActive(true);
+
+                    Color imageColor = cooldownImages[i].color;
+                    imageColor.a = cooldownTime > 0 ? 0.5f : 1f; // Set alpha to 0.5 if on cooldown, otherwise 1
+                    cooldownImages[i].color = imageColor;
 
                     if (i == 1) // Assuming index 1 is for healing skill
                     {
