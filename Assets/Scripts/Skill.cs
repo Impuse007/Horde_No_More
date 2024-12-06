@@ -76,7 +76,7 @@ public class Skill
         playerController.playerDamage += weaponBasicDamageIncrease;
         playerController.basicAttackSpeed += weaponBasicSpeedIncrease;
         playerController.basicAttackRange += weaponBasicRangeIncrease;
-        playerController.basicAttackCooldown -= weaponBasicCooldownDecrease;
+        playerController.basicAttackCooldown += weaponBasicCooldownDecrease;
         playerController.specialAttackDamage += weaponSpecialDamageIncrease;
         playerController.specialAttackSpeed += weaponSpecialSpeedIncrease;
         playerController.specialAttackCooldown -= weaponSpecialCooldownDecrease;

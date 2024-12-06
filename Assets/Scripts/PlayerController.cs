@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector2 movement = new Vector2(horizontal, vertical) * speed;
+        Vector2 movement = new Vector2(horizontal, vertical).normalized * speed;
         rb.velocity = movement; // Use Rigidbody2D for movement
 
         float speedValue = movement.magnitude;
