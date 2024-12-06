@@ -49,8 +49,6 @@ public class GameManager : MonoBehaviour
             LoadGame(playerController,skillTree);
             Debug.Log(skillTree.unlockedSkills.Count + skillTree.skills.Count);
         }
-        
-        CheckLevel(); // Check the current level and play the appropriate music 
     }
     
     void SetButtonAlphaValue(float alphaValue)
@@ -58,30 +56,6 @@ public class GameManager : MonoBehaviour
         Color color = loadGameButton.GetComponent<Image>().color;
         color.a = alphaValue / 255f; // Convert alpha to the range of 0 to 1
         loadGameButton.GetComponent<Image>().color = color;
-    }
-    
-    void CheckLevel()
-    {
-        string currentLevel = SceneManager.GetActiveScene().name;
-        if (currentLevel == "Main Menu")
-        {
-            SfxManager.PlayMusic(0); // Play the main menu music
-            Debug.Log("Main Menu Music");
-        }
-        else
-        {
-            SfxManager.PlayMusic(1); // Play the gameplay music
-            Debug.Log("Gameplay Music");
-        }
-        Debug.Log("Current Level: " + currentLevel);
-        //if (currentLevel == "Level1")
-        //{
-        //    playerController.gameObject.SetActive(true);
-        //}
-        //else
-        //{
-        //    playerController.gameObject.SetActive(false);
-        //}
     }
 
     public void Update()
