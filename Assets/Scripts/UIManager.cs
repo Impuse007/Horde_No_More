@@ -138,10 +138,12 @@ public class UIManager : MonoBehaviour
         if (sceneName == "Main Menu")
         {
             SwitchUI(switchUI.MainMenu);
+            SFXManager.instance.PlayMusic(0);
         }
         else if (sceneName == "Level 1")
         {
             SwitchUI(switchUI.GamePlay);
+            SFXManager.instance.PlayMusic(1);
         }
         
         Debug.Log("UI Activated based on scene: " + sceneName);
