@@ -63,6 +63,7 @@ public class WaveManager : MonoBehaviour
             Wave currentWave = waves[currentWaveIndex];
             isSpawning = true;
             persistentWaveText.text = "Wave " + currentWave.waveNumber + "/30";
+            //gameManager.AddWave(); // Add wave to the wave counter, but crashes the game
             enemiesAlive = 0;
 
             if (currentWaveIndex == 14)
@@ -112,7 +113,6 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(currentWave.waveDelay);
             SFXManager.instance.PlayWaveSFX(0); // Play the wave complete sound effect
             currentWaveIndex++;
-            gameManager.AddWave();
             if (currentWaveIndex >= waves.Count)
             {
                 WinGame();
