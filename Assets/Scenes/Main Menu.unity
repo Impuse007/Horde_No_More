@@ -730,10 +730,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skills:
   - skillName: Health Upgrade 1
-    description: Increases the Player Health by 20
+    description: Increases the Player Health by 25
     cost: 30
     isUnlocked: 0
-    healthIncrease: 20
+    healthIncrease: 25
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
@@ -753,10 +753,10 @@ MonoBehaviour:
     skillPrefab: {fileID: 1856340161}
     skillStatusText: {fileID: 1829083035}
   - skillName: Health Upgrade 2
-    description: Increases the Player Health by 25
+    description: Increases the Player Health by 30
     cost: 300
     isUnlocked: 0
-    healthIncrease: 25
+    healthIncrease: 30
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
@@ -776,10 +776,10 @@ MonoBehaviour:
     skillPrefab: {fileID: 1899787475}
     skillStatusText: {fileID: 1722808076}
   - skillName: Health Upgrade 3
-    description: Increases the Player Health by 30
+    description: Increases the Player Health by 35
     cost: 800
     isUnlocked: 0
-    healthIncrease: 30
+    healthIncrease: 35
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
@@ -799,10 +799,10 @@ MonoBehaviour:
     skillPrefab: {fileID: 1121757221}
     skillStatusText: {fileID: 1298193810}
   - skillName: Health Upgrade 4
-    description: Increases the Player Health by 35
+    description: Increases the Player Health by 40
     cost: 1400
     isUnlocked: 0
-    healthIncrease: 35
+    healthIncrease: 40
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
@@ -822,10 +822,10 @@ MonoBehaviour:
     skillPrefab: {fileID: 749335725}
     skillStatusText: {fileID: 695369806}
   - skillName: Health Upgrade 5
-    description: Increases the Player Health by 35
+    description: Increases the Player Health by 45
     cost: 4000
     isUnlocked: 0
-    healthIncrease: 35
+    healthIncrease: 45
     speedIncrease: 0
     dashIncreaseSpeed: 0
     dashDecreaseCooldown: 0
@@ -1008,31 +1008,8 @@ MonoBehaviour:
     skillPrefab: {fileID: 351698173}
     skillStatusText: {fileID: 1042570138}
   - skillName: Wave Upgrade 1
-    description: Wave damage increases by 5
-    cost: 300
-    isUnlocked: 0
-    healthIncrease: 0
-    speedIncrease: 0
-    dashIncreaseSpeed: 0
-    dashDecreaseCooldown: 0
-    weaponBasicDamageIncrease: 0
-    weaponBasicSpeedIncrease: 0
-    weaponBasicRangeIncrease: 0
-    weaponBasicCooldownDecrease: 0
-    weaponSpecialDamageIncrease: 5
-    weaponSpecialSpeedIncrease: 0
-    weaponSpecialRangeIncrease: 0
-    weaponSpecialCooldownDecrease: 0
-    playerHealingIncrease: 0
-    playerHealingCooldownDecrease: 0
-    playerEarningIncrease: 0
-    unlockSpecialAbility: 0
-    unlockHealingAbility: 0
-    skillPrefab: {fileID: 506113667}
-    skillStatusText: {fileID: 103440091}
-  - skillName: Wave Upgrade 2
     description: Wave damage increases by 10
-    cost: 700
+    cost: 300
     isUnlocked: 0
     healthIncrease: 0
     speedIncrease: 0
@@ -1051,12 +1028,58 @@ MonoBehaviour:
     playerEarningIncrease: 0
     unlockSpecialAbility: 0
     unlockHealingAbility: 0
+    skillPrefab: {fileID: 506113667}
+    skillStatusText: {fileID: 103440091}
+  - skillName: Wave Upgrade 2
+    description: Wave damage increases by 15
+    cost: 700
+    isUnlocked: 0
+    healthIncrease: 0
+    speedIncrease: 0
+    dashIncreaseSpeed: 0
+    dashDecreaseCooldown: 0
+    weaponBasicDamageIncrease: 0
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
+    weaponBasicCooldownDecrease: 0
+    weaponSpecialDamageIncrease: 15
+    weaponSpecialSpeedIncrease: 0
+    weaponSpecialRangeIncrease: 0
+    weaponSpecialCooldownDecrease: 0
+    playerHealingIncrease: 0
+    playerHealingCooldownDecrease: 0
+    playerEarningIncrease: 0
+    unlockSpecialAbility: 0
+    unlockHealingAbility: 0
     skillPrefab: {fileID: 618611283}
     skillStatusText: {fileID: 208156190}
   - skillName: Devastating Wave
-    description: Wave damage is increased by 20 and speed of the Wave is increase
+    description: Wave damage is increased by 25 and speed of the Wave is increase
       and cooldown
     cost: 1000
+    isUnlocked: 0
+    healthIncrease: 0
+    speedIncrease: 0
+    dashIncreaseSpeed: 0
+    dashDecreaseCooldown: 0
+    weaponBasicDamageIncrease: 0
+    weaponBasicSpeedIncrease: 0
+    weaponBasicRangeIncrease: 0
+    weaponBasicCooldownDecrease: 0
+    weaponSpecialDamageIncrease: 25
+    weaponSpecialSpeedIncrease: 5
+    weaponSpecialRangeIncrease: 0
+    weaponSpecialCooldownDecrease: 5
+    playerHealingIncrease: 0
+    playerHealingCooldownDecrease: 0
+    playerEarningIncrease: 0
+    unlockSpecialAbility: 0
+    unlockHealingAbility: 0
+    skillPrefab: {fileID: 160877021}
+    skillStatusText: {fileID: 629480355}
+  - skillName: Wave Upgrade 3
+    description: Wave damage increases by 20
+    cost: 1500
     isUnlocked: 0
     healthIncrease: 0
     speedIncrease: 0
@@ -1069,29 +1092,6 @@ MonoBehaviour:
     weaponSpecialDamageIncrease: 20
     weaponSpecialSpeedIncrease: 5
     weaponSpecialRangeIncrease: 0
-    weaponSpecialCooldownDecrease: 5
-    playerHealingIncrease: 0
-    playerHealingCooldownDecrease: 0
-    playerEarningIncrease: 0
-    unlockSpecialAbility: 0
-    unlockHealingAbility: 0
-    skillPrefab: {fileID: 160877021}
-    skillStatusText: {fileID: 629480355}
-  - skillName: Wave Upgrade 3
-    description: 'Wave damage increases by 15 '
-    cost: 1500
-    isUnlocked: 0
-    healthIncrease: 0
-    speedIncrease: 0
-    dashIncreaseSpeed: 0
-    dashDecreaseCooldown: 0
-    weaponBasicDamageIncrease: 0
-    weaponBasicSpeedIncrease: 0
-    weaponBasicRangeIncrease: 0
-    weaponBasicCooldownDecrease: 0
-    weaponSpecialDamageIncrease: 15
-    weaponSpecialSpeedIncrease: 5
-    weaponSpecialRangeIncrease: 0
     weaponSpecialCooldownDecrease: 0
     playerHealingIncrease: 0
     playerHealingCooldownDecrease: 0
@@ -1101,7 +1101,7 @@ MonoBehaviour:
     skillPrefab: {fileID: 1061761612}
     skillStatusText: {fileID: 1095890642}
   - skillName: Shatterwake
-    description: 'Wave damage increases by 15, and cooldown reduce '
+    description: 'Wave damage increases by 20, and cooldown reduce '
     cost: 2000
     isUnlocked: 0
     healthIncrease: 0
@@ -1112,7 +1112,7 @@ MonoBehaviour:
     weaponBasicSpeedIncrease: 0
     weaponBasicRangeIncrease: 0
     weaponBasicCooldownDecrease: 0
-    weaponSpecialDamageIncrease: 15
+    weaponSpecialDamageIncrease: 20
     weaponSpecialSpeedIncrease: 0
     weaponSpecialRangeIncrease: 0
     weaponSpecialCooldownDecrease: 2
